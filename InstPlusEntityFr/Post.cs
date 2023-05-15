@@ -15,5 +15,21 @@ namespace InstPlusEntityFr
         public string Zdjecie { get; set; } //ścieżka do zdjęcia
 
         public int UzytkownikId { get; set; } //twórca posta
+
+        public List<TagPostu> Tagi { get; set; }
+    }
+
+    [Table("TagiPostow")]
+    public class TagPostu
+    {
+        [Key]
+        public int TagId { get; set; }
+        private string nazwa;
+        public string Nazwa
+        {
+            get => nazwa;
+            set => value.ToLower();
+        }
     }
 }
+

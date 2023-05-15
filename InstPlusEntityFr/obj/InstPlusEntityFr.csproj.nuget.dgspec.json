@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Bogdan i Wiktor\\Desktop\\studia katowice\\PBD\\InstPlusEntityFr\\InstPlusEntityFr.csproj": {}
+    "C:\\Users\\Bogdan i Wiktor\\Desktop\\studia katowice\\PBD\\InstagramPlusProjekt\\InstPlusEntityFr\\InstPlusEntityFr.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Bogdan i Wiktor\\Desktop\\studia katowice\\PBD\\InstPlusEntityFr\\InstPlusEntityFr.csproj": {
+    "C:\\Users\\Bogdan i Wiktor\\Desktop\\studia katowice\\PBD\\InstagramPlusProjekt\\InstPlusEntityFr\\InstPlusEntityFr.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Bogdan i Wiktor\\Desktop\\studia katowice\\PBD\\InstPlusEntityFr\\InstPlusEntityFr.csproj",
+        "projectUniqueName": "C:\\Users\\Bogdan i Wiktor\\Desktop\\studia katowice\\PBD\\InstagramPlusProjekt\\InstPlusEntityFr\\InstPlusEntityFr.csproj",
         "projectName": "InstPlusEntityFr",
-        "projectPath": "C:\\Users\\Bogdan i Wiktor\\Desktop\\studia katowice\\PBD\\InstPlusEntityFr\\InstPlusEntityFr.csproj",
+        "projectPath": "C:\\Users\\Bogdan i Wiktor\\Desktop\\studia katowice\\PBD\\InstagramPlusProjekt\\InstPlusEntityFr\\InstPlusEntityFr.csproj",
         "packagesPath": "C:\\Users\\Bogdan i Wiktor\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Bogdan i Wiktor\\Desktop\\studia katowice\\PBD\\InstPlusEntityFr\\obj\\",
+        "outputPath": "C:\\Users\\Bogdan i Wiktor\\Desktop\\studia katowice\\PBD\\InstagramPlusProjekt\\InstPlusEntityFr\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

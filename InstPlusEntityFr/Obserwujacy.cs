@@ -3,11 +3,16 @@
 namespace InstPlusEntityFr
 {
     [Table("Obserwujacy")]
-    public class Obserwujacy : Obserwowany
+    public class Obserwujacy
     {
-        public Obserwujacy(int obserwowanyId, int obserwatorId) :base(obserwowanyId, obserwatorId) { }
-    }
+        public int ObserwowanyId { get; set; } //id użytkownika x
 
-    //ObserwowanyId --- id użytkownika x
-    //ObserwatorId --- id osoby obserwującej użytkownika x
+        public int ObserwatorId { get; set; } //id osoby obserwującej użytkownika x
+
+        public Obserwujacy(int obserwowanyId, int obserwatorId)
+        {
+            ObserwatorId = obserwatorId;
+            ObserwowanyId = obserwowanyId;
+        }
+    }
 }

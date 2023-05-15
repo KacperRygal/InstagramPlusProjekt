@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace InstPlusEntityFr.Pages
+namespace InstagramPlusProjekt.Pages
 {
     public class PrivacyModel : PageModel
     {
@@ -14,6 +14,8 @@ namespace InstPlusEntityFr.Pages
 
         public void OnGet()
         {
+            string czas = DateTime.Now.ToString();
+            ViewData["TimeStamp"] = czas;
         }
     }
 }

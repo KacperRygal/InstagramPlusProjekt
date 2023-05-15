@@ -4,6 +4,7 @@ using InstPlusEntityFr;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InstPlusEntityFr.Migrations
 {
     [DbContext(typeof(DbInstagramPlus))]
-    partial class DbInstagramPlusModelSnapshot : ModelSnapshot
+    [Migration("20230515172433_tabele3")]
+    partial class tabele3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -123,29 +126,7 @@ namespace InstPlusEntityFr.Migrations
                     b.ToTable("Posty");
                 });
 
-            modelBuilder.Entity("InstPlusEntityFr.TagPostu", b =>
-                {
-                    b.Property<int>("TagId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TagId"));
-
-                    b.Property<string>("Nazwa")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("PostId")
-                        .HasColumnType("int");
-
-                    b.HasKey("TagId");
-
-                    b.HasIndex("PostId");
-
-                    b.ToTable("TagiPostow");
-                });
-
-            modelBuilder.Entity("InstPlusEntityFr.TagUzytkownika", b =>
+            modelBuilder.Entity("InstPlusEntityFr.Tag", b =>
                 {
                     b.Property<int>("TagId")
                         .ValueGeneratedOnAdd()
@@ -167,7 +148,7 @@ namespace InstPlusEntityFr.Migrations
 
                     b.HasIndex("UzytkownikId");
 
-                    b.ToTable("TagiUzytkownikow");
+                    b.ToTable("Tag");
                 });
 
             modelBuilder.Entity("InstPlusEntityFr.Uzytkownik", b =>
@@ -202,23 +183,11 @@ namespace InstPlusEntityFr.Migrations
                     b.ToTable("Uzytkownicy");
                 });
 
-            modelBuilder.Entity("InstPlusEntityFr.TagPostu", b =>
-                {
-                    b.HasOne("InstPlusEntityFr.Post", null)
-                        .WithMany("Tagi")
-                        .HasForeignKey("PostId");
-                });
-
-            modelBuilder.Entity("InstPlusEntityFr.TagUzytkownika", b =>
+            modelBuilder.Entity("InstPlusEntityFr.Tag", b =>
                 {
                     b.HasOne("InstPlusEntityFr.Uzytkownik", null)
                         .WithMany("Tagi")
                         .HasForeignKey("UzytkownikId");
-                });
-
-            modelBuilder.Entity("InstPlusEntityFr.Post", b =>
-                {
-                    b.Navigation("Tagi");
                 });
 
             modelBuilder.Entity("InstPlusEntityFr.Uzytkownik", b =>

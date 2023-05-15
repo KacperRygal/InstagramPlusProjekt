@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BoiOOeGd/v8biIY/w1XrZvqQblx4gTUM1W911d7pJjZ08EFQljzsF53z/Bm1Pxv2PCvro0v8UL556ZlvDOE5Fg==",
+  "dgSpecHash": "F6xuEeVoCPl7hNNh44bkzof+xbuYvgvNVpBp+7ZvYYWpT3iLhsfLYUmdfkeddCiZEuTBvif9ngF3UvIqsYHZkg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Bogdan i Wiktor\\Desktop\\studia katowice\\PBD\\InstPlusEntityFr\\InstPlusEntityFr.csproj",
+  "projectFilePath": "C:\\Users\\Bogdan i Wiktor\\Desktop\\studia katowice\\PBD\\InstagramPlusProjekt\\InstPlusEntityFr\\InstPlusEntityFr.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Bogdan i Wiktor\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Bogdan i Wiktor\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
