@@ -1,0 +1,48 @@
+﻿@page
+@model InstPlusEntityFr.Pages.DodajPost.IndexModel
+
+<style>
+    #previewImage {
+        max-width: 200px;
+        max-height: 200px;
+        float: none;
+        margin: 0 auto;
+    }
+</style>
+
+<div style="text-align: center">
+    <h1 class="display-4">Dodaj Nowy Post!</h1>
+    <div style="margin-bottom: 50px;">
+        <p>dodaj tagi:</p>
+        <form method="post">
+            <input type="text" id="dodajTagTxt" name="dodajTagTxt" />
+            <input type="submit" value="DODAJ TAG >" asp-page-handler="AppendTag" />
+        </form>
+        <label>@Model.DodajTagTxt</label>
+
+    </div>
+    <div>
+        <p>Opis:</p>
+        <textarea id="dodajOpisTxt" name="dodajOpisTxt" rows="3" cols="150">@Model.DodajOpisTxt</textarea>
+    </div>
+    <div>
+        <input type="file" accept="image/*" onchange="showPreview(event)" />
+        <img id="previewImage" src="#" alt="Preview" style="display: none; max-width: 200px; max-height: 200px;" />
+    </div>
+    <div>
+        <input type="button" value="OPUBLIKUJ" style="float: right;" />
+    </div>
+</div>
+
+<script>
+    function showPreview(event) {
+        var input = event.target;
+        var reader = new FileReader();
+        reader.onload = function () {
+            var img = document.getElementById('previewImage');
+            img.src = reader.result;
+            img.style.display = 'block';
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+</script>

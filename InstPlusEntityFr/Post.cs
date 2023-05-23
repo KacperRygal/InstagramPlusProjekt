@@ -30,6 +30,13 @@ namespace InstPlusEntityFr
             get => nazwa;
             set => value.ToLower();
         }
+
+        public TagPostu(string nazwa)
+        {
+            Nazwa = nazwa;
+        }
+        public TagPostu() { }
+
     }
 }
 

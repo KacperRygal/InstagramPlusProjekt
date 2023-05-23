@@ -1,0 +1,9 @@
+﻿@page
+@model InstPlusEntityFr.Pages.ProfilPrywatny.IndexModel
+@{
+}
+
+@if (!string.IsNullOrEmpty(Model.FilePath))
+{
+    <img src="@Model.FilePath" alt="Opis zdjęcia"  witdh="300" height="300" runat="server">
+}

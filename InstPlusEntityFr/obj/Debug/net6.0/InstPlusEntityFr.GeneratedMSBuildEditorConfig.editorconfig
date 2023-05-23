@@ -16,6 +16,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Bogdan i Wiktor/Desktop/studia katowice/PBD/InstagramPlusProjekt/InstPlusEntityFr/Pages/DodajPost/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9kYWpQb3N0XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Bogdan i Wiktor/Desktop/studia katowice/PBD/InstagramPlusProjekt/InstPlusEntityFr/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -28,8 +32,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Bogdan i Wiktor/Desktop/studia katowice/PBD/InstagramPlusProjekt/InstPlusEntityFr/Pages/MainPage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFpblBhZ2VcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Bogdan i Wiktor/Desktop/studia katowice/PBD/InstagramPlusProjekt/InstPlusEntityFr/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bogdan i Wiktor/Desktop/studia katowice/PBD/InstagramPlusProjekt/InstPlusEntityFr/Pages/ProfilPrywatny/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsUHJ5d2F0bnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Bogdan i Wiktor/Desktop/studia katowice/PBD/InstagramPlusProjekt/InstPlusEntityFr/Pages/Shared/_ValidationScriptsPartial.cshtml]

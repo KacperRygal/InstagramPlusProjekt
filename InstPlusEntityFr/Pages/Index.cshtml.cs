@@ -14,7 +14,8 @@ namespace InstagramPlusProjekt.Pages
 
         public void OnGet()
         {
-
         }
-    }
+
+		
+	}
 }

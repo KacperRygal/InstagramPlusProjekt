@@ -8,6 +8,7 @@ using System.Reflection.Metadata;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 using static System.Net.Mime.MediaTypeNames;
 
+
 namespace Strona.Pages.Login
 {
     public class IndexModel : PageModel
@@ -40,7 +41,7 @@ namespace Strona.Pages.Login
                 {
                     bazaInstagram.Uzytkownicy.Add(nowyUzytkownik);
                     bazaInstagram.SaveChanges();
-                    errorMessage = "Udalo sie dodac uzytkownika!";
+                    errorMessage = "Udalo sie dodac uzytkownika! Mozesz sie zalogowaæ na swoje konto.";
                 }
                 else if (!czy_dobry_login) errorMessage = "Has³o musi zawieraæ 8 znaków, wielka i ma³¹ litere oraz liczbê";
                 else errorMessage = "Has³o musi zawieraæ 8 znaków, wielka i ma³¹ litere oraz liczbê";
@@ -60,18 +61,19 @@ namespace Strona.Pages.Login
             if (nowyUzytkownik.Haslo.Length == 0 || nowyUzytkownik.Nazwa.Length == 0)
             {
                 errorMessage = "Pola nie mog¹ byæ puste!";
-                return;
-            }
+			}
 
             if (!bazaInstagram.Uzytkownicy.Where(u => u.Nazwa == nowyUzytkownik.Nazwa && u.Haslo == nowyUzytkownik.Haslo).IsNullOrEmpty())
             {
                 errorMessage = "Zalogowano";
-                //sesja u¿ytkownika
-            }
+                HttpContext.Session.SetInt32("UserId", nowyUzytkownik.UzytkownikId);
+                Response.Redirect("/MainPage/Index");
+			}
             else
             {
                 errorMessage = "Niepoprawny login lub has³o!";
-            }
+			}
+            
         }
     }
 }

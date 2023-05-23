@@ -24,7 +24,7 @@ namespace InstPlusEntityFr
         {
             //warto wkleić swojego ConnStr ;)))
             optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=InstagramPlus;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
-            int kurwaKotwica = 69;
+
         }
     }
 }
