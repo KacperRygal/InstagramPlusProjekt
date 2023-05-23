@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using InstPlusEntityFr;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
+using Microsoft.IdentityModel.Tokens;
 
 namespace InstPlusEntityFr.Pages.DodajPost
 {
@@ -18,42 +19,53 @@ namespace InstPlusEntityFr.Pages.DodajPost
 
         public void OnGet()
         {
-            if(HttpContext.Session.GetString("OpisPostu") != null)
+            if (HttpContext.Session.GetString("OpisPostu") != null)
             {
                 DodajOpisTxt = HttpContext.Session.GetString("OpisPostu");
             }
-
-            DodajOpisTxt = "";
+            else
+            {
+                DodajOpisTxt = "";
+            }
         }
 
         public IActionResult OnPostAppendTag(string dodajTagTxt)
         {
-            //zapisujemy wartoœæ pola opis ¿eby nie znika³o po return Page()
-                //crashuje - sprawdziæ czemu i jak naprawiæ
-            //HttpContext.Session.SetString("OpisPostu", (string)DodajOpisTxt);
-
-            //zczytuje z sesji zserializowane tagi
-            string? listaTagowJSON = HttpContext.Session.GetString("ListaTagow");
-            if (listaTagowJSON == null)
+            if (!string.IsNullOrEmpty(DodajOpisTxt))
             {
-                listaTagowJSON = JsonConvert.SerializeObject(listaDodTagow);
-                HttpContext.Session.SetString("ListaTagow", listaTagowJSON);
+                return null;
+                //nie dzia³a jak bym chcia³ - nie wykonuje siê else
+                //a przy pustym polu txt crashuje - poprawiæ bo da³em !
             }
             else
-                listaDodTagow = JsonConvert.DeserializeObject<HashSet<string>>((string)listaTagowJSON);
-
-            listaDodTagow.Add(dodajTagTxt.ToLower());
-            DodajTagTxt = "tagi postu:";
-            foreach (string t in listaDodTagow)
             {
-                DodajTagTxt += " #" + t;
+                //zapisujemy wartoœæ pola opis ¿eby nie znika³o po return Page()
+                //crashuje - sprawdziæ czemu i jak naprawiæ
+                //HttpContext.Session.SetString("OpisPostu", DodajOpisTxt);
+
+                //zczytuje z sesji zserializowane tagi
+                string? listaTagowJSON = HttpContext.Session.GetString("ListaTagow");
+                if (listaTagowJSON == null)
+                {
+                    listaTagowJSON = JsonConvert.SerializeObject(listaDodTagow);
+                    HttpContext.Session.SetString("ListaTagow", listaTagowJSON);
+                }
+                else
+                    listaDodTagow = JsonConvert.DeserializeObject<HashSet<string>>((string)listaTagowJSON);
+
+                listaDodTagow.Add(dodajTagTxt.ToLower());
+                DodajTagTxt = "tagi postu:";
+                foreach (string t in listaDodTagow)
+                {
+                    DodajTagTxt += " #" + t;
+                }
+
+                //zapisuje do sesji zserializowane tagi z nowym
+                listaTagowJSON = JsonConvert.SerializeObject(listaDodTagow);
+                HttpContext.Session.SetString("ListaTagow", listaTagowJSON);
+
+                return Page();
             }
-
-            //zapisuje do sesji zserializowane tagi z nowym
-            listaTagowJSON = JsonConvert.SerializeObject(listaDodTagow);
-            HttpContext.Session.SetString("ListaTagow", listaTagowJSON);
-
-            return Page();
         }
     }
 }
