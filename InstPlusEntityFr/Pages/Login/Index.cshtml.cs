@@ -66,7 +66,7 @@ namespace Strona.Pages.Login
             if (!bazaInstagram.Uzytkownicy.Where(u => u.Nazwa == nowyUzytkownik.Nazwa && u.Haslo == nowyUzytkownik.Haslo).IsNullOrEmpty())
             {
                 errorMessage = "Zalogowano";
-                HttpContext.Session.SetInt32("UserId", nowyUzytkownik.UzytkownikId);
+                HttpContext.Session.SetInt32("UzytkownikId", nowyUzytkownik.UzytkownikId);
                 Response.Redirect("/MainPage/Index");
 			}
             else

@@ -19,22 +19,27 @@
             <input type="submit" value="DODAJ TAG >" asp-page-handler="AppendTag" />
         </form>
         <label>@Model.DodajTagTxt</label>
-
     </div>
-    <div>
-        <p>Opis:</p>
-        <textarea id="dodajOpisTxt" name="dodajOpisTxt" rows="3" cols="150">@Model.DodajOpisTxt</textarea>
-    </div>
-    <div>
+    <div style ="margin-bottom: 30px;">
         <input type="file" accept="image/*" onchange="showPreview(event)" />
         <img id="previewImage" src="#" alt="Preview" style="display: none; max-width: 200px; max-height: 200px;" />
     </div>
-    <div>
-        <input type="submit" value="OPUBLIKUJ" style="float: right;" asp-page-handler="Opublikuj" />
+    <div style="margin-bottom: 20px;">
+        <textarea id="OpisTxt" name="dodajOpisTxt" rows="4" cols="150" style="resize: none;"></textarea>
+        <form method="post">
+            <input type="submit" value="OPUBLIKUJ >" asp-page-handler="OpublikujBtn" />
+        </form>
     </div>
 </div>
 
 <script>
+    document.getElementById("OpisTxt").addEventListener("keydown", function (e) {
+        if (e.keyCode === 13) { // KeyCode for Enter key
+            e.preventDefault();
+            this.value += "\n";
+        }
+    });
+
     function showPreview(event) {
         var input = event.target;
         var reader = new FileReader();

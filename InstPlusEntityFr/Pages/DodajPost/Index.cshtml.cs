@@ -4,6 +4,8 @@ using InstPlusEntityFr;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using Microsoft.IdentityModel.Tokens;
+using System;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace InstPlusEntityFr.Pages.DodajPost
 {
@@ -13,6 +15,18 @@ namespace InstPlusEntityFr.Pages.DodajPost
         public string DodajTagTxt { get; set; }
 
         public string DodajOpisTxt { get; set; }
+
+        private readonly ILogger<IndexModel> _logger; //to te¿ nie wiem
+        private readonly IWebHostEnvironment _environment; //co to - nie wiem xd
+
+        [BindProperty]
+        public string ImagePath { get; set; }
+
+        public IndexModel(ILogger<IndexModel> logger, IWebHostEnvironment environment) 
+        {
+            _logger = logger;
+            _environment = environment;
+        }
 
         //niby lista ale dam set ¿eby nie powtarza³
         public HashSet<string> listaDodTagow = new HashSet<string>();
@@ -66,6 +80,49 @@ namespace InstPlusEntityFr.Pages.DodajPost
 
                 return Page();
             }
+        }
+
+        public IActionResult OnPostOpublikujBtn(string dodajOpisTxt, IFormFile image)
+        {
+            Post nowyPost = new Post();
+            nowyPost.UzytkownikId = (int)HttpContext.Session.GetInt32("UzytkownikId");
+            nowyPost.Opis = dodajOpisTxt;
+
+            string? listaTagowJSON = HttpContext.Session.GetString("ListaTagow");
+            listaDodTagow = JsonConvert.DeserializeObject<HashSet<string>>((string)listaTagowJSON);
+
+            //trzeba dodawaæ te¿ te tagi u¿ytkownikowi
+            /*
+            foreach(string t in listaDodTagow)
+            {
+                TagPostu nowyTag = new TagPostu(t);
+                nowyPost.Tagi.Add(nowyTag);
+            }*/
+
+            //dodawanie zdjêcia do folderu na serwerze
+            if (image != null)
+            {
+                var uploadsFolder = Path.Combine(_environment.WebRootPath, "uploads");
+                if (!Directory.Exists(uploadsFolder))
+                {
+                    Directory.CreateDirectory(uploadsFolder);
+                }
+
+                var filePath = Path.Combine(uploadsFolder, image.FileName);
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    image.CopyTo(stream);
+                };
+                
+                Console.WriteLine(filePath);
+            }
+            //db.SaveChanges();
+
+            Console.WriteLine(dodajOpisTxt);
+
+
+            //przyda³by siê jakiœ komunikat/ nowa strona z tekstem ¿e dodano nowy post !!!
+            return RedirectToPage("/MainPage/Index");
         }
     }
 }
