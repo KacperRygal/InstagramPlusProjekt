@@ -16,7 +16,7 @@ namespace InstPlusEntityFr
 
         public int UzytkownikId { get; set; } //twórca posta
 
-        public List<TagPostu> Tagi { get; set; }
+        public List<TagPostu> Tagi { get; } = new(); //lista tagów, pomyśleć, zmienić, dostosować
     }
 
     [Table("TagiPostow")]
@@ -40,3 +40,5 @@ namespace InstPlusEntityFr
     }
 }
 
+//wyjaśniona lista
+//https://learn.microsoft.com/en-us/ef/core/modeling/relationships/many-to-many

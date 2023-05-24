@@ -85,22 +85,24 @@ namespace InstPlusEntityFr.Pages.DodajPost
         public IActionResult OnPostOpublikujBtn(string dodajOpisTxt, IFormFile image)
         {
             Post nowyPost = new Post();
-            nowyPost.UzytkownikId = (int)HttpContext.Session.GetInt32("UzytkownikId");
-            nowyPost.Opis = dodajOpisTxt;
+            //nowyPost.UzytkownikId = (int)HttpContext.Session.GetInt32("UzytkownikId"); //OK
+            //nowyPost.Opis = dodajOpisTxt; //OK
 
             string? listaTagowJSON = HttpContext.Session.GetString("ListaTagow");
             listaDodTagow = JsonConvert.DeserializeObject<HashSet<string>>((string)listaTagowJSON);
 
             //trzeba dodawaæ te¿ te tagi u¿ytkownikowi
             /*
-            foreach(string t in listaDodTagow)
+            foreach(string t in listaDodTagow) //NIE DZIA£A - zmiana w bazie potrzebna
             {
-                TagPostu nowyTag = new TagPostu(t);
+                TagPostu nowyTag = new TagPostu();
+                nowyTag.Nazwa = t;
                 nowyPost.Tagi.Add(nowyTag);
             }*/
 
             //dodawanie zdjêcia do folderu na serwerze
-            if (image != null)
+            /*
+            if (image != null) //NIE DZIA£A
             {
                 var uploadsFolder = Path.Combine(_environment.WebRootPath, "uploads");
                 if (!Directory.Exists(uploadsFolder))
@@ -115,11 +117,7 @@ namespace InstPlusEntityFr.Pages.DodajPost
                 };
                 
                 Console.WriteLine(filePath);
-            }
-            //db.SaveChanges();
-
-            Console.WriteLine(dodajOpisTxt);
-
+            }*/
 
             //przyda³by siê jakiœ komunikat/ nowa strona z tekstem ¿e dodano nowy post !!!
             return RedirectToPage("/MainPage/Index");

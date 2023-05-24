@@ -63,17 +63,19 @@ namespace Strona.Pages.Login
                 errorMessage = "Pola nie mog¹ byæ puste!";
 			}
 
-            if (!bazaInstagram.Uzytkownicy.Where(u => u.Nazwa == nowyUzytkownik.Nazwa && u.Haslo == nowyUzytkownik.Haslo).IsNullOrEmpty())
-            {
-                errorMessage = "Zalogowano";
-                HttpContext.Session.SetInt32("UzytkownikId", nowyUzytkownik.UzytkownikId);
-                Response.Redirect("/MainPage/Index");
-			}
-            else
+            Uzytkownik uz = bazaInstagram.Uzytkownicy.Where(u => u.Nazwa == nowyUzytkownik.Nazwa && u.Haslo == nowyUzytkownik.Haslo).First();
+
+            if (uz == null)
             {
                 errorMessage = "Niepoprawny login lub has³o!";
-			}
-            
+            }
+            else
+            {
+                errorMessage = "Zalogowano";
+                HttpContext.Session.SetInt32("UzytkownikId", uz.UzytkownikId);
+                Console.WriteLine(HttpContext.Session.GetInt32("UzytkownikId"));
+                Response.Redirect("/MainPage/Index");
+			}    
         }
     }
 }
