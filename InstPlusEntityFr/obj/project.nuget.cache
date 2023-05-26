@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "0Xmd4J2+s4RwptpMYG0Ue9StEjQeEBFWsU0pN/x7V1vnyHDMj8v2EUYVLsIACKahLiVshghqSd8pdt9mDifgLw==",
+  "dgSpecHash": "u3cObsHwGXLewZJ5f/E40eF8svzDfA09QtvHPP3p3KOT8snNwKw4//hyQWZJf7f5GHakrpk/JLfjFwzQlr5ITQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Bogdan i Wiktor\\Desktop\\studia katowice\\PBD\\InstagramPlusProjekt\\InstPlusEntityFr\\InstPlusEntityFr.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Bogdan i Wiktor\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Bogdan i Wiktor\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",
+    "C:\\Users\\Bogdan i Wiktor\\.nuget\\packages\\grpc.core\\2.46.6\\grpc.core.2.46.6.nupkg.sha512",
+    "C:\\Users\\Bogdan i Wiktor\\.nuget\\packages\\grpc.core.api\\2.46.6\\grpc.core.api.2.46.6.nupkg.sha512",
     "C:\\Users\\Bogdan i Wiktor\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Bogdan i Wiktor\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Bogdan i Wiktor\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

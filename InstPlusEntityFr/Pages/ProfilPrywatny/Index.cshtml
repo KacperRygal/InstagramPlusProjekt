@@ -11,7 +11,13 @@
     </div>
 }
 
-@if (!string.IsNullOrEmpty(Model.FilePath))
+@if (!string.IsNullOrEmpty(Model.ZdjecieProfilowe))
 {
-    <img src="@Model.FilePath" alt="Opis zdjęcia"  witdh="300" height="300" runat="server">
+    <div style="text-align: left">
+        <form>
+            <img id="previewImage" src=@Url.Content(@Model.ZdjecieProfilowe) alt="Preview" />
+            <br>
+            <label class="display-8">@Model.LoginUzytkownika</label>
+        </form>
+    </div> 
 }

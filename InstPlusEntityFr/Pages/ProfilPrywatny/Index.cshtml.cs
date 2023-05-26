@@ -1,3 +1,4 @@
+using Grpc.Core;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -6,28 +7,37 @@ namespace InstPlusEntityFr.Pages.ProfilPrywatny
     public class IndexModel : PageModel
     {
         DbInstagramPlus db = new DbInstagramPlus();
-        public String FilePath { get; set; }
+        public String ZdjecieProfilowe { get; set; }
+        public string LoginUzytkownika { get; set; }
+
         public String errorMessage = "";
+
+        Uzytkownik zalogowany;
         public void OnGet()
         {
-            //////////wiktor
             if (HttpContext.Session.Keys.Contains("INFO"))
             {
                 errorMessage = HttpContext.Session.GetString("INFO");
                 HttpContext.Session.Remove("INFO");
             }
 
-            //////////
-
-			Console.WriteLine(FilePath);
-			//pole na obraz, przycisk zmien profilowe, wyswietlanie loginu, przycisk zmien haslo, wyswietlanie postow uzytkownika
-			var uz = db.Uzytkownicy.Where(s => s.UzytkownikId == HttpContext.Session.GetInt32("UserId"));
-            foreach (Uzytkownik u in uz)
+            int zalogowanyId = (int)HttpContext.Session.GetInt32("UzytkownikId");
+            zalogowany = db.Uzytkownicy.Where(u => u.UzytkownikId == zalogowanyId).FirstOrDefault();
+            /*
+            if (zalogowany.Zdjecie == null)
             {
-                FilePath = u.Zdjecie;
+                ZdjecieProfilowe = "~/images/userTmpImg.jpg";
             }
-			//Console.WriteLine("CHUJ"); //co to za pozosta³oœci wtf
-			//Console.WriteLine(FilePath);
+            else
+            {
+                ZdjecieProfilowe = zalogowany.Zdjecie;
+            }*/
+            //TEST
+            ZdjecieProfilowe = "~/images/userTmpImg.jpg"; //TRZEBA OGARN¥Æ WYŒWIETLANIE Z SERWERA, poczytaæ o Viewbag
+            //TEST
+
+
+            LoginUzytkownika = $"Profil u¿ytkownika {zalogowany.Nazwa}";
             Page();
         }
     }
