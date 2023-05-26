@@ -6,6 +6,10 @@ using Newtonsoft.Json;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using static System.Net.Mime.MediaTypeNames;
+using Microsoft.AspNetCore.Http;
+using System.IO;
+using System.Threading.Tasks;
+
 
 namespace InstPlusEntityFr.Pages.DodajPost
 {
@@ -14,19 +18,14 @@ namespace InstPlusEntityFr.Pages.DodajPost
         DbInstagramPlus db = new DbInstagramPlus();
         public string DodajTagTxt { get; set; }
 
+        public string UzytkownikTworzacy { get; set; }
+
         public string DodajOpisTxt { get; set; }
 
-        private readonly ILogger<IndexModel> _logger; //to te¿ nie wiem
-        private readonly IWebHostEnvironment _environment; //co to - nie wiem xd
+        public String errorMessage = "";
 
         [BindProperty]
-        public string ImagePath { get; set; }
-
-        public IndexModel(ILogger<IndexModel> logger, IWebHostEnvironment environment) 
-        {
-            _logger = logger;
-            _environment = environment;
-        }
+        public IFormFile UploadedImage { get; set; }
 
         //niby lista ale dam set ¿eby nie powtarza³
         public HashSet<string> listaDodTagow = new HashSet<string>();
@@ -41,11 +40,21 @@ namespace InstPlusEntityFr.Pages.DodajPost
             {
                 DodajOpisTxt = "";
             }
+            var zalogowanyUsr = db.Uzytkownicy.Where(u => u.UzytkownikId == HttpContext.Session.GetInt32("UzytkownikId")).First();
+            UzytkownikTworzacy = $"u¿ytkownik: {zalogowanyUsr.Nazwa}";
         }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        //DODAWANIE TAGÓW
 
         public IActionResult OnPostAppendTag(string dodajTagTxt)
         {
-            if (!string.IsNullOrEmpty(DodajOpisTxt))
+            if(dodajTagTxt == null)
+            {
+                errorMessage = "brak tagu!";
+                //dodaæ przywracanie wartoœci w labelu!
+            }
+            else if (!string.IsNullOrEmpty(DodajOpisTxt))
             {
                 return null;
                 //nie dzia³a jak bym chcia³ - nie wykonuje siê else
@@ -77,50 +86,82 @@ namespace InstPlusEntityFr.Pages.DodajPost
                 //zapisuje do sesji zserializowane tagi z nowym
                 listaTagowJSON = JsonConvert.SerializeObject(listaDodTagow);
                 HttpContext.Session.SetString("ListaTagow", listaTagowJSON);
-
-                return Page();
             }
+            return Page();
         }
 
-        public IActionResult OnPostOpublikujBtn(string dodajOpisTxt, IFormFile image)
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        //PUBLIKOWANIE POSTU
+        public async Task<IActionResult> OnPostOpublikujBtn(string dodajOpisTxt)
         {
-            Post nowyPost = new Post();
-            //nowyPost.UzytkownikId = (int)HttpContext.Session.GetInt32("UzytkownikId"); //OK
-            //nowyPost.Opis = dodajOpisTxt; //OK
-
             string? listaTagowJSON = HttpContext.Session.GetString("ListaTagow");
             listaDodTagow = JsonConvert.DeserializeObject<HashSet<string>>((string)listaTagowJSON);
 
-            //trzeba dodawaæ te¿ te tagi u¿ytkownikowi
-            /*
-            foreach(string t in listaDodTagow) //NIE DZIA£A - zmiana w bazie potrzebna
+            //trzeba zrobiæ blokade ¿eby niezalogowany u¿ytkownik nie móg³ wejœæ na tê stronê
+            if (dodajOpisTxt == null)
             {
-                TagPostu nowyTag = new TagPostu();
-                nowyTag.Nazwa = t;
-                nowyPost.Tagi.Add(nowyTag);
-            }*/
+                errorMessage = "Post musi zawieraæ opis!";
+            }
+            else if (listaDodTagow == null) //nie dzia³a
+            {
+                errorMessage = "Post musi zawieraæ przynajmniej 1 tag!";
+            }
+            else if (UploadedImage == null)
+            {
+                errorMessage = "Post musi zawieraæ zdjêcie!";
+            }
+            else
+            {
+                Post nowyPost = new Post();
+                nowyPost.UzytkownikId = (int)HttpContext.Session.GetInt32("UzytkownikId");
+                nowyPost.Opis = dodajOpisTxt;
 
-            //dodawanie zdjêcia do folderu na serwerze
-            /*
-            if (image != null) //NIE DZIA£A
-            {
-                var uploadsFolder = Path.Combine(_environment.WebRootPath, "uploads");
-                if (!Directory.Exists(uploadsFolder))
+                //trzeba dodawaæ te¿ te tagi u¿ytkownikowi
+
+                foreach (string t in listaDodTagow)
                 {
-                    Directory.CreateDirectory(uploadsFolder);
+                    if (db.TagiPostow.Where(tag => tag.Nazwa == t).IsNullOrEmpty())
+                    {
+                        TagPostu nowyTag = new TagPostu();
+                        nowyTag.Nazwa = (string)t;
+                        nowyTag.Posty.Add(nowyPost);
+                        nowyPost.Tagi.Add(nowyTag);
+                        db.TagiPostow.Add(nowyTag);
+                    }
+                    else
+                    {
+                        TagPostu szukany = db.TagiPostow.Where(tag => tag.Nazwa == t).First();
+                        nowyPost.Tagi.Add(szukany);
+                        szukany.Posty.Add(nowyPost);
+                    }
                 }
 
-                var filePath = Path.Combine(uploadsFolder, image.FileName);
+                //dodawanie zdjêcia do folderu na serwerze
+
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "imgUploads", UploadedImage.FileName);
                 using (var stream = new FileStream(filePath, FileMode.Create))
                 {
-                    image.CopyTo(stream);
-                };
-                
-                Console.WriteLine(filePath);
-            }*/
+                    await UploadedImage.CopyToAsync(stream);
+                }
 
-            //przyda³by siê jakiœ komunikat/ nowa strona z tekstem ¿e dodano nowy post !!!
-            return RedirectToPage("/MainPage/Index");
+                nowyPost.Zdjecie = filePath;
+
+                db.Posty.Add(nowyPost);
+                db.SaveChanges();
+
+                HttpContext.Session.SetString("INFO", "Poprawnie dodano nowy post!"); //do wyœwietlwnia na profilu/g³ównej
+                return RedirectToPage("/ProfilPrywatny/Index");
+            }
+            return Page();
         }
     }
 }
+
+/*
+ * || DO POPRAWY W OKNIE: ||
+ * przekierowania i blokada tylko dla zalogowanych
+ * uzupe³nianie siê pola z opisem, labela tagów, zdjêcia po jakiejœ akcji - dokoñczyæ
+ * dodawanie nie tylko tagów dla postu a te¿ dla u¿ytkownika
+ * css i strona wizualna
+ * wyœwietlanie zdjêcia profilowego oprócz loginu u¿ytkownika tworz¹cego post
+*/

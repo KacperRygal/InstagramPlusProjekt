@@ -12,6 +12,9 @@ namespace InstPlusEntityFr
         public DbSet<Obserwowany> Obserwowani { get; set; }
         public DbSet<Obserwujacy> Obserwujacy { get; set; }
 
+        //many-many
+        public DbSet<TagPostu> TagiPostow { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<PolubieniePosta>().HasKey(e => new { e.PostId, e.UzytkownikId }); //czy to jest ok? nie wiem - śmieć daje taki błąd jak dam 2 razy [Key] albo nie dam wcale >:( : The entity type 'PolubienieKomentarza' requires a primary key to be defined. If you intended to use a keyless entity type, call 'HasNoKey' in 'OnModelCreating'. For more information on keyless entity types, see https://go.microsoft.com/fwlink/?linkid=2141943.

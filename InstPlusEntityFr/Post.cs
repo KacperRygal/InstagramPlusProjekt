@@ -10,13 +10,20 @@ namespace InstPlusEntityFr
         public int PostId { get; set; }
 
         [MaxLength(200)]
-        public string Opis { get; set; }
+        public string Opis { get; set; } = "";
 
         public string Zdjecie { get; set; } //ścieżka do zdjęcia
 
         public int UzytkownikId { get; set; } //twórca posta
 
-        public List<TagPostu> Tagi { get; } = new(); //lista tagów, pomyśleć, zmienić, dostosować
+        public DateTime DataPublikacji { get; private set; }
+
+        public List<TagPostu> Tagi { get; } = new();
+
+        public Post()
+        {
+            DataPublikacji = DateTime.Now;
+        }
     }
 
     [Table("TagiPostow")]
@@ -24,11 +31,11 @@ namespace InstPlusEntityFr
     {
         [Key]
         public int TagId { get; set; }
-        private string nazwa;
-        public string Nazwa
+        private string nazwa = "";
+        public string Nazwa 
         {
             get => nazwa;
-            set => value.ToLower();
+            set => nazwa = value.ToLower();
         }
 
         public TagPostu(string nazwa)
@@ -37,6 +44,7 @@ namespace InstPlusEntityFr
         }
         public TagPostu() { }
 
+        public List<Post> Posty { get; } = new();
     }
 }
 

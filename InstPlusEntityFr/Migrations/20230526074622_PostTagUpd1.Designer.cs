@@ -4,6 +4,7 @@ using InstPlusEntityFr;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InstPlusEntityFr.Migrations
 {
     [DbContext(typeof(DbInstagramPlus))]
-    partial class DbInstagramPlusModelSnapshot : ModelSnapshot
+    [Migration("20230526074622_PostTagUpd1")]
+    partial class PostTagUpd1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -105,9 +108,6 @@ namespace InstPlusEntityFr.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PostId"));
-
-                    b.Property<DateTime>("DataPublikacji")
-                        .HasColumnType("datetime2");
 
                     b.Property<string>("Opis")
                         .IsRequired()
