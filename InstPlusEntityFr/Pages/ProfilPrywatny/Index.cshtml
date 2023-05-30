@@ -14,10 +14,9 @@
 @if (!string.IsNullOrEmpty(Model.ZdjecieProfilowe))
 {
     <div style="text-align: left">
-        <form>
+        <form asp-page-handler="ZmienZdjecie">
             <img class="img" id="previewImage" src=@Url.Content(@Model.ZdjecieProfilowe) alt="Zdjecie profilowe" width="100" height="100" />
-            <input type="file" accept="image/*" name="UploadedImage" />
-            <input type="submit" value="ZMIEŃ ZDJĘCIE PROFILOWE >" asp-page-handler="ZmienZdjecie" />
+            <input type="file" accept="image/*" name="UploadedImage" asp-page-handler="ZmienZdjecie" />
         </form>
         <br>
         <label class="display-8">@Model.LoginUzytkownika</label>

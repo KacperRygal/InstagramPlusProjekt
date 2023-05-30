@@ -44,7 +44,7 @@ namespace InstPlusEntityFr.Pages.ProfilPrywatny
 
         public IActionResult OnPostZmienZdjecie()
         {
-            Console.WriteLine(UploadedImage.ToString());
+            Console.WriteLine(UploadedImage.FileName);
             return Page();
         }
     }
