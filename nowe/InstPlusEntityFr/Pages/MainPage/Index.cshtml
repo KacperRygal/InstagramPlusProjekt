@@ -1,0 +1,74 @@
+﻿@page
+@model InstPlusEntityFr.Pages.MainPage.IndexModel
+@{
+}
+<form method="post" enctype="multipart/form-data">
+    <input type="file" id="uploadedFile" name="UploadedFile" style="display: none;" />
+    <button type="button" onclick="selectFile()">Wybierz plik</button>
+    <input type="submit" value="Prześlij" />
+</form>
+
+<body>
+    <div id="container"></div>
+
+    <script>
+        var images = @Json.Serialize(Model.getZdjecia()); // Przykładowe ścieżki do obrazów
+        var opisy = @Json.Serialize(Model.getOpisy());
+        var imagesav = @Json.Serialize(Model.getZdjecieUzytkownik());
+        var nazwy = @Json.Serialize(Model.getNazwaUzytkownik());
+        var idposty = @Json.Serialize(Model.getIdPostow());
+
+        var container = document.getElementById("container");
+
+        for (var i = 0; i < images.length; i++) {
+            var imageDiv = document.createElement("div");
+            imageDiv.className = "image-div";
+
+            var imageavatar = document.createElement("img");
+            imageavatar.class = "img";
+            imageavatar.width = "50";
+            imageavatar.height = "50";
+            imageavatar.src = imagesav[i];
+
+            var image = document.createElement("img");
+            image.class = "img";
+            image.width = "500";
+            image.height = "450";
+            image.src = images[i];
+            
+            var opis = document.createElement("label");
+            opis.class = "opis";
+            opis.innerHTML=opisy[i];
+            
+            var nazwa = document.createElement("label");
+            nazwa.class = "nazwa";
+            nazwa.innerHTML=nazwy[i];
+
+            var komentarze = document.createElement("div");
+            komentarze.className="komentarze";
+
+           /* 
+
+            for (var j = 0; j < tresc_komentarze.length; j++) {
+                var komentarz = document.createElement("div");
+                komentarz.className = "komentarz";
+                komentarz.innerHTML = tresc_komentarze[j];
+
+                komentarze.appendChild(komentarz);
+            }
+            */
+            imageDiv.appendChild(image);
+            container.appendChild(imageavatar);
+            container.appendChild(nazwa);
+            container.appendChild(imageDiv);
+            container.appendChild(opis);
+        }
+    </script>
+</body>
+
+
+<script>
+    function selectFile() {
+        document.getElementById("uploadedFile").click();
+    }
+</script>
