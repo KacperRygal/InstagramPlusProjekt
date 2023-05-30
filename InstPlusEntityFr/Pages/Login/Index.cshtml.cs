@@ -63,8 +63,7 @@ namespace Strona.Pages.Login
                 errorMessage = "Pola nie mog¹ byæ puste!";
 			}
 
-            Uzytkownik uz = bazaInstagram.Uzytkownicy.Where(u => u.Nazwa == nowyUzytkownik.Nazwa && u.Haslo == nowyUzytkownik.Haslo).First();
-
+            var uz = bazaInstagram.Uzytkownicy.FirstOrDefault(u => u.Nazwa == nowyUzytkownik.Nazwa && u.Haslo == nowyUzytkownik.Haslo);
             if (uz == null)
             {
                 errorMessage = "Niepoprawny login lub has³o!";

@@ -32,15 +32,17 @@ namespace InstPlusEntityFr.Pages.DodajPost
 
         public void OnGet()
         {
-            if (HttpContext.Session.GetString("OpisPostu") != null)
+            if (HttpContext.Session.GetString("OpisPostu").IsNullOrEmpty())
             {
-                DodajOpisTxt = HttpContext.Session.GetString("OpisPostu");
+                DodajOpisTxt = "";
+                Console.WriteLine("pusty");
             }
             else
             {
-                DodajOpisTxt = "";
+                DodajOpisTxt = HttpContext.Session.GetString("OpisPostu");
+                Console.WriteLine("niepusty" + DodajOpisTxt);
             }
-            var zalogowanyUsr = db.Uzytkownicy.Where(u => u.UzytkownikId == HttpContext.Session.GetInt32("UzytkownikId")).First();
+            var zalogowanyUsr = db.Uzytkownicy.FirstOrDefault(u => u.UzytkownikId == HttpContext.Session.GetInt32("UzytkownikId"));
             UzytkownikTworzacy = $"u¿ytkownik: {zalogowanyUsr.Nazwa}";
         }
 
@@ -64,6 +66,7 @@ namespace InstPlusEntityFr.Pages.DodajPost
             {
                 //zapisujemy wartoœæ pola opis ¿eby nie znika³o po return Page()
                 //crashuje - sprawdziæ czemu i jak naprawiæ
+                Console.WriteLine(DodajOpisTxt);
                 //HttpContext.Session.SetString("OpisPostu", DodajOpisTxt);
 
                 //zczytuje z sesji zserializowane tagi
@@ -130,7 +133,7 @@ namespace InstPlusEntityFr.Pages.DodajPost
                     }
                     else
                     {
-                        TagPostu szukany = db.TagiPostow.Where(tag => tag.Nazwa == t).First();
+                        TagPostu szukany = db.TagiPostow.FirstOrDefault(tag => tag.Nazwa == t);
                         nowyPost.Tagi.Add(szukany);
                         szukany.Posty.Add(nowyPost);
                     }
@@ -150,6 +153,10 @@ namespace InstPlusEntityFr.Pages.DodajPost
                 db.SaveChanges();
 
                 HttpContext.Session.SetString("INFO", "Poprawnie dodano nowy post!"); //do wyœwietlwnia na profilu/g³ównej
+
+                //czyœcimy parametry sesji które nie s¹ istotne
+                HttpContext.Session.Remove("ListaTagow");
+                HttpContext.Session.Remove("OpisPostu");
                 return RedirectToPage("/ProfilPrywatny/Index");
             }
             return Page();
