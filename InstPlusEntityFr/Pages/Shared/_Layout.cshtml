@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿
+@using Microsoft.AspNetCore.Mvc.RazorPages
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -31,15 +36,31 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Uzytkownicy/Index">Uzytkownicy</a>
                         </li>
+                        @if(HttpContextAccessor.HttpContext.Session.GetInt32("UzytkownikId") == null)
+                        {
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Login/Index">Login</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/ProfilPrywatny/Index">Profil</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/DodajPost/Index">Dodaj Post</a>
-                        </li>
+                        }else{
+                            <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Login/Index">Wyloguj</a>
+                            </li>
+                        }
+                        @if (HttpContextAccessor.HttpContext.Session.GetInt32("UzytkownikId") != null)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/ProfilPrywatny/Index">Profil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-page="/DodajPost/Index">Dodaj Post</a>
+                            </li>
+                         }
+                         <li class="nav-item" style="margin-left: auto;" >
+                             <form>
+                               <input type="text" id="Szukaj" style="border-radius: 25%; text-align: right;" name="Szukaj">
+
+                            </form>  
+                          </li>
                     </ul>
                 </div>
             </div>

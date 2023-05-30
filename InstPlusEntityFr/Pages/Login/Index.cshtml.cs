@@ -55,6 +55,7 @@ namespace Strona.Pages.Login
 
         public void OnPostLogowanie()
         {
+            if(HttpContext.Session.GetInt32("UzytkownikId") == null) { 
             nowyUzytkownik.Nazwa = Request.Form["login"];
             nowyUzytkownik.Haslo = Request.Form["haslo"];
 
@@ -75,7 +76,18 @@ namespace Strona.Pages.Login
                 HttpContext.Session.SetInt32("UzytkownikId", uz.UzytkownikId);
                 Console.WriteLine(HttpContext.Session.GetInt32("UzytkownikId"));
                 Response.Redirect("/MainPage/Index");
-			}    
+			}
+            }
+            else
+            {
+                errorMessage = "Jesteœ ju¿ zalogowany.";
+            }
+        }
+        public void OnPostWyloguj()
+        {
+            Console.Write("Wylogowywuje");
+            HttpContext.Session.Clear();
+            Response.Redirect("/MainPage/Index");
         }
     }
 }
