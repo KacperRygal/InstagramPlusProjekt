@@ -1,0 +1,48 @@
+﻿@page
+@model Strona.Pages.Login.IndexModel
+@{
+}
+@if(HttpContext.Session.GetInt32("UzytkownikId") == null){
+
+<h1>Logowanie</h1>
+
+@if (Model.errorMessage.Length > 0)
+{
+	<div class='alert alert-warning alert-dismissible fade show' role='alert'>
+		<strong>@Model.errorMessage</strong>
+		<button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+	</div>
+}
+<form method="post">
+	<div class="row mb_3">
+		<label class="col-sm-3 col-form-label">Login</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="login" value="" />
+		</div>
+	</div> 
+	<div class="row mb_3">
+		<label class="col-sm-3 col-form-label">Hasło</label>
+		<div class="col-sm-6">
+			<input type="password" class="form-control" name="haslo" value="" />
+		</div>
+	</div>
+	<div class="row mb_3">
+		<div class="offset-sm-3 col-sm-3 d-grid">
+			<button type="submit" class="btn btn-primary" value="logowanie" asp-page-handler="Logowanie">Zaloguj</button>
+		</div>
+		<div class="col-sm-3 d-grid">
+			<button type="submit" class="btn btn-primary" value="rejestrowanie" asp-page-handler="Rejestrowanie">Zarejestruj</button>
+		</div>
+	</div>
+</form>
+
+
+}else{
+	<h1>Wylogowywanie</h1>
+	<form method="post">
+
+	<div class="col-sm-3 d-grid">
+			<button type="submit" class="btn btn-primary" value="wyloguj" asp-page-handler="Wyloguj">Wyloguj</button>
+	</div>
+	</form>
+}
