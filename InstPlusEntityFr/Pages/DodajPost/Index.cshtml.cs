@@ -144,7 +144,7 @@ namespace InstPlusEntityFr.Pages.DodajPost
                     await UploadedImage.CopyToAsync(stream);
                 }
 
-                nowyPost.Zdjecie = filePath;
+                nowyPost.Zdjecie = "~/ImgUploads/" + UploadedImage.FileName;
 
                 db.Posty.Add(nowyPost);
                 db.SaveChanges();

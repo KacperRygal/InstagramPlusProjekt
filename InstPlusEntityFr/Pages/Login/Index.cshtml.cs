@@ -73,8 +73,8 @@ namespace Strona.Pages.Login
             {
                 errorMessage = "Zalogowano";
                 HttpContext.Session.SetInt32("UzytkownikId", uz.UzytkownikId);
-                Console.WriteLine(HttpContext.Session.GetInt32("UzytkownikId"));
-                Response.Redirect("/MainPage/Index");
+                //Console.WriteLine(HttpContext.Session.GetInt32("UzytkownikId"));
+                Response.Redirect("/ProfilPrywatny/Index");
 			}    
         }
     }

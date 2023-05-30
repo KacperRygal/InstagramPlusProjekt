@@ -7,8 +7,11 @@ namespace InstPlusEntityFr.Pages.ProfilPrywatny
     public class IndexModel : PageModel
     {
         DbInstagramPlus db = new DbInstagramPlus();
-        public String ZdjecieProfilowe { get; set; }
+        public string ZdjecieProfilowe { get; set; }
         public string LoginUzytkownika { get; set; }
+
+        [BindProperty]
+        public string OpisUzytkownika { get; set; }
 
         [BindProperty]
         public IFormFile UploadedImage { get; set; }
@@ -37,6 +40,7 @@ namespace InstPlusEntityFr.Pages.ProfilPrywatny
                 ZdjecieProfilowe = sciezka;
             }
 
+            OpisUzytkownika = zalogowany.Opis;
 
             LoginUzytkownika = $"Profil u¿ytkownika {zalogowany.Nazwa}";
             Page();
@@ -44,8 +48,21 @@ namespace InstPlusEntityFr.Pages.ProfilPrywatny
 
         public IActionResult OnPostZmienZdjecie()
         {
-            Console.WriteLine(UploadedImage.FileName);
-            return Page();
+            return RedirectToPage("/ZmianaZdjecia/Index");
+        }
+
+        public async Task<IActionResult> OnPostZmienOpisBtn()
+        {
+            //powtórzenie kodu - ale bez tego crashuje hmmm...
+            int zalogowanyId = (int)HttpContext.Session.GetInt32("UzytkownikId");
+            zalogowany = db.Uzytkownicy.Where(u => u.UzytkownikId == zalogowanyId).FirstOrDefault();
+
+            zalogowany.Opis = OpisUzytkownika;
+            Console.WriteLine(zalogowany.Opis);
+            db.SaveChanges();
+
+            //return Page() zwraca³o pust¹ stronê... why?
+            return RedirectToPage("/ProfilPrywatny/Index");
         }
     }
 }

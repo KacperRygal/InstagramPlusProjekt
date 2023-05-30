@@ -4,6 +4,7 @@ using InstPlusEntityFr;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace InstPlusEntityFr.Migrations
 {
     [DbContext(typeof(DbInstagramPlus))]
-    partial class DbInstagramPlusModelSnapshot : ModelSnapshot
+    [Migration("20230530115128_UzytkownikUpd1")]
+    partial class UzytkownikUpd1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -192,10 +195,10 @@ namespace InstPlusEntityFr.Migrations
                         .HasMaxLength(40)
                         .HasColumnType("nvarchar(40)");
 
-                    b.Property<string>("Opis")
+                    b.Property<string>("OpisProfilu")
                         .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)");
+                        .HasMaxLength(400)
+                        .HasColumnType("nvarchar(400)");
 
                     b.Property<string>("Zdjecie")
                         .HasColumnType("nvarchar(max)");

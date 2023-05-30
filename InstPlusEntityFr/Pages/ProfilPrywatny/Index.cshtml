@@ -14,11 +14,33 @@
 @if (!string.IsNullOrEmpty(Model.ZdjecieProfilowe))
 {
     <div style="text-align: left">
+        <div style="display: flex; align-items: center;">
+            <div style="width: 150px; height: 150px; overflow: hidden; margin-right: 10px;">
+                <img class="img" id="previewImage" src=@Url.Content(@Model.ZdjecieProfilowe) alt="Zdjecie profilowe" style="width: 100%; height: 100%; object-fit: cover;" />
+            </div>
+            <label class="display-6">@Model.LoginUzytkownika</label>
+        </div>
         <form asp-page-handler="ZmienZdjecie">
-            <img class="img" id="previewImage" src=@Url.Content(@Model.ZdjecieProfilowe) alt="Zdjecie profilowe" width="100" height="100" />
-            <input type="file" accept="image/*" name="UploadedImage" asp-page-handler="ZmienZdjecie" />
+            <input type="submit" value="ZMIEŃ ZDJĘCIE PROFILOWE >" asp-page-handler="ZmienZdjecie" />
         </form>
-        <br>
-        <label class="display-8">@Model.LoginUzytkownika</label>
-    </div> 
+        <br><br>
+        <div>
+            <label>O mnie:</label>
+            <br>
+        </div>
+        <form asp-page-handler="ZmienOpisBtn">
+            <textarea class="form-control" id="OpisUzytkownika" name="OpisUzytkownika" rows="3" cols="100">@Model.OpisUzytkownika</textarea>
+            <input type="submit" value="ZMIEŃ OPIS >" asp-page-handler="ZmienOpisBtn" />
+        </form>
+    </div>
 }
+
+<script>
+    document.getElementById("OpisUzytkownika").addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            var currentValue = this.value;
+            this.value = currentValue + "\n";
+        }
+    });
+</script>

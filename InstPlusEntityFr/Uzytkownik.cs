@@ -21,6 +21,9 @@ namespace InstPlusEntityFr
 
         public bool Moderator { get; set; } //flaga czy użytkownik jest moderatorem
 
+        [MaxLength(200)]
+        public string Opis { get; set; } = "";
+
         public List<TagUzytkownika> Tagi { get; set; }
 
         public bool testLoginu()
