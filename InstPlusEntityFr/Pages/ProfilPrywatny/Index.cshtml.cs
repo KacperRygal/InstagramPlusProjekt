@@ -10,6 +10,9 @@ namespace InstPlusEntityFr.Pages.ProfilPrywatny
         public String ZdjecieProfilowe { get; set; }
         public string LoginUzytkownika { get; set; }
 
+        [BindProperty]
+        public IFormFile UploadedImage { get; set; }
+
         public String errorMessage = "";
 
         Uzytkownik zalogowany;
@@ -23,22 +26,26 @@ namespace InstPlusEntityFr.Pages.ProfilPrywatny
 
             int zalogowanyId = (int)HttpContext.Session.GetInt32("UzytkownikId");
             zalogowany = db.Uzytkownicy.Where(u => u.UzytkownikId == zalogowanyId).FirstOrDefault();
-            /*
+
             if (zalogowany.Zdjecie == null)
             {
-                ZdjecieProfilowe = "~/images/userTmpImg.jpg";
+                ZdjecieProfilowe = "~/ImgUploads/userTmpImg.jpg";
             }
             else
             {
-                ZdjecieProfilowe = zalogowany.Zdjecie;
-            }*/
-            //TEST
-            ZdjecieProfilowe = "~/images/userTmpImg.jpg"; //TRZEBA OGARN¥Æ WYŒWIETLANIE Z SERWERA, poczytaæ o Viewbag
-            //TEST
+                string sciezka = "~/ImgUploads/" + Path.GetFileName(zalogowany.Zdjecie);
+                ZdjecieProfilowe = sciezka;
+            }
 
 
             LoginUzytkownika = $"Profil u¿ytkownika {zalogowany.Nazwa}";
             Page();
+        }
+
+        public IActionResult OnPostZmienZdjecie()
+        {
+            Console.WriteLine(UploadedImage.ToString());
+            return Page();
         }
     }
 }
