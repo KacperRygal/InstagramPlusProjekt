@@ -24,8 +24,6 @@ namespace InstPlusEntityFr
         [MaxLength(200)]
         public string Opis { get; set; } = "";
 
-        public List<TagUzytkownika> Tagi { get; set; }
-
         public bool testLoginu()
         {
             if (Nazwa.Length <= 40) return true; else return false;
@@ -54,15 +52,13 @@ namespace InstPlusEntityFr
             return false;
         }
 
-        public Uzytkownik() { }
-        public Uzytkownik(int uzytkownikId, string nazwa, string haslo, bool moderator, List<TagUzytkownika> tagi)
+        public Uzytkownik() { DataVipDo = null; }
+        public Uzytkownik(string nazwa, string haslo, bool moderator)
         {
-            UzytkownikId = uzytkownikId;
             Nazwa = nazwa;
             Haslo = haslo;
             DataVipDo = null;
             Moderator = moderator;
-            Tagi = tagi;
         }
     }
 
@@ -70,13 +66,26 @@ namespace InstPlusEntityFr
     public class TagUzytkownika
     {
         [Key]
-        public int TagId { get; set; }
-        private string nazwa;
-        public string Nazwa
+        public int TagUzytkownikaId { get; set; }
+        public int UzytkownikId { get; set; }
+        public int TagPostuId { get; set; }
+
+        public TagUzytkownika(int uzytkownikId, int tagPostuId)
         {
-            get => nazwa;
-            set => value.ToLower();
+            UzytkownikId = uzytkownikId;
+            TagPostuId = tagPostuId;
+            wystapienia++; //już jedno powiązanie istnieje skoro je tworzymy
         }
-        public int Counter { get; set; }
+        public TagUzytkownika() { wystapienia++; }
+
+        private int wystapienia = 0;
+        public int Wystapienia
+        {
+            get { return wystapienia; }
+            private set { wystapienia = value; }
+        }
+
+        public void InkrementujWyst() { wystapienia++; }
+        public void DekrementujWyst() { wystapienia--; }
     }
 }

@@ -26,6 +26,7 @@ app.UseStaticFiles(new StaticFileOptions
            Path.Combine(builder.Environment.ContentRootPath, "imgUploads")),
     RequestPath = "/ImgUploads"
 });
+app.UseStaticFiles();
 
 app.UseRouting();
 

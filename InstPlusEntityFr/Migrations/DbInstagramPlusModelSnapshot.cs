@@ -143,31 +143,6 @@ namespace InstPlusEntityFr.Migrations
                     b.ToTable("TagiPostow");
                 });
 
-            modelBuilder.Entity("InstPlusEntityFr.TagUzytkownika", b =>
-                {
-                    b.Property<int>("TagId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TagId"));
-
-                    b.Property<int>("Counter")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Nazwa")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("UzytkownikId")
-                        .HasColumnType("int");
-
-                    b.HasKey("TagId");
-
-                    b.HasIndex("UzytkownikId");
-
-                    b.ToTable("TagiUzytkownikow");
-                });
-
             modelBuilder.Entity("InstPlusEntityFr.Uzytkownik", b =>
                 {
                     b.Property<int>("UzytkownikId")
@@ -220,13 +195,6 @@ namespace InstPlusEntityFr.Migrations
                     b.ToTable("PostTagPostu");
                 });
 
-            modelBuilder.Entity("InstPlusEntityFr.TagUzytkownika", b =>
-                {
-                    b.HasOne("InstPlusEntityFr.Uzytkownik", null)
-                        .WithMany("Tagi")
-                        .HasForeignKey("UzytkownikId");
-                });
-
             modelBuilder.Entity("PostTagPostu", b =>
                 {
                     b.HasOne("InstPlusEntityFr.Post", null)
@@ -240,11 +208,6 @@ namespace InstPlusEntityFr.Migrations
                         .HasForeignKey("TagId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("InstPlusEntityFr.Uzytkownik", b =>
-                {
-                    b.Navigation("Tagi");
                 });
 #pragma warning restore 612, 618
         }
