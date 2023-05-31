@@ -35,12 +35,12 @@ namespace InstPlusEntityFr.Pages.DodajPost
             if (HttpContext.Session.GetString("OpisPostu").IsNullOrEmpty())
             {
                 DodajOpisTxt = "";
-                Console.WriteLine("pusty");
+                //Console.WriteLine("pusty");
             }
             else
             {
                 DodajOpisTxt = HttpContext.Session.GetString("OpisPostu");
-                Console.WriteLine("niepusty" + DodajOpisTxt);
+                //Console.WriteLine("niepusty" + DodajOpisTxt);
             }
             var zalogowanyUsr = db.Uzytkownicy.FirstOrDefault(u => u.UzytkownikId == HttpContext.Session.GetInt32("UzytkownikId"));
             UzytkownikTworzacy = $"u¿ytkownik: {zalogowanyUsr.Nazwa}";
@@ -66,7 +66,7 @@ namespace InstPlusEntityFr.Pages.DodajPost
             {
                 //zapisujemy wartoœæ pola opis ¿eby nie znika³o po return Page()
                 //crashuje - sprawdziæ czemu i jak naprawiæ
-                Console.WriteLine(DodajOpisTxt);
+                //Console.WriteLine(DodajOpisTxt);
                 //HttpContext.Session.SetString("OpisPostu", DodajOpisTxt);
 
                 //zczytuje z sesji zserializowane tagi

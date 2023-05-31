@@ -16,20 +16,29 @@ namespace InstPlusEntityFr.Pages.ProfilPrywatny
         [BindProperty]
         public IFormFile UploadedImage { get; set; }
 
+        public bool CzyAdministrator { get; set; } //flagi dla przycisków
+        public bool CzyVip { get; set; }
+
         public String errorMessage = "";
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        //LAUNCH
 
         Uzytkownik zalogowany;
         public void OnGet()
         {
+            //wyœwietlenie informacji
             if (HttpContext.Session.Keys.Contains("INFO"))
             {
                 errorMessage = HttpContext.Session.GetString("INFO");
                 HttpContext.Session.Remove("INFO");
             }
 
+            //wyszukanie zalogowanego u¿ytkownika
             int zalogowanyId = (int)HttpContext.Session.GetInt32("UzytkownikId");
             zalogowany = db.Uzytkownicy.Where(u => u.UzytkownikId == zalogowanyId).FirstOrDefault();
 
+            //wyœwietlenie zdjêcia profilowego
             if (zalogowany.Zdjecie == null)
             {
                 ZdjecieProfilowe = "~/ImgUploads/userTmpImg.jpg";
@@ -40,17 +49,36 @@ namespace InstPlusEntityFr.Pages.ProfilPrywatny
                 ZdjecieProfilowe = sciezka;
             }
 
+            //wyœwietlenie opisu i loginu
             OpisUzytkownika = zalogowany.Opis;
 
             LoginUzytkownika = $"Profil u¿ytkownika {zalogowany.Nazwa}";
+
+            //sprawdzenie czy zalogowany jest adminem
+            if (zalogowany.Moderator == null || zalogowany.Moderator == false)
+                CzyAdministrator = false;
+            else
+                CzyAdministrator = true;
+
+            //sprawdzenie czy zalogowany ma aktualn¹ subskrypcjê
+            if (zalogowany.DataVipDo == null || zalogowany.DataVipDo < DateTime.Now)
+                CzyVip = false;
+            else
+                CzyVip = true;
+
+            //prze³adowanie strony
             Page();
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        //ZMIANA ZDJÊCIA PROFILOWEGO
         public IActionResult OnPostZmienZdjecie()
         {
             return RedirectToPage("/ZmianaZdjecia/Index");
         }
 
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        //ZMIANA OPISU POSTA
         public async Task<IActionResult> OnPostZmienOpisBtn()
         {
             //powtórzenie kodu - ale bez tego crashuje hmmm...
@@ -63,6 +91,13 @@ namespace InstPlusEntityFr.Pages.ProfilPrywatny
 
             //return Page() zwraca³o pust¹ stronê... why?
             return RedirectToPage("/ProfilPrywatny/Index");
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        //CHÊÆ ZAKUPU SUBSKRYPCJI
+        public IActionResult OnPostZakupVipBtn()
+        {
+            return RedirectToPage("/OdblokujVip/Index");
         }
     }
 }

@@ -13,13 +13,32 @@
 
 @if (!string.IsNullOrEmpty(Model.ZdjecieProfilowe))
 {
+    @if (Model.CzyVip)
+    {
+        <div class="image-container">
+            <img class="img" id="previewImage" src=@Url.Content("~/ImgUploads/vip_mark.jpg") alt="Zdjecie profilowe" width="100" height="100" />
+            <br />
+        </div>
+    }
     <div style="text-align: left">
         <div style="display: flex; align-items: center;">
             <div style="width: 150px; height: 150px; overflow: hidden; margin-right: 10px;">
                 <img class="img" id="previewImage" src=@Url.Content(@Model.ZdjecieProfilowe) alt="Zdjecie profilowe" style="width: 100%; height: 100%; object-fit: cover;" />
             </div>
             <label class="display-6">@Model.LoginUzytkownika</label>
+            @if (Model.CzyAdministrator)
+            {
+                <label class="display-8">   (ADMINISTRATOR)</label>
+            }
         </div>
+        @if (Model.CzyVip == false)
+        {
+            <div style="text-align: right">
+                <form asp-page-handler="ZakupVipBtn">
+                    <input type="submit" value="ZAKUP VIP >" asp-page-handler="ZakupVipBtn" />
+                </form>
+            </div>
+        }
         <form asp-page-handler="ZmienZdjecie">
             <input type="submit" value="ZMIEŃ ZDJĘCIE PROFILOWE >" asp-page-handler="ZmienZdjecie" />
         </form>
