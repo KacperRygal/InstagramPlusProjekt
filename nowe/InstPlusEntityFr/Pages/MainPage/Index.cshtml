@@ -11,7 +11,11 @@
 <body>
     <div id="container"></div>
 
+   
+
     <script>
+
+
         var images = @Json.Serialize(Model.getZdjecia()); // Przykładowe ścieżki do obrazów
         var opisy = @Json.Serialize(Model.getOpisy());
         var imagesav = @Json.Serialize(Model.getZdjecieUzytkownik());
@@ -44,24 +48,26 @@
             nazwa.class = "nazwa";
             nazwa.innerHTML=nazwy[i];
 
-            var komentarze = document.createElement("div");
-            komentarze.className="komentarze";
+             var komentarzeDiv = document.createElement("div");
+             komentarzeDiv.className = "komentarze";
 
-           /* 
+             // Pobieranie komentarzy dla danego id postu
+             var postKomentarze = @Json.Serialize(Model.getKomentarze());
 
-            for (var j = 0; j < tresc_komentarze.length; j++) {
-                var komentarz = document.createElement("div");
-                komentarz.className = "komentarz";
-                komentarz.innerHTML = tresc_komentarze[j];
+             // Wyświetlanie komentarzy
+             for (var j = 0; j < postKomentarze.length; j++) {
+               var komentarz = document.createElement("div");
+               komentarz.className = "komentarz";
+               komentarz.innerHTML = postKomentarze[j];
+               komentarzeDiv.appendChild(komentarz);
+             }
 
-                komentarze.appendChild(komentarz);
-            }
-            */
-            imageDiv.appendChild(image);
-            container.appendChild(imageavatar);
-            container.appendChild(nazwa);
-            container.appendChild(imageDiv);
-            container.appendChild(opis);
+             imageDiv.appendChild(image);
+             container.appendChild(imageavatar);
+             container.appendChild(nazwa);
+             container.appendChild(imageDiv);
+             container.appendChild(opis);
+             container.appendChild(komentarzeDiv);
         }
     </script>
 </body>

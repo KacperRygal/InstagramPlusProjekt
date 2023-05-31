@@ -7,15 +7,15 @@ using System.Linq;
 namespace InstPlusEntityFr.Pages.MainPage
 {
 
-    public class IndexModel : PageModel
-    {
+	public class IndexModel : PageModel
+	{
 		private readonly IWebHostEnvironment _environment;
 
 		public List<String> autorzy_postow = new List<String>();
 
 		public List<Post> posty = new List<Post>();
 
-		
+
 		public String getPostZdjecie(int id)
 		{
 			return posty.ElementAt(id).Zdjecie;
@@ -26,9 +26,9 @@ namespace InstPlusEntityFr.Pages.MainPage
 		}
 
 		public List<String> getZdjecia()
-		{ 
+		{
 			List<String> result = new List<String>();
-			foreach(Post p in posty)
+			foreach (Post p in posty)
 			{
 				result.Add(@Url.Content(p.Zdjecie));
 			}
@@ -43,7 +43,7 @@ namespace InstPlusEntityFr.Pages.MainPage
 				result.Add(p.Opis);
 			}
 			return result;
-			
+
 		}
 
 		public List<String> getZdjecieUzytkownik()
@@ -52,7 +52,7 @@ namespace InstPlusEntityFr.Pages.MainPage
 			foreach (Post p in posty)
 			{
 				var xd = db.Uzytkownicy.Where(u => u.UzytkownikId == p.UzytkownikId);
-				foreach(var item in xd)
+				foreach (var item in xd)
 				{
 					result.Add(@Url.Content(item.Zdjecie));
 				}
@@ -83,15 +83,24 @@ namespace InstPlusEntityFr.Pages.MainPage
 			}
 			return result;
 		}
+		private static int id;
+		static IndexModel()
+			{
+			id = 0;
+			}
 
-		public List<String> getKomentarze(int idPost)
+		public List<String> getKomentarze()
 		{
+
+			Console.WriteLine(id);
 			List<String> result = new List<String>();
-			var xd = db.Komentarze.Where(u => u.PostId == idPost);
+			var xd = db.Komentarze.Where(u => u.PostId == posty.ElementAt(id).PostId);
 			foreach (var item in xd)
 			{
 				result.Add(item.Tresc);
 			}
+			id++;
+			
 			return result;
 		}
 
@@ -103,9 +112,6 @@ namespace InstPlusEntityFr.Pages.MainPage
 			{
 				posty.Add(p);
 			}
-
-
-
 
 			/*if(HttpContext.Session.IsAvailable)
 			{
@@ -163,4 +169,5 @@ namespace InstPlusEntityFr.Pages.MainPage
 		}
 
 	}
+	
 }
