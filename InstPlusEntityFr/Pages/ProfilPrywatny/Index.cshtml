@@ -51,6 +51,56 @@
             <textarea class="form-control" id="OpisUzytkownika" name="OpisUzytkownika" rows="3" cols="100">@Model.OpisUzytkownika</textarea>
             <input type="submit" value="ZMIEŃ OPIS >" asp-page-handler="ZmienOpisBtn" />
         </form>
+        <br /><br />
+        @if (Model.CzyAdministrator)
+        {
+            <form asp-page-handler="WyswStatystykiBtn">
+                <input type="submit" value="WYŚWIETL >" asp-page-handler="WyswStatystykiBtn" />
+            </form>
+        }
+        <br /><br />
+        <table class='tabelaOpcji'>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>obserwowani:</td>
+                    <td>@Model.IloscObserwowanych</td>
+                    <td>
+                        <form asp-page-handler="WyswObserwowanychBtn">
+                            <input type="submit" value="WYŚWIETL >" asp-page-handler="WyswObserwowanychBtn" />
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>obserwujący:</td>
+                    <td>@Model.IloscObserwujacych</td>
+                    <td>
+                        <form asp-page-handler="WyswObserwujacychBtn">
+                            <input type="submit" value="WYŚWIETL >" asp-page-handler="WyswObserwujacychBtn" />
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>utworzone posty:</td>
+                    <td>@Model.IloscPostowZalogow</td>
+                    <td>
+                        <form asp-page-handler="WyswMojePostyBtn">
+                            <input type="submit" value="WYŚWIETL >" asp-page-handler="WyswMojePostyBtn" />
+                        </form>
+                    </td>
+                </tr>
+                <tr>
+                    <td>całkowita ilość polubień:</td>
+                    <td>@Model.IloscPolubZalogow</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 }
 

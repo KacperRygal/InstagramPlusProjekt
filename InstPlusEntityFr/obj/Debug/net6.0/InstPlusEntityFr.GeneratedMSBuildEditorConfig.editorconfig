@@ -52,8 +52,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Bogdan i Wiktor/Desktop/studia katowice/PBD/InstagramPlusProjekt/InstPlusEntityFr/Pages/StatystykiAdmin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RhdHlzdHlraUFkbWluXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Bogdan i Wiktor/Desktop/studia katowice/PBD/InstagramPlusProjekt/InstPlusEntityFr/Pages/Uzytkownicy/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXp5dGtvd25pY3lcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bogdan i Wiktor/Desktop/studia katowice/PBD/InstagramPlusProjekt/InstPlusEntityFr/Pages/WyswObserwowanych/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV3lzd09ic2Vyd293YW55Y2hcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Bogdan i Wiktor/Desktop/studia katowice/PBD/InstagramPlusProjekt/InstPlusEntityFr/Pages/WyswObserwujacych/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV3lzd09ic2Vyd3VqYWN5Y2hcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Bogdan i Wiktor/Desktop/studia katowice/PBD/InstagramPlusProjekt/InstPlusEntityFr/Pages/ZmianaZdjecia/Index.cshtml]

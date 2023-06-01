@@ -21,6 +21,11 @@ namespace InstPlusEntityFr.Pages.ProfilPrywatny
 
         public String errorMessage = "";
 
+        public int IloscObserwowanych { get; set; } = 0;
+        public int IloscObserwujacych { get; set; } = 0;
+        public int IloscPostowZalogow { get; set; } = 0;
+        public int IloscPolubZalogow { get; set; } = 0;
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         //LAUNCH
 
@@ -66,6 +71,13 @@ namespace InstPlusEntityFr.Pages.ProfilPrywatny
             else
                 CzyVip = true;
 
+            //wyœwietlenie statystyk
+            IloscObserwowanych = db.Obserwowani.Where(o=>o.ObserwatorId == zalogowanyId).Count();
+            IloscObserwujacych = db.Obserwujacy.Where(o=>o.ObserwowanyId == zalogowanyId).Count();
+            IloscPolubZalogow = db.PolubieniaKomentarzy.Where(p => p.UzytkownikId == zalogowanyId).Count() +
+                db.PolubieniaPostow.Where(p => p.UzytkownikId == zalogowanyId).Count();
+            IloscPostowZalogow = db.Posty.Where(p=>p.UzytkownikId==zalogowanyId).Count();
+
             //prze³adowanie strony
             Page();
         }
@@ -98,6 +110,20 @@ namespace InstPlusEntityFr.Pages.ProfilPrywatny
         public IActionResult OnPostZakupVipBtn()
         {
             return RedirectToPage("/OdblokujVip/Index");
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        //WYŒWIETLANIE OBSERWOWANYCH
+        public IActionResult OnPostWyswObserwowanychBtn()
+        {
+            return RedirectToPage("/WyswObserwowanych/Index");
+        }
+
+        ////////////////////////////////////////////////////////////////////////////////////////////////////
+        //WYŒWIETLANIE OBSERWOWANYCH
+        public IActionResult OnPostWyswStatystykiBtn()
+        {
+            return RedirectToPage("/StatystykiAdmin/Index");
         }
     }
 }

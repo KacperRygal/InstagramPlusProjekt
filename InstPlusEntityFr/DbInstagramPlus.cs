@@ -23,8 +23,10 @@ namespace InstPlusEntityFr
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //warto wkleić swojego ConnStr ;)))
-            optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=InstagramPlus;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False");
+            //(1) TRZEBA WKLEIĆ SWOJEGO CONNECTION STRINGA
+            //(2) NA KONIEC DODAĆ: ;MultipleActiveResultSets=True //MUSI BYĆ ŻEBY DZIAŁAŁO KILKA SELECTÓW W JEDNEJ METODZIE!!!
+
+            optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=InstagramPlus;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False;MultipleActiveResultSets=True");
 
         }
     }

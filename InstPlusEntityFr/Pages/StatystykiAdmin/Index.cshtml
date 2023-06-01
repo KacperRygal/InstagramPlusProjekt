@@ -1,0 +1,30 @@
+﻿@page
+@model InstPlusEntityFr.Pages.StatystykiAdmin.IndexModel
+@{
+}
+<h2>Raport Administratora Instagram Plus:</h2>
+<table class='table'>
+    <thead>
+        <tr>
+            <th></th>
+            <th>ostatnie 24h</th>
+            <th>ostatni tydzień</th>
+            <th>ostatni miesiąc</th>
+            <th>ostatnie 6 miesięcy</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>dodane posty</td>
+            <td>@Model.ListaIlosciDodPostow[0]</td>
+            <td>@Model.ListaIlosciDodPostow[1]</td>
+            <td>@Model.ListaIlosciDodPostow[2]</td>
+            <td>@Model.ListaIlosciDodPostow[3]</td>
+        </tr>
+    </tbody>
+</table>
+<div style="text-align: right">
+    <form asp-page-handler="AnulujBtn">
+        <input type="submit" value="WRÓĆ DO PROFILU >" asp-page-handler="AnulujBtn" />
+    </form>
+</div>
