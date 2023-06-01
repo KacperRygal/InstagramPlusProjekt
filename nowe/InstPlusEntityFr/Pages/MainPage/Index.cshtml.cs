@@ -2,115 +2,48 @@ using InstPlusEntityFr.Migrations;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using System.Linq;
 
 namespace InstPlusEntityFr.Pages.MainPage
 {
-
+	public class PostWithComments
+	{
+		public string Image { get; set; }
+		public string Opis { get; set; }
+		public string ImageAvatar { get; set; }
+		public string Nazwa { get; set; }
+		public List<String> Komentarze { get; set; }
+		public int IloscPolubien { get; set; } 
+	}
 	public class IndexModel : PageModel
 	{
 		private readonly IWebHostEnvironment _environment;
-
-		public List<String> autorzy_postow = new List<String>();
-
-		public List<Post> posty = new List<Post>();
-
-
-		public String getPostZdjecie(int id)
-		{
-			return posty.ElementAt(id).Zdjecie;
-		}
-		public String getPostOpis(int id)
-		{
-			return posty.ElementAt(id).Opis;
-		}
-
-		public List<String> getZdjecia()
-		{
-			List<String> result = new List<String>();
-			foreach (Post p in posty)
-			{
-				result.Add(@Url.Content(p.Zdjecie));
-			}
-			return result;
-		}
-
-		public List<String> getOpisy()
-		{
-			List<String> result = new List<String>();
-			foreach (Post p in posty)
-			{
-				result.Add(p.Opis);
-			}
-			return result;
-
-		}
-
-		public List<String> getZdjecieUzytkownik()
-		{
-			List<String> result = new List<String>();
-			foreach (Post p in posty)
-			{
-				var xd = db.Uzytkownicy.Where(u => u.UzytkownikId == p.UzytkownikId);
-				foreach (var item in xd)
-				{
-					result.Add(@Url.Content(item.Zdjecie));
-				}
-			}
-			return result;
-		}
-
-		public List<String> getNazwaUzytkownik()
-		{
-			List<String> result = new List<String>();
-			foreach (Post p in posty)
-			{
-				var xd = db.Uzytkownicy.Where(u => u.UzytkownikId == p.UzytkownikId);
-				foreach (var item in xd)
-				{
-					result.Add(item.Nazwa);
-				}
-			}
-			return result;
-		}
-
-		public List<int> getIdPostow()
-		{
-			List<int> result = new List<int>();
-			foreach (Post p in posty)
-			{
-				result.Add(p.PostId);
-			}
-			return result;
-		}
-		private static int id;
-		static IndexModel()
-			{
-			id = 0;
-			}
-
-		public List<String> getKomentarze()
-		{
-
-			Console.WriteLine(id);
-			List<String> result = new List<String>();
-			var xd = db.Komentarze.Where(u => u.PostId == posty.ElementAt(id).PostId);
-			foreach (var item in xd)
-			{
-				result.Add(item.Tresc);
-			}
-			id++;
-			
-			return result;
-		}
-
 		DbInstagramPlus db = new DbInstagramPlus();
+		public String getPosty()
+		{
+			return JsonConvert.SerializeObject(postsWithComments);
+		}
+
+		private List<PostWithComments> postsWithComments = new List<PostWithComments>();
+
 		public void OnGet()
 		{
-
-			foreach (Post p in db.Posty)
+			foreach (var idpost in db.Posty)
 			{
-				posty.Add(p);
+				var post = new PostWithComments();
+				post.Komentarze = new List<String>();
+				post.Image = @Url.Content(idpost.Zdjecie);
+				post.Opis = idpost.Opis;
+				post.ImageAvatar = @Url.Content(db.Uzytkownicy.Where(u => u.UzytkownikId == idpost.UzytkownikId).FirstOrDefault().Zdjecie);
+				post.Nazwa = db.Uzytkownicy.Where(u => u.UzytkownikId == idpost.UzytkownikId).FirstOrDefault().Nazwa;
+				post.IloscPolubien = db.PolubieniaPostow.Count(u=>u.PostId==idpost.PostId);
+				var tempKom = db.Komentarze.Where(u=>u.PostId == idpost.PostId).Select(u=>u.Tresc);
+				foreach(var kom in tempKom)
+				{
+					post.Komentarze.Add(kom);
+				}
+				postsWithComments.Add(post);
 			}
 
 			/*if(HttpContext.Session.IsAvailable)

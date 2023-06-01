@@ -7,69 +7,105 @@
     <button type="button" onclick="selectFile()">Wybierz plik</button>
     <input type="submit" value="Prześlij" />
 </form>
+<head>
+    <style>
+    .image-div {
+        margin-bottom: 10px;
+        display: flex; 
+        align-items: center; 
+    }
 
+    .img {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .opis {
+        font-weight: bold;
+    }
+
+    .nazwa {
+        font-style: italic;
+        margin-left: 10px; 
+    }
+
+    .komentarze {
+        margin-top: 10px;
+    }
+
+    .komentarz {
+        margin-bottom: 5px;
+    }
+
+    .polubienia {
+        display: flex; 
+        align-items: center; 
+        margin-top: 10px;
+        font-weight: bold;
+    }
+</style>
+</head>
 <body>
-    <div id="container"></div>
+    <div id="kontener"></div>
 
-   
+    
+   <script>
+    var postsWithComments = @Html.Raw(Model.getPosty());
+    var container = document.getElementById("kontener");
 
-    <script>
+    for (var i = 0; i < postsWithComments.length; i++) {
+        var imageDiv = document.createElement("div");
+        imageDiv.className = "image-div";
+
+        var imageavatar = document.createElement("img");
+        imageavatar.className = "img";
+        imageavatar.width = "50";
+        imageavatar.height = "50";
+        imageavatar.src = postsWithComments[i].ImageAvatar;
+
+        var image = document.createElement("img");
+        image.className = "img";
+        image.width = "500";
+        image.height = "450";
+        image.src = postsWithComments[i].Image;
+
+        var opis = document.createElement("label");
+        opis.className = "opis";
+        opis.innerHTML = postsWithComments[i].Opis;
+
+        var nazwa = document.createElement("label");
+        nazwa.className = "nazwa";
+        nazwa.innerHTML = postsWithComments[i].Nazwa;
 
 
-        var images = @Json.Serialize(Model.getZdjecia()); // Przykładowe ścieżki do obrazów
-        var opisy = @Json.Serialize(Model.getOpisy());
-        var imagesav = @Json.Serialize(Model.getZdjecieUzytkownik());
-        var nazwy = @Json.Serialize(Model.getNazwaUzytkownik());
-        var idposty = @Json.Serialize(Model.getIdPostow());
 
-        var container = document.getElementById("container");
+        var komentarzeDiv = document.createElement("div");
+        komentarzeDiv.className = "komentarze";
 
-        for (var i = 0; i < images.length; i++) {
-            var imageDiv = document.createElement("div");
-            imageDiv.className = "image-div";
+        if (postsWithComments[i].Komentarze) {
+            for (var j = 0; j < postsWithComments[i].Komentarze.length; j++) {
+                var komentarz = document.createElement("div");
+                komentarz.className = "komentarz";
+                komentarz.innerHTML = postsWithComments[i].Komentarze[j];
 
-            var imageavatar = document.createElement("img");
-            imageavatar.class = "img";
-            imageavatar.width = "50";
-            imageavatar.height = "50";
-            imageavatar.src = imagesav[i];
-
-            var image = document.createElement("img");
-            image.class = "img";
-            image.width = "500";
-            image.height = "450";
-            image.src = images[i];
-            
-            var opis = document.createElement("label");
-            opis.class = "opis";
-            opis.innerHTML=opisy[i];
-            
-            var nazwa = document.createElement("label");
-            nazwa.class = "nazwa";
-            nazwa.innerHTML=nazwy[i];
-
-             var komentarzeDiv = document.createElement("div");
-             komentarzeDiv.className = "komentarze";
-
-             // Pobieranie komentarzy dla danego id postu
-             var postKomentarze = @Json.Serialize(Model.getKomentarze());
-
-             // Wyświetlanie komentarzy
-             for (var j = 0; j < postKomentarze.length; j++) {
-               var komentarz = document.createElement("div");
-               komentarz.className = "komentarz";
-               komentarz.innerHTML = postKomentarze[j];
-               komentarzeDiv.appendChild(komentarz);
-             }
-
-             imageDiv.appendChild(image);
-             container.appendChild(imageavatar);
-             container.appendChild(nazwa);
-             container.appendChild(imageDiv);
-             container.appendChild(opis);
-             container.appendChild(komentarzeDiv);
+                komentarzeDiv.appendChild(komentarz);
+            }
         }
-    </script>
+
+        var polubienia = document.createElement("span");
+        polubienia.className = "polubienia";
+        polubienia.innerHTML = "Polubienia: " + postsWithComments[i].IloscPolubien;
+
+        imageDiv.appendChild(image);
+        container.appendChild(imageavatar);
+        container.appendChild(nazwa);
+        container.appendChild(imageDiv);
+        container.appendChild(polubienia);
+        container.appendChild(opis);
+        container.appendChild(komentarzeDiv);
+        
+    }
+</script>
 </body>
 
 
