@@ -16,10 +16,24 @@
     <tbody>
         <tr>
             <td>dodane posty</td>
-            <td>@Model.ListaIlosciDodPostow[0]</td>
-            <td>@Model.ListaIlosciDodPostow[1]</td>
-            <td>@Model.ListaIlosciDodPostow[2]</td>
-            <td>@Model.ListaIlosciDodPostow[3]</td>
+            @foreach(var item in Model.IlosciDodPostow)
+            {
+                <td>@item</td>
+            }
+        </tr>
+        <tr>
+            <td>dodane komentarze</td>
+            @foreach (var item in Model.IlosciDodKomentarzy)
+            {
+                <td>@item</td>
+            }
+        </tr>
+        <tr>
+            <td>dodane polubienia</td>
+            @foreach (var item in Model.IlosciDodPolubien)
+            {
+                <td>@item</td>
+            }
         </tr>
     </tbody>
 </table>

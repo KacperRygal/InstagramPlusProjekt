@@ -51,14 +51,16 @@
             <textarea class="form-control" id="OpisUzytkownika" name="OpisUzytkownika" rows="3" cols="100">@Model.OpisUzytkownika</textarea>
             <input type="submit" value="ZMIEŃ OPIS >" asp-page-handler="ZmienOpisBtn" />
         </form>
-        <br /><br />
         @if (Model.CzyAdministrator)
         {
-            <form asp-page-handler="WyswStatystykiBtn">
-                <input type="submit" value="WYŚWIETL >" asp-page-handler="WyswStatystykiBtn" />
-            </form>
+            <br />
+            <div style="text-align: right">
+                <form asp-page-handler="WyswStatystykiBtn">
+                    <input type="submit" value="WYŚWIETL RAPORTY >" asp-page-handler="WyswStatystykiBtn" />
+                </form>
+            </div>
         }
-        <br /><br />
+        <br />
         <table class='tabelaOpcji'>
             <thead>
                 <tr>
