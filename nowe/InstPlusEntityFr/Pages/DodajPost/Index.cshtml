@@ -1,0 +1,64 @@
+﻿@page
+@model InstPlusEntityFr.Pages.DodajPost.IndexModel
+
+<style>
+    #previewImage {
+        max-width: 200px;
+        max-height: 200px;
+        float: none;
+        margin: 0 auto;
+    }
+</style>
+
+@if (Model.errorMessage.Length > 0)
+{
+    <div class='alert alert-warning alert-dismissible fade show' role='alert'>
+        <strong>@Model.errorMessage</strong>
+        <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
+    </div>
+}
+
+<div style="text-align: center">
+    <h1 class="display-4">Dodaj Nowy Post!</h1>
+    <label>@Model.UzytkownikTworzacy</label>
+    <div style="margin-bottom: 50px;">
+        <p>dodaj tagi:</p>
+        <form method="post" asp-page-handler="AppendTag">
+            <input type="text" id="dodajTagTxt" name="dodajTagTxt" />
+            <input type="submit" value="DODAJ TAG >" asp-page-handler="AppendTag" />
+        </form>
+        <label>@Model.DodajTagTxt</label>
+    </div>
+    <div style="margin-bottom: 30px;">
+        <form method="post" enctype="multipart/form-data" asp-page-handler="OpublikujBtn">
+            <input type="file" accept="image/*" onchange="showPreview(event)" name="UploadedImage" />
+            <img id="previewImage" src="#" alt="Preview" style="display: none; max-width: 200px; max-height: 200px;" />
+            <br /><br />
+            <label>Opis:</label>
+            <br /><br />
+            <textarea id="OpisTxt" name="dodajOpisTxt" rows="4" cols="150" style="resize: none;"></textarea>
+            <br /><br />
+            <input type="submit" value="OPUBLIKUJ >" asp-page-handler="OpublikujBtn" />
+        </form>
+    </div>
+</div>
+
+<script>
+    document.getElementById("OpisTxt").addEventListener("keydown", function (e) {
+        if (e.keyCode === 13) { // KeyCode for Enter key
+            e.preventDefault();
+            this.value += "\n";
+        }
+    });
+
+    function showPreview(event) {
+        var input = event.target;
+        var reader = new FileReader();
+        reader.onload = function () {
+            var img = document.getElementById('previewImage');
+            img.src = reader.result;
+            img.style.display = 'block';
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+</script>
