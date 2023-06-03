@@ -1,0 +1,549 @@
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\appsettings.json
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\InstPlusEntityFr.staticwebassets.runtime.json
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\InstPlusEntityFr.exe
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\InstPlusEntityFr.deps.json
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\InstPlusEntityFr.runtimeconfig.json
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\InstPlusEntityFr.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\InstPlusEntityFr.pdb
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\Azure.Core.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\Azure.Identity.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\Humanizer.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\Mono.TextTemplating.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\System.CodeDom.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\System.Memory.Data.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.csproj.AssemblyReference.cache
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.AssemblyInfoInputs.cache
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.AssemblyInfo.cs
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.csproj.CoreCompileInputs.cache
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.RazorAssemblyInfo.cache
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.RazorAssemblyInfo.cs
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\obj\Debug\net6.0\staticwebassets\msbuild.InstPlusEntityFr.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\obj\Debug\net6.0\staticwebassets\msbuild.build.InstPlusEntityFr.props
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.InstPlusEntityFr.props
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.InstPlusEntityFr.props
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\obj\Debug\net6.0\scopedcss\bundle\InstPlusEntityFr.styles.css
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\obj\Debug\net6.0\scopedcss\projectbundle\InstPlusEntityFr.bundle.scp.css
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.csproj.CopyComplete
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\obj\Debug\net6.0\refint\InstPlusEntityFr.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.pdb
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.genruntimeconfig.cache
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstPlusEntityFr\obj\Debug\net6.0\ref\InstPlusEntityFr.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\appsettings.json
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\InstPlusEntityFr.staticwebassets.runtime.json
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\InstPlusEntityFr.exe
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\InstPlusEntityFr.deps.json
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\InstPlusEntityFr.runtimeconfig.json
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\InstPlusEntityFr.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\InstPlusEntityFr.pdb
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\Azure.Core.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\Azure.Identity.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\Humanizer.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\Mono.TextTemplating.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\System.CodeDom.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\System.Drawing.Common.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\System.Memory.Data.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\System.Runtime.Caching.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\System.Text.Json.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\System.Windows.Extensions.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.csproj.AssemblyReference.cache
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.AssemblyInfoInputs.cache
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.AssemblyInfo.cs
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.csproj.CoreCompileInputs.cache
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.RazorAssemblyInfo.cache
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.RazorAssemblyInfo.cs
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\obj\Debug\net6.0\staticwebassets\msbuild.InstPlusEntityFr.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\obj\Debug\net6.0\staticwebassets\msbuild.build.InstPlusEntityFr.props
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.InstPlusEntityFr.props
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.InstPlusEntityFr.props
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\obj\Debug\net6.0\staticwebassets.pack.json
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\obj\Debug\net6.0\scopedcss\bundle\InstPlusEntityFr.styles.css
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\obj\Debug\net6.0\scopedcss\projectbundle\InstPlusEntityFr.bundle.scp.css
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.csproj.CopyComplete
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\obj\Debug\net6.0\refint\InstPlusEntityFr.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.pdb
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.genruntimeconfig.cache
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\obj\Debug\net6.0\ref\InstPlusEntityFr.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\appsettings.Development.json
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\appsettings.json
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\InstPlusEntityFr.staticwebassets.runtime.json
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\InstPlusEntityFr.exe
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\InstPlusEntityFr.deps.json
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\InstPlusEntityFr.runtimeconfig.json
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\InstPlusEntityFr.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\InstPlusEntityFr.pdb
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Azure.Core.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Azure.Identity.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Humanizer.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Mono.TextTemplating.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\System.CodeDom.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\System.Drawing.Common.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\System.Memory.Data.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\System.Runtime.Caching.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\System.Security.Permissions.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\System.Text.Json.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\System.Windows.Extensions.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.csproj.AssemblyReference.cache
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.GeneratedMSBuildEditorConfig.editorconfig
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.AssemblyInfoInputs.cache
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.AssemblyInfo.cs
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.csproj.CoreCompileInputs.cache
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.MvcApplicationPartsAssemblyInfo.cache
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.RazorAssemblyInfo.cache
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.RazorAssemblyInfo.cs
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\staticwebassets\msbuild.InstPlusEntityFr.Microsoft.AspNetCore.StaticWebAssets.props
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\staticwebassets\msbuild.build.InstPlusEntityFr.props
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.InstPlusEntityFr.props
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.InstPlusEntityFr.props
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\staticwebassets.pack.json
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\staticwebassets.build.json
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\staticwebassets.development.json
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\scopedcss\bundle\InstPlusEntityFr.styles.css
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\scopedcss\projectbundle\InstPlusEntityFr.bundle.scp.css
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.csproj.CopyComplete
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\refint\InstPlusEntityFr.dll
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.pdb
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.genruntimeconfig.cache
+G:\C#\Bazy\InstagramPlusProjekt-wiktor\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\ref\InstPlusEntityFr.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\Newtonsoft.Json.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\Grpc.Core.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\Grpc.Core.Api.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\runtimes\linux-arm64\native\libgrpc_csharp_ext.arm64.so
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\runtimes\linux-x64\native\libgrpc_csharp_ext.x64.so
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\runtimes\osx-x64\native\libgrpc_csharp_ext.x64.dylib
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win-x64\native\grpc_csharp_ext.x64.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win-x86\native\grpc_csharp_ext.x86.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\appsettings.Development.json
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\appsettings.json
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\InstPlusEntityFr.staticwebassets.runtime.json
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\InstPlusEntityFr.exe
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\InstPlusEntityFr.deps.json
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\InstPlusEntityFr.runtimeconfig.json
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\InstPlusEntityFr.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\InstPlusEntityFr.pdb
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Azure.Core.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Azure.Identity.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Grpc.Core.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Grpc.Core.Api.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Humanizer.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Mono.TextTemplating.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\Newtonsoft.Json.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\System.CodeDom.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\System.Drawing.Common.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\System.Memory.Data.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\System.Runtime.Caching.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\System.Security.Permissions.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\System.Text.Json.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\System.Windows.Extensions.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\runtimes\linux-arm64\native\libgrpc_csharp_ext.arm64.so
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\runtimes\linux-x64\native\libgrpc_csharp_ext.x64.so
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\runtimes\osx-x64\native\libgrpc_csharp_ext.x64.dylib
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win-x64\native\grpc_csharp_ext.x64.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win-x86\native\grpc_csharp_ext.x86.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.csproj.AssemblyReference.cache
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.GeneratedMSBuildEditorConfig.editorconfig
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.AssemblyInfoInputs.cache
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.AssemblyInfo.cs
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.csproj.CoreCompileInputs.cache
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.MvcApplicationPartsAssemblyInfo.cache
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.RazorAssemblyInfo.cache
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.RazorAssemblyInfo.cs
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\staticwebassets\msbuild.InstPlusEntityFr.Microsoft.AspNetCore.StaticWebAssets.props
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\staticwebassets\msbuild.build.InstPlusEntityFr.props
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.InstPlusEntityFr.props
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.InstPlusEntityFr.props
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\staticwebassets.pack.json
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\staticwebassets.build.json
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\staticwebassets.development.json
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\scopedcss\bundle\InstPlusEntityFr.styles.css
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\scopedcss\projectbundle\InstPlusEntityFr.bundle.scp.css
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.csproj.CopyComplete
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\refint\InstPlusEntityFr.dll
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.pdb
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.genruntimeconfig.cache
+F:\C#\Bazy\WIKTOR\InstagramPlusProjekt-wiktor\InstPlusEntityFr\obj\Debug\net6.0\ref\InstPlusEntityFr.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\appsettings.Development.json
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\appsettings.json
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\InstPlusEntityFr.staticwebassets.runtime.json
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\InstPlusEntityFr.exe
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\InstPlusEntityFr.deps.json
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\InstPlusEntityFr.runtimeconfig.json
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\InstPlusEntityFr.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\InstPlusEntityFr.pdb
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\Azure.Core.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\Azure.Identity.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\Grpc.Core.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\Grpc.Core.Api.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\Humanizer.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\Mono.TextTemplating.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\Newtonsoft.Json.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\System.CodeDom.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\System.Drawing.Common.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\System.Memory.Data.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\System.Runtime.Caching.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\System.Security.Permissions.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\System.Text.Json.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\System.Windows.Extensions.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\runtimes\linux-arm64\native\libgrpc_csharp_ext.arm64.so
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\runtimes\linux-x64\native\libgrpc_csharp_ext.x64.so
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\runtimes\osx-x64\native\libgrpc_csharp_ext.x64.dylib
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win-x64\native\grpc_csharp_ext.x64.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win-x86\native\grpc_csharp_ext.x86.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.csproj.AssemblyReference.cache
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.GeneratedMSBuildEditorConfig.editorconfig
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.AssemblyInfoInputs.cache
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.AssemblyInfo.cs
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.csproj.CoreCompileInputs.cache
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.MvcApplicationPartsAssemblyInfo.cache
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.RazorAssemblyInfo.cache
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.RazorAssemblyInfo.cs
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\obj\Debug\net6.0\staticwebassets\msbuild.InstPlusEntityFr.Microsoft.AspNetCore.StaticWebAssets.props
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\obj\Debug\net6.0\staticwebassets\msbuild.build.InstPlusEntityFr.props
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.InstPlusEntityFr.props
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.InstPlusEntityFr.props
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\obj\Debug\net6.0\staticwebassets.pack.json
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\obj\Debug\net6.0\staticwebassets.build.json
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\obj\Debug\net6.0\staticwebassets.development.json
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\obj\Debug\net6.0\scopedcss\bundle\InstPlusEntityFr.styles.css
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\obj\Debug\net6.0\scopedcss\projectbundle\InstPlusEntityFr.bundle.scp.css
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.csproj.CopyComplete
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\obj\Debug\net6.0\refint\InstPlusEntityFr.dll
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.pdb
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.genruntimeconfig.cache
+F:\C#\Bazy\Tymczasowe\InstPlusEntityFr\obj\Debug\net6.0\ref\InstPlusEntityFr.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\appsettings.Development.json
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\appsettings.json
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\InstPlusEntityFr.staticwebassets.runtime.json
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\InstPlusEntityFr.exe
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\InstPlusEntityFr.deps.json
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\InstPlusEntityFr.runtimeconfig.json
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\InstPlusEntityFr.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\InstPlusEntityFr.pdb
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Azure.Core.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Azure.Identity.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Grpc.Core.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Grpc.Core.Api.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Humanizer.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Mono.TextTemplating.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Newtonsoft.Json.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\System.CodeDom.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\System.Drawing.Common.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\System.Memory.Data.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\System.Runtime.Caching.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\System.Security.Permissions.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\System.Text.Json.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\System.Windows.Extensions.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\runtimes\linux-arm64\native\libgrpc_csharp_ext.arm64.so
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\runtimes\linux-x64\native\libgrpc_csharp_ext.x64.so
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\runtimes\osx-x64\native\libgrpc_csharp_ext.x64.dylib
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win-x64\native\grpc_csharp_ext.x64.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win-x86\native\grpc_csharp_ext.x86.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.csproj.AssemblyReference.cache
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.GeneratedMSBuildEditorConfig.editorconfig
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.AssemblyInfoInputs.cache
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.AssemblyInfo.cs
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.csproj.CoreCompileInputs.cache
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.MvcApplicationPartsAssemblyInfo.cache
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.RazorAssemblyInfo.cache
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.RazorAssemblyInfo.cs
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\obj\Debug\net6.0\staticwebassets.build.json
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\obj\Debug\net6.0\staticwebassets.development.json
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\obj\Debug\net6.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\obj\Debug\net6.0\scopedcss\bundle\InstPlusEntityFr.styles.css
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\obj\Debug\net6.0\scopedcss\projectbundle\InstPlusEntityFr.bundle.scp.css
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.csproj.CopyComplete
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\obj\Debug\net6.0\refint\InstPlusEntityFr.dll
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.pdb
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\obj\Debug\net6.0\InstPlusEntityFr.genruntimeconfig.cache
+G:\Pulpit\InstagramPlusProjekt-merge\InstPlusEntityFr\obj\Debug\net6.0\ref\InstPlusEntityFr.dll

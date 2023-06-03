@@ -1,0 +1,31 @@
+﻿@page
+@model InstPlusEntityFr.Pages.OdblokujVip.IndexModel
+@{
+}
+
+<div style="text-align: center">
+    <h1 class="display-4">Zakup subskrypcję VIP!</h1>
+    <p>
+        <label class="display-8">@Model.OpisSubskrypcji1</label>
+        <br />
+        <label class="display-8">@Model.OpisSubskrypcji2</label>
+        <br />
+        <label class="display-8">@Model.OpisSubskrypcji3</label>
+        <br />
+        <label class="display-8">@Model.OpisSubskrypcji4</label>
+        <br /><br />
+        <div>
+            <label class="display-6">Podaj kod autoryzujący:</label>
+            <form method="post" asp-page-handler="PotwierdzKodBtn">
+                <input type="text" id="wpiszKodTxt" name="wpiszKodTxt" />
+                <br />
+                <input type="submit" value="POTWIERDŹ >" asp-page-handler="PotwierdzKodBtn" />
+            </form>
+        </div>
+        <div style="text-align: right">
+            <form asp-page-handler="AnulujBtn">
+                <input type="submit" value="ANULUJ" asp-page-handler="AnulujBtn" />
+            </form>
+        </div>
+    </p>
+</div>
