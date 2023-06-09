@@ -158,7 +158,7 @@ namespace InstPlusEntityFr.Pages.MainPage
 					post.Opis = idpost.Opis;
 					post.Data = idpost.DataPublikacji;
 					post.ImageAvatar = @Url.Content(db.Uzytkownicy.Where(u => u.UzytkownikId == idpost.UzytkownikId).FirstOrDefault().Zdjecie);
-					if (post.ImageAvatar == null) post.ImageAvatar = "/ImgUploads/userTmpImg.jpg";
+					if (post.ImageAvatar == null) post.ImageAvatar = @Url.Content("/ImgUploads/userTmpImg.jpg");
 					post.Nazwa = db.Uzytkownicy.Where(u => u.UzytkownikId == idpost.UzytkownikId).FirstOrDefault().Nazwa;
 					post.IloscPolubien = db.PolubieniaPostow.Count(u => u.PostId == idpost.PostId);
 					var tempKom = db.Komentarze.Where(u => u.PostId == idpost.PostId);
