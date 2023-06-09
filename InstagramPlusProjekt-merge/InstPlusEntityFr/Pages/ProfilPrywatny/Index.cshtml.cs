@@ -133,5 +133,10 @@ namespace InstPlusEntityFr.Pages.ProfilPrywatny
         {
             return RedirectToPage("/StatystykiAdmin/Index");
         }
+        public IActionResult OnPostWyswMojePostyBtn()
+        {
+            HttpContext.Session.SetInt32("SzukaneID", (int)HttpContext.Session.GetInt32("UzytkownikId"));
+            return RedirectToPage("/MainPage/Index");
+        }
     }
 }

@@ -71,6 +71,11 @@ namespace InstPlusEntityFr.Pages.MainPage
 				//Tutaj Modu³ wyszukiwania tagu
 				var testowa = db.Posty.ToList();
 				if (inputValue != null) testowa = db.TagiPostow.Include(tp => tp.Posty).Where(tp => tp.Nazwa == inputValue).SelectMany(tp => tp.Posty).ToList();
+				if (HttpContext.Session.GetInt32("SzukaneID") != null)
+				{
+					testowa = db.Posty.Where(p => p.UzytkownikId == HttpContext.Session.GetInt32("SzukaneID")).ToList();
+					HttpContext.Session.Remove("SzukaneID");
+				}
 				//Tutaj koniec modu³u wyszukiwania tagu
 
 				foreach (var idpost in testowa)
