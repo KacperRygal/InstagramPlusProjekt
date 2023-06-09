@@ -10,7 +10,7 @@ namespace InstPlusEntityFr.Pages.WyswObserwujacych
         public void OnGet()
         {
             DbInstagramPlus db = new DbInstagramPlus();
-            int zalogowanyId = (int)HttpContext.Session.GetInt32("UzytkownikId");
+            int? zalogowanyId = (int?)HttpContext.Session.GetInt32("UzytkownikId");
 
 
             var obserwujacy = db.Obserwujacy.Where(o => o.ObserwowanyId == zalogowanyId);
