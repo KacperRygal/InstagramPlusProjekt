@@ -106,9 +106,12 @@ namespace InstPlusEntityFr.Pages.DodajPost
             listaDodTagow = JsonConvert.DeserializeObject<HashSet<string>>((string)listaTagowJSON);
 
             //trzeba zrobiæ blokade ¿eby niezalogowany u¿ytkownik nie móg³ wejœæ na tê stronê
+            if (HttpContext.Session.GetString("OpisPostu") != null) dodajOpisTxt = HttpContext.Session.GetString("OpisPostu");
+            
             if (dodajOpisTxt == null)
             {
                 errorMessage = "Post musi zawieraæ opis!";
+        
             }
             else if (listaDodTagow == null) //nie dzia³a
             {
