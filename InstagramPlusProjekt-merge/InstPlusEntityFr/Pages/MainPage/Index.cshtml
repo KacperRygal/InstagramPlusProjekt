@@ -45,7 +45,7 @@
     <div id="kontener"></div>
 
     
-   <script>
+    <script>
     var postsWithComments = @Html.Raw(Model.getPosty());
     var container = document.getElementById("kontener");
 
@@ -82,9 +82,23 @@
             for (var j = 0; j < postsWithComments[i].Komentarze.length; j++) {
                 var komentarz = document.createElement("div");
                 komentarz.className = "komentarz";
-                komentarz.innerHTML = postsWithComments[i].Komentarze[j];
+                komentarz.innerHTML = postsWithComments[i].KomentarzeTresc[j];
 
+                var imagekom = document.createElement("img");
+                imagekom.className = "imgkom";
+                imagekom.width = "40";
+                imagekom.height = "40";
+                imagekom.src = postsWithComments[i].KomentarzeZDJ[j];
+
+                var komentarzAutor = document.createElement("div");
+                komentarzAutor.className = "komentarzAutor";
+                komentarzAutor.innerHTML = postsWithComments[i].KomentarzeAutor[j];
+
+                komentarzeDiv.appendChild(komentarzAutor);
+                komentarzeDiv.appendChild(imagekom);
                 komentarzeDiv.appendChild(komentarz);
+                
+                
             }
         }
 

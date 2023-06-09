@@ -32,6 +32,9 @@ namespace InstPlusEntityFr.Pages.DodajPost
 
         public void OnGet()
         {
+
+
+            Console.WriteLine(HttpContext.Session.GetString("OpisPostu"));
             if (HttpContext.Session.GetString("OpisPostu") != null)
             {
                 DodajOpisTxt = HttpContext.Session.GetString("OpisPostu");
@@ -47,9 +50,11 @@ namespace InstPlusEntityFr.Pages.DodajPost
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         //DODAWANIE TAGÓW
 
-        public IActionResult OnPostAppendTag(string dodajTagTxt)
+        public IActionResult OnPostAppendTag(string dodajTagTxt, string opisTxt2)
         {
-            if(dodajTagTxt == null)
+            if (opisTxt2 != null) HttpContext.Session.SetString("OpisPostu", opisTxt2.ToString()); else HttpContext.Session.SetString("OpisPostu", "");
+
+            if (dodajTagTxt == null)
             {
                 errorMessage = "brak tagu!";
                 //dodaæ przywracanie wartoœci w labelu!
@@ -86,7 +91,10 @@ namespace InstPlusEntityFr.Pages.DodajPost
                 //zapisuje do sesji zserializowane tagi z nowym
                 listaTagowJSON = JsonConvert.SerializeObject(listaDodTagow);
                 HttpContext.Session.SetString("ListaTagow", listaTagowJSON);
+
             }
+            this.OnGet();
+
             return Page();
         }
 

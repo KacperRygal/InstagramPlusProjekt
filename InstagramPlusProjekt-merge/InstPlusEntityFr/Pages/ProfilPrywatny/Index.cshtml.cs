@@ -119,9 +119,16 @@ namespace InstPlusEntityFr.Pages.ProfilPrywatny
             return RedirectToPage("/WyswObserwowanych/Index");
         }
 
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        //WYŒWIETLANIE OBSERWOWANYCH
-        public IActionResult OnPostWyswStatystykiBtn()
+		////////////////////////////////////////////////////////////////////////////////////////////////////
+		//WYŒWIETLANIE OBSERWOWANYCH
+		public IActionResult OnPostWyswObserwujacychBtn()
+		{
+			return RedirectToPage("/WyswObserwujacych/Index");
+		}
+
+		////////////////////////////////////////////////////////////////////////////////////////////////////
+		//WYŒWIETLANIE OBSERWOWANYCH
+		public IActionResult OnPostWyswStatystykiBtn()
         {
             return RedirectToPage("/StatystykiAdmin/Index");
         }

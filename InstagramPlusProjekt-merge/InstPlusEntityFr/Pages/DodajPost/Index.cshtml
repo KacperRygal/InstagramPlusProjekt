@@ -23,9 +23,10 @@
     <label>@Model.UzytkownikTworzacy</label>
     <div style="margin-bottom: 50px;">
         <p>dodaj tagi:</p>
-        <form method="post" asp-page-handler="AppendTag">
+        <form method="post" asp-page-handler="AppendTag" id="tagForm" >
             <input type="text" id="dodajTagTxt" name="dodajTagTxt" />
-            <input type="submit" value="DODAJ TAG >" asp-page-handler="AppendTag" />
+             <input type="hidden" id="opisTxt2" name="opisTxt2"/>
+            <input type="submit" value="DODAJ TAG >" asp-page-handler="AppendTag"  />
         </form>
         <label>@Model.DodajTagTxt</label>
     </div>
@@ -36,7 +37,7 @@
             <br /><br />
             <label>Opis:</label>
             <br /><br />
-            <textarea id="OpisTxt" name="dodajOpisTxt" rows="4" cols="150" style="resize: none;"></textarea>
+            <textarea id="OpisTxt" name="OpisTxt" rows="4" cols="150" style="resize: none;">@Model.DodajOpisTxt</textarea>
             <br /><br />
             <input type="submit" value="OPUBLIKUJ >" asp-page-handler="OpublikujBtn" />
         </form>
@@ -44,6 +45,12 @@
 </div>
 
 <script>
+  document.getElementById("tagForm").addEventListener("submit", function (e) {
+        var opisTxtValue = document.getElementById("OpisTxt").value
+        document.getElementById("opisTxt2").value = opisTxtValue;
+    });
+
+
     document.getElementById("OpisTxt").addEventListener("keydown", function (e) {
         if (e.keyCode === 13) { // KeyCode for Enter key
             e.preventDefault();

@@ -2847,11 +2847,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Pulpit\\InstagramPlusProjekt-merge\\InstPlusEntityFr\\InstPlusEntityFr.csproj",
+      "projectUniqueName": "G:\\Pulpit\\InstagramPlusProjekt-MERGE\\InstagramPlusProjekt-merge\\InstPlusEntityFr\\InstPlusEntityFr.csproj",
       "projectName": "InstPlusEntityFr",
-      "projectPath": "G:\\Pulpit\\InstagramPlusProjekt-merge\\InstPlusEntityFr\\InstPlusEntityFr.csproj",
+      "projectPath": "G:\\Pulpit\\InstagramPlusProjekt-MERGE\\InstagramPlusProjekt-merge\\InstPlusEntityFr\\InstPlusEntityFr.csproj",
       "packagesPath": "C:\\Users\\Karol\\.nuget\\packages\\",
-      "outputPath": "G:\\Pulpit\\InstagramPlusProjekt-merge\\InstPlusEntityFr\\obj\\",
+      "outputPath": "G:\\Pulpit\\InstagramPlusProjekt-MERGE\\InstagramPlusProjekt-merge\\InstPlusEntityFr\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Karol\\AppData\\Roaming\\NuGet\\NuGet.Config",

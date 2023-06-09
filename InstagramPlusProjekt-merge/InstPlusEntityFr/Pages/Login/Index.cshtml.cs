@@ -28,7 +28,7 @@ namespace Strona.Pages.Login
 
             if (nowyUzytkownik.Haslo.Length == 0 || nowyUzytkownik.Nazwa.Length == 0)
             {
-                errorMessage = "Pola nie mogπ byÊ puste!";
+                errorMessage = "Pola nie mogƒÖ byƒá puste!";
                 return;
             }
 
@@ -41,10 +41,10 @@ namespace Strona.Pages.Login
                 {
                     bazaInstagram.Uzytkownicy.Add(nowyUzytkownik);
                     bazaInstagram.SaveChanges();
-                    errorMessage = "Udalo sie dodac uzytkownika! Mozesz sie zalogowaÊ na swoje konto.";
+                    errorMessage = "Udalo sie dodac uzytkownika! Mozesz sie zalogowaƒá na swoje konto.";
                 }
-                else if (!czy_dobry_login) errorMessage = "Has≥o musi zawieraÊ 8 znakÛw, wielka i ma≥π litere oraz liczbÍ";
-                else errorMessage = "Has≥o musi zawieraÊ 8 znakÛw, wielka i ma≥π litere oraz liczbÍ";
+                else if (!czy_dobry_login) errorMessage = "Login musi byƒá kr√≥tszy ni≈º 40 znak√≥w!";
+                else errorMessage = "Has≈Ço musi zawieraƒá 8 znak√≥w, wielka i ma≈ÇƒÖ litere oraz liczbƒô";
             }
             else
             {
@@ -66,14 +66,14 @@ namespace Strona.Pages.Login
 
             if (nowyUzytkownik.Haslo.Length == 0 || nowyUzytkownik.Nazwa.Length == 0)
             {
-                errorMessage = "Pola nie mogπ byÊ puste!";
+                errorMessage = "Pola nie mogƒÖ byƒá puste!";
 			}
 
-            Uzytkownik uz = bazaInstagram.Uzytkownicy.Where(u => u.Nazwa == nowyUzytkownik.Nazwa && u.Haslo == nowyUzytkownik.Haslo).First();
+            Uzytkownik uz = bazaInstagram.Uzytkownicy.Where(u => u.Nazwa == nowyUzytkownik.Nazwa && u.Haslo == nowyUzytkownik.Haslo).FirstOrDefault();
 
             if (uz == null)
             {
-                errorMessage = "Niepoprawny login lub has≥o!";
+                errorMessage = "Niepoprawny login lub has≈Ço!";
             }
             else
             {
@@ -85,7 +85,7 @@ namespace Strona.Pages.Login
             }
             else
             {
-                errorMessage = "Jesteú juø zalogowany.";
+                errorMessage = "Jeste≈õ ju≈º zalogowany.";
             }
         }
    

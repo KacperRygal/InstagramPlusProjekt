@@ -48,16 +48,16 @@ namespace InstPlusEntityFr.Migrations
                 type: "int",
                 nullable: false,
                 oldClrType: typeof(int),
-                oldType: "int")
-                .OldAnnotation("SqlServer:Identity", "1, 1");
+                oldType: "int");
+
 
             migrationBuilder.AddColumn<int>(
                 name: "TagUzytkownikaId",
                 table: "TagiUzytkownikow",
                 type: "int",
                 nullable: false,
-                defaultValue: 0)
-                .Annotation("SqlServer:Identity", "1, 1");
+                defaultValue: 0);
+          
 
             migrationBuilder.AddPrimaryKey(
                 name: "PK_TagiUzytkownikow",
@@ -112,8 +112,8 @@ namespace InstPlusEntityFr.Migrations
                 type: "int",
                 nullable: false,
                 oldClrType: typeof(int),
-                oldType: "int")
-                .Annotation("SqlServer:Identity", "1, 1");
+                oldType: "int");
+                
 
             migrationBuilder.AddColumn<string>(
                 name: "Nazwa",

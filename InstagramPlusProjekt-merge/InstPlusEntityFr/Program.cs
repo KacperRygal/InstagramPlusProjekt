@@ -28,7 +28,7 @@ app.UseStaticFiles(new StaticFileOptions
     RequestPath = "/ImgUploads"
 });
 
-
+app.UseStaticFiles();
 
 app.UseRouting();
 

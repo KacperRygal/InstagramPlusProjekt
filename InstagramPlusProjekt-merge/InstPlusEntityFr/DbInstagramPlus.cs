@@ -11,23 +11,24 @@ namespace InstPlusEntityFr
         public DbSet<PolubienieKomentarza> PolubieniaKomentarzy { get; set; }
         public DbSet<Obserwowany> Obserwowani { get; set; }
         public DbSet<Obserwujacy> Obserwujacy { get; set; }
-
-        //many-many
         public DbSet<TagPostu> TagiPostow { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<PolubieniePosta>().HasKey(e => new { e.PostId, e.UzytkownikId }); //czy to jest ok? nie wiem - śmieć daje taki błąd jak dam 2 razy [Key] albo nie dam wcale >:( : The entity type 'PolubienieKomentarza' requires a primary key to be defined. If you intended to use a keyless entity type, call 'HasNoKey' in 'OnModelCreating'. For more information on keyless entity types, see https://go.microsoft.com/fwlink/?linkid=2141943.
+            modelBuilder.Entity<PolubieniePosta>().HasKey(e => new { e.PostId, e.UzytkownikId }); 
             modelBuilder.Entity<PolubienieKomentarza>().HasKey(e => new { e.KomentarzId, e.UzytkownikId });
-            modelBuilder.Entity<Obserwujacy>().HasKey(e => new { e.ObserwatorId, e.ObserwowanyId }); //(jebana kotwica - kangurek kao reference) kurwaaaaaaaaa znowu błąd wtf: A key cannot be configured on 'Obserwujacy' because it is a derived type. The key must be configured on the root type 'Obserwowany'. If you did not intend for 'Obserwowany' to be included in the model, ensure that it is not referenced by a DbSet property on your context, referenced in a configuration call to ModelBuilder, or referenced from a navigation on a type that is included in the model.
+            modelBuilder.Entity<Obserwujacy>().HasKey(e => new { e.ObserwatorId, e.ObserwowanyId }); 
             modelBuilder.Entity<Obserwowany>().HasKey(e => new { e.ObserwatorId, e.ObserwowanyId });
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //warto wkleić swojego ConnStr ;)))
-            //optionsBuilder.UseSqlServer("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=F:\\C#\\Bazy\\Tymczasowe\\InstagramPlus.mdf;Integrated Security=True;Connect Timeout=30");
-            optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=InstagramPlus;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False ;MultipleActiveResultSets=True");
+            //Nie dodawać niczego na koniec
+            //tylko wkleić swojego stringa
+
+
+            optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=InstagramPlus;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False"
+                + ";MultipleActiveResultSets=True");
 
         }
     }
