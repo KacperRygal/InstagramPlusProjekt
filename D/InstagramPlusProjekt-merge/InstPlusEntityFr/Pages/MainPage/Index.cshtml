@@ -1,0 +1,126 @@
+﻿@page
+@model InstPlusEntityFr.Pages.MainPage.IndexModel
+@{
+}
+<head>
+
+    <style>
+    .image-div {
+        margin-bottom: 10px;
+        display: flex; 
+        align-items: center; 
+    }
+
+    .img {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .opis {
+        font-weight: bold;
+    }
+
+    .nazwa {
+        font-style: italic;
+        margin-left: 10px; 
+    }
+
+    .komentarze {
+        margin-top: 10px;
+    }
+
+    .komentarz {
+        margin-bottom: 5px;
+    }
+
+    .polubienia {
+        display: flex; 
+        align-items: center; 
+        margin-top: 10px;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+    <div id="kontener"></div>
+
+    
+    <script>
+    var postsWithComments = @Html.Raw(Model.getPosty());
+    var container = document.getElementById("kontener");
+
+    for (var i = 0; i < postsWithComments.length; i++) {
+        var imageDiv = document.createElement("div");
+        imageDiv.className = "image-div";
+
+        var imageavatar = document.createElement("img");
+        imageavatar.className = "imgavatar";
+        imageavatar.width = "50";
+        imageavatar.height = "50";
+        imageavatar.src = postsWithComments[i].ImageAvatar;
+
+        var image = document.createElement("img");
+        image.className = "img";
+        image.width = "500";
+        image.height = "450";
+        image.src = postsWithComments[i].Image;
+
+        var opis = document.createElement("label");
+        opis.className = "opis";
+        opis.innerHTML = postsWithComments[i].Opis;
+
+        var nazwa = document.createElement("label");
+        nazwa.className = "nazwa";
+        nazwa.innerHTML = postsWithComments[i].Nazwa;
+
+
+
+        var komentarzeDiv = document.createElement("div");
+        komentarzeDiv.className = "komentarze";
+
+        if (postsWithComments[i].Komentarze) {
+            for (var j = 0; j < postsWithComments[i].Komentarze.length; j++) {
+                var komentarz = document.createElement("div");
+                komentarz.className = "komentarz";
+                komentarz.innerHTML = postsWithComments[i].KomentarzeTresc[j];
+
+                var imagekom = document.createElement("img");
+                imagekom.className = "imgkom";
+                imagekom.width = "40";
+                imagekom.height = "40";
+                imagekom.src = postsWithComments[i].KomentarzeZDJ[j];
+
+                var komentarzAutor = document.createElement("div");
+                komentarzAutor.className = "komentarzAutor";
+                komentarzAutor.innerHTML = postsWithComments[i].KomentarzeAutor[j];
+
+                komentarzeDiv.appendChild(komentarzAutor);
+                komentarzeDiv.appendChild(imagekom);
+                komentarzeDiv.appendChild(komentarz);
+                
+                
+            }
+        }
+
+        var polubienia = document.createElement("span");
+        polubienia.className = "polubienia";
+        polubienia.innerHTML = "Polubienia: " + postsWithComments[i].IloscPolubien;
+
+        imageDiv.appendChild(image);
+        container.appendChild(imageavatar);
+        container.appendChild(nazwa);
+        container.appendChild(imageDiv);
+        container.appendChild(polubienia);
+        container.appendChild(opis);
+        container.appendChild(komentarzeDiv);
+        
+    }
+</script>
+</body>
+
+
+<script>
+    function selectFile() {
+        document.getElementById("uploadedFile").click();
+    }
+</script>

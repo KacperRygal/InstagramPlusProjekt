@@ -1,0 +1,32 @@
+﻿@page
+@model InstPlusEntityFr.Pages.WyswObserwujacych.IndexModel
+@{
+}
+
+<h2>Użytkownicy którzy cię obserwują:</h2>
+<table class='table'>
+    <thead>
+        <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.listaUzytkownikow)
+        {
+            <tr>
+                <td>
+                    <img class="img" id="previewImage" src=@Url.Content(item.Zdjecie) alt="Zdjecie profilowe" width="50" height="50" />
+                </td>
+                <td>@item.Nazwa</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div style="text-align: right">
+    <form asp-page-handler="AnulujBtn">
+        <input type="submit" value="WRÓĆ DO PROFILU >" asp-page-handler="AnulujBtn" />
+    </form>
+</div>

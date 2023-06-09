@@ -1,0 +1,31 @@
+﻿@page
+@model InstPlusEntityFr.Pages.ZmianaZdjecia.IndexModel
+
+<div style="text-align: center">
+    <h1 class="display-4">Zmień zdjęcie profilowe</h1>
+    <div style="margin-bottom: 30px;">
+        <form method="post" enctype="multipart/form-data" asp-page-handler="ZmienZdjecieBtn">
+            <input type="file" accept="image/*" onchange="showPreview(event)" name="UploadedImage" />
+            <br />
+            <div style="width: 200px; height: 200px; overflow: hidden; display: inline-block;">
+                <img id="previewImage" src="#" alt="Preview" style="width: auto; height: 100%; object-fit: cover; object-position: center center; display: none;" />
+            </div>
+            <br /><br />
+            <input type="submit" value="ANULUJ" asp-page-handler="AnulujBtn" />
+            <input type="submit" value="ZMIEŃ ZDJĘCIE >" asp-page-handler="ZmienZdjecieBtn" />
+        </form>
+    </div>
+</div>
+
+<script>
+    function showPreview(event) {
+        var input = event.target;
+        var reader = new FileReader();
+        reader.onload = function () {
+            var img = document.getElementById('previewImage');
+            img.src = reader.result;
+            img.style.display = 'block';
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+</script>

@@ -1,0 +1,44 @@
+﻿@page
+@model InstPlusEntityFr.Pages.StatystykiAdmin.IndexModel
+@{
+}
+<h2>Raport Administratora Instagram Plus:</h2>
+<table class='table'>
+    <thead>
+        <tr>
+            <th></th>
+            <th>ostatnie 24h</th>
+            <th>ostatni tydzień</th>
+            <th>ostatni miesiąc</th>
+            <th>ostatnie 6 miesięcy</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>dodane posty</td>
+            @foreach(var item in Model.IlosciDodPostow)
+            {
+                <td>@item</td>
+            }
+        </tr>
+        <tr>
+            <td>dodane komentarze</td>
+            @foreach (var item in Model.IlosciDodKomentarzy)
+            {
+                <td>@item</td>
+            }
+        </tr>
+        <tr>
+            <td>dodane polubienia</td>
+            @foreach (var item in Model.IlosciDodPolubien)
+            {
+                <td>@item</td>
+            }
+        </tr>
+    </tbody>
+</table>
+<div style="text-align: right">
+    <form asp-page-handler="AnulujBtn">
+        <input type="submit" value="WRÓĆ DO PROFILU >" asp-page-handler="AnulujBtn" />
+    </form>
+</div>
