@@ -14,8 +14,9 @@ namespace InstagramPlusProjekt.Pages
 
         public void OnGet()
         {
+            Response.Redirect("/MainPage/Index");
         }
 
-		
-	}
+
+    }
 }

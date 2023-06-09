@@ -84,7 +84,8 @@ namespace InstPlusEntityFr.Pages.MainPage
                     post.Image = @Url.Content(idpost.Zdjecie);
                     post.Opis = idpost.Opis;
                     post.ImageAvatar = @Url.Content(db.Uzytkownicy.Where(u => u.UzytkownikId == idpost.UzytkownikId).FirstOrDefault().Zdjecie);
-                    post.Nazwa = db.Uzytkownicy.Where(u => u.UzytkownikId == idpost.UzytkownikId).FirstOrDefault().Nazwa;
+					if (post.ImageAvatar == null) post.ImageAvatar = "/ImgUploads/userTmpImg.jpg";
+					post.Nazwa = db.Uzytkownicy.Where(u => u.UzytkownikId == idpost.UzytkownikId).FirstOrDefault().Nazwa;
                     post.IloscPolubien = db.PolubieniaPostow.Count(u => u.PostId == idpost.PostId);
                     var tempKom = db.Komentarze.Where(u => u.PostId == idpost.PostId);
                     foreach (var kom in tempKom)
@@ -157,6 +158,7 @@ namespace InstPlusEntityFr.Pages.MainPage
 					post.Opis = idpost.Opis;
 					post.Data = idpost.DataPublikacji;
 					post.ImageAvatar = @Url.Content(db.Uzytkownicy.Where(u => u.UzytkownikId == idpost.UzytkownikId).FirstOrDefault().Zdjecie);
+					if (post.ImageAvatar == null) post.ImageAvatar = "/ImgUploads/userTmpImg.jpg";
 					post.Nazwa = db.Uzytkownicy.Where(u => u.UzytkownikId == idpost.UzytkownikId).FirstOrDefault().Nazwa;
 					post.IloscPolubien = db.PolubieniaPostow.Count(u => u.PostId == idpost.PostId);
 					var tempKom = db.Komentarze.Where(u => u.PostId == idpost.PostId);

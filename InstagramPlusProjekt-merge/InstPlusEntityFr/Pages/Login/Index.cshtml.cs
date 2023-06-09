@@ -7,10 +7,13 @@ using System.Data.SqlClient;
 using System.Reflection.Metadata;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 using static System.Net.Mime.MediaTypeNames;
+using System.Security.Cryptography;
+using System.Text;
 
 
 namespace Strona.Pages.Login
 {
+
     public class IndexModel : PageModel
     {
         Uzytkownik nowyUzytkownik = new Uzytkownik();
@@ -38,7 +41,12 @@ namespace Strona.Pages.Login
                 bool czy_dobry_login = nowyUzytkownik.testLoginu();
 
                 if (czy_silne_haslo && czy_dobry_login)
+                    
                 {
+                     string pass = GetMd5Hash(nowyUzytkownik.Haslo);
+                    nowyUzytkownik.Haslo = pass;
+                    //Console.WriteLine(nowyUzytkownik.Haslo);
+
                     bazaInstagram.Uzytkownicy.Add(nowyUzytkownik);
                     bazaInstagram.SaveChanges();
                     errorMessage = "Udalo sie dodac uzytkownika! Mozesz sie zalogować na swoje konto.";
@@ -54,7 +62,7 @@ namespace Strona.Pages.Login
         }
         public void OnPostWyloguj()
         {
-            Console.Write("Wylogowywuje");
+            //Console.Write("Wylogowywuje");
             HttpContext.Session.Clear();
             Response.Redirect("/MainPage/Index");
         }
@@ -67,11 +75,13 @@ namespace Strona.Pages.Login
             if (nowyUzytkownik.Haslo.Length == 0 || nowyUzytkownik.Nazwa.Length == 0)
             {
                 errorMessage = "Pola nie mogą być puste!";
-			}
+                }
+                string pass = GetMd5Hash(nowyUzytkownik.Haslo);
+                nowyUzytkownik.Haslo = pass;
 
-            Uzytkownik uz = bazaInstagram.Uzytkownicy.Where(u => u.Nazwa == nowyUzytkownik.Nazwa && u.Haslo == nowyUzytkownik.Haslo).FirstOrDefault();
-
-            if (uz == null)
+                Uzytkownik uz = bazaInstagram.Uzytkownicy.Where(u => u.Nazwa == nowyUzytkownik.Nazwa && u.Haslo == nowyUzytkownik.Haslo).FirstOrDefault();
+             //   bool isPasswordCorrect = VerifyMd5Hash(Request.Form["haslo"], nowyUzytkownik.Haslo);
+                if (uz == null)
             {
                 errorMessage = "Niepoprawny login lub hasło!";
             }
@@ -79,7 +89,7 @@ namespace Strona.Pages.Login
             {
                 errorMessage = "Zalogowano";
                 HttpContext.Session.SetInt32("UzytkownikId", uz.UzytkownikId);
-                Console.WriteLine(HttpContext.Session.GetInt32("UzytkownikId"));
+                //Console.WriteLine(HttpContext.Session.GetInt32("UzytkownikId"));
                 Response.Redirect("/MainPage/Index");
 			}
             }
@@ -88,6 +98,26 @@ namespace Strona.Pages.Login
                 errorMessage = "Jesteś już zalogowany.";
             }
         }
-   
+
+        // Metoda do zahaszowania hasła przy użyciu MD5
+        public static string GetMd5Hash(string input)
+        {
+            using (var md5 = MD5.Create())
+            {
+                byte[] inputBytes = Encoding.UTF8.GetBytes(input);
+                byte[] hashBytes = md5.ComputeHash(inputBytes);
+
+                StringBuilder builder = new StringBuilder();
+
+                for (int i = 0; i < hashBytes.Length; i++)
+                {
+                    builder.Append(hashBytes[i].ToString("x2"));
+                }
+
+                return builder.ToString();
+            }
+        }
     }
+
+
 }
