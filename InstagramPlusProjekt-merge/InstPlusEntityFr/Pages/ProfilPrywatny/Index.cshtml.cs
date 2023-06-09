@@ -38,7 +38,7 @@ namespace InstPlusEntityFr.Pages.ProfilPrywatny
                 errorMessage = HttpContext.Session.GetString("INFO");
                 HttpContext.Session.Remove("INFO");
             }
-
+            HttpContext.Session.Remove("OpisPostu");
             //wyszukanie zalogowanego u¿ytkownika
             int zalogowanyId = (int)HttpContext.Session.GetInt32("UzytkownikId");
             zalogowany = db.Uzytkownicy.Where(u => u.UzytkownikId == zalogowanyId).FirstOrDefault();

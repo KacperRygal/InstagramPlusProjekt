@@ -117,8 +117,8 @@ namespace InstPlusEntityFr.Pages.MainPage
                     var post = postsWithComments[losowyIndex];
                     mieszanaLista.Add(post);
                     postsWithComments.RemoveAt(losowyIndex);
-					Console.WriteLine(post.Nazwa);
-					Console.WriteLine(mieszanaLista[mieszanaLista.Count-1].Nazwa);
+					//Console.WriteLine(post.Nazwa);
+					//Console.WriteLine(mieszanaLista[mieszanaLista.Count-1].Nazwa);
                 }
 				//przepisanie do koncowej listy (algorytm)
 				foreach (var post in mieszanaLista)
@@ -136,7 +136,7 @@ namespace InstPlusEntityFr.Pages.MainPage
 							break;
 						}
 					}
-                    Console.WriteLine(post.Nazwa);
+                   // Console.WriteLine(post.Nazwa);
                 }
             }
 			//to kiedy niezalogowany uzytkownik
@@ -212,7 +212,7 @@ namespace InstPlusEntityFr.Pages.MainPage
 					u.Zdjecie = filePath;
 				}
 				db.SaveChanges();
-				Console.WriteLine(filePath);
+				//Console.WriteLine(filePath);
 			}
 
 			return Page();

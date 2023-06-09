@@ -39,10 +39,7 @@ namespace InstPlusEntityFr.Pages.DodajPost
             {
                 DodajOpisTxt = HttpContext.Session.GetString("OpisPostu");
             }
-            else
-            {
-                DodajOpisTxt = "";
-            }
+            
             var zalogowanyUsr = db.Uzytkownicy.Where(u => u.UzytkownikId == HttpContext.Session.GetInt32("UzytkownikId")).First();
             UzytkownikTworzacy = $"u¿ytkownik: {zalogowanyUsr.Nazwa}";
         }
@@ -100,15 +97,16 @@ namespace InstPlusEntityFr.Pages.DodajPost
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         //PUBLIKOWANIE POSTU
-        public async Task<IActionResult> OnPostOpublikujBtn(string dodajOpisTxt)
+        public async Task<IActionResult> OnPostOpublikujBtn(string OpisTxt)
         {
+            Console.WriteLine(OpisTxt);
             string? listaTagowJSON = HttpContext.Session.GetString("ListaTagow");
             listaDodTagow = JsonConvert.DeserializeObject<HashSet<string>>((string)listaTagowJSON);
 
             //trzeba zrobiæ blokade ¿eby niezalogowany u¿ytkownik nie móg³ wejœæ na tê stronê
-            if (HttpContext.Session.GetString("OpisPostu") != null) dodajOpisTxt = HttpContext.Session.GetString("OpisPostu");
+            if (HttpContext.Session.GetString("OpisPostu") != null && OpisTxt!="" && HttpContext.Session.GetString("OpisPostu")!="") OpisTxt = HttpContext.Session.GetString("OpisPostu");
             
-            if (dodajOpisTxt == null)
+            if (OpisTxt == null)
             {
                 errorMessage = "Post musi zawieraæ opis!";
         
@@ -125,7 +123,9 @@ namespace InstPlusEntityFr.Pages.DodajPost
             {
                 Post nowyPost = new Post();
                 nowyPost.UzytkownikId = (int)HttpContext.Session.GetInt32("UzytkownikId");
-                nowyPost.Opis = dodajOpisTxt;
+                Console.WriteLine("T"+OpisTxt);
+
+                nowyPost.Opis = OpisTxt;
 
                 //trzeba dodawaæ te¿ te tagi u¿ytkownikowi
 
@@ -162,6 +162,7 @@ namespace InstPlusEntityFr.Pages.DodajPost
 
                 HttpContext.Session.SetString("INFO", "Poprawnie dodano nowy post!"); //do wyœwietlwnia na profilu/g³ównej
                 return RedirectToPage("/ProfilPrywatny/Index");
+
             }
             return Page();
         }
