@@ -20,6 +20,9 @@
             <br />
         </div>
     }
+    <div style="text-align: right">   
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Login/Index"><button style="background-color: lightsteelblue;">WYLOGUJ</button></a>
+     </div>
     <div style="text-align: left">
         <div style="display: flex; align-items: center;">
             <div style="width: 150px; height: 150px; overflow: hidden; margin-right: 10px;">
@@ -53,8 +56,10 @@
         </form>
         @if (Model.CzyAdministrator)
         {
+             
             <br />
             <div style="text-align: right">
+                <a class="nav-link text-dark" asp-area="" asp-page="/Uzytkownicy/Index"><button type="button">UŻYTKOWNICY ></button></a>
                 <form asp-page-handler="WyswStatystykiBtn">
                     <input type="submit" value="WYŚWIETL RAPORTY >" asp-page-handler="WyswStatystykiBtn" />
                 </form>
