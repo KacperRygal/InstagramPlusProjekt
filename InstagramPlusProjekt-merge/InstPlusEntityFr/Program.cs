@@ -8,7 +8,7 @@ builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddSession(options=>
 {
-    options.IdleTimeout = TimeSpan.FromMinutes(100);
+    options.IdleTimeout = TimeSpan.MaxValue;
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;  
 });
