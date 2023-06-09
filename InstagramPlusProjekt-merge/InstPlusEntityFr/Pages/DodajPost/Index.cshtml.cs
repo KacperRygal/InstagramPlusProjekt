@@ -101,8 +101,10 @@ namespace InstPlusEntityFr.Pages.DodajPost
         {
             Console.WriteLine(OpisTxt);
             string? listaTagowJSON = HttpContext.Session.GetString("ListaTagow");
-            listaDodTagow = JsonConvert.DeserializeObject<HashSet<string>>((string)listaTagowJSON);
-
+            if (!string.IsNullOrEmpty(listaTagowJSON))
+            {
+                listaDodTagow = JsonConvert.DeserializeObject<HashSet<string>>(listaTagowJSON);
+            }
             //trzeba zrobiæ blokade ¿eby niezalogowany u¿ytkownik nie móg³ wejœæ na tê stronê
             if (HttpContext.Session.GetString("OpisPostu") != null && OpisTxt!="" && HttpContext.Session.GetString("OpisPostu")!="") OpisTxt = HttpContext.Session.GetString("OpisPostu");
             
@@ -111,7 +113,7 @@ namespace InstPlusEntityFr.Pages.DodajPost
                 errorMessage = "Post musi zawieraæ opis!";
         
             }
-            else if (listaDodTagow == null) //nie dzia³a
+            else if (string.IsNullOrEmpty(listaTagowJSON)) //nie dzia³a
             {
                 errorMessage = "Post musi zawieraæ przynajmniej 1 tag!";
             }
