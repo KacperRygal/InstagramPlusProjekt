@@ -18,6 +18,7 @@ namespace InstPlusEntityFr.Pages.ProfilPrywatny
 
         public bool CzyAdministrator { get; set; } //flagi dla przycisków
         public bool CzyVip { get; set; }
+        public String KomunikatVip { get; set; } 
 
         public String errorMessage = "";
 
@@ -78,6 +79,22 @@ namespace InstPlusEntityFr.Pages.ProfilPrywatny
             IloscPolubZalogow = db.PolubieniaKomentarzy.Where(p => p.UzytkownikId == zalogowanyId).Count() +
                 db.PolubieniaPostow.Where(p => p.UzytkownikId == zalogowanyId).Count();
             IloscPostowZalogow = db.Posty.Where(p=>p.UzytkownikId==zalogowanyId).Count();
+
+            //wyœwietlanie daty trwania subskrypcji VIP
+            if (CzyVip)
+                KomunikatVip = "Subskrypcja VIP wa¿na do: " + zalogowany.DataVipDo;
+            else
+            {
+                if (zalogowany.DataVipDo < DateTime.Now)
+                {
+                    KomunikatVip = "Subskrypcja VIP wygas³a!";
+                    zalogowany.DataVipDo = null;
+                }
+                else
+                {
+                    KomunikatVip = "zakup subskrypcjê VIP aby pozbyæ siê reklam!";
+                }
+            }
 
             //prze³adowanie strony
             Page();

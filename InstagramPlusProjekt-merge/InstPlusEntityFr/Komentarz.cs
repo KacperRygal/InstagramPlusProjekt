@@ -15,5 +15,12 @@ namespace InstPlusEntityFr
         public int UzytkownikId { get; set; } //autor komentarza
 
         public int PostId { get; set; } //post komentarza
+
+        public DateTime DataPublikacji { get; private set; }
+
+        public Komentarz()
+        {
+            DataPublikacji = DateTime.Now;
+        }
     }
 }

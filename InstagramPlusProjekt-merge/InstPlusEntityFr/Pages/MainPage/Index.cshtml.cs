@@ -27,7 +27,15 @@ namespace InstPlusEntityFr.Pages.MainPage
 	{
 		private readonly IWebHostEnvironment _environment;
 		DbInstagramPlus db = new DbInstagramPlus();
-		public String getPosty()
+
+		//do stopki reklamowej
+		public bool CzyVip { get; set; }
+		public bool CzyZalogowany { get; set; }
+		public string ZdjecieZalogowanego { get; set; }
+		public string LoginZalogowanego { get; set; }
+        public String WyswReklama { get; set; }
+
+        public String getPosty()
 		{
 
             return JsonConvert.SerializeObject(postsWithComments);
@@ -41,8 +49,16 @@ namespace InstPlusEntityFr.Pages.MainPage
             var zalogowany = db.Uzytkownicy.Where(u => u.UzytkownikId == (int?)HttpContext.Session.GetInt32("UzytkownikId")).FirstOrDefault();
 			if (zalogowany!=null)
 			{
-				//zliczenie tagów
-				foreach (var pol in db.PolubieniaPostow.Where(u => u.UzytkownikId == zalogowany.UzytkownikId))
+				CzyZalogowany = true;
+
+                //sprawdzenie czy ma siê wyœwietliæ reklama
+                if (zalogowany.DataVipDo == null || zalogowany.DataVipDo < DateTime.Now)
+                    CzyVip = false;
+                else
+                    CzyVip = true;
+
+                //zliczenie tagów
+                foreach (var pol in db.PolubieniaPostow.Where(u => u.UzytkownikId == zalogowany.UzytkownikId))
 				{
 					var post = db.Posty.Where(u => u.PostId == pol.PostId).Select(u => u.Tagi);
 					foreach (var p in post)
@@ -147,6 +163,9 @@ namespace InstPlusEntityFr.Pages.MainPage
 			//to kiedy niezalogowany uzytkownik
 			else
 			{
+				//nie ma VIP z automatu - reklamy
+				CzyZalogowany = false;
+				CzyVip = false;
 				//Tutaj Modu³ wyszukiwania tagu
 				var testowa = db.Posty.ToList();
 				if(inputValue!=null) testowa = db.TagiPostow.Include(tp => tp.Posty).Where(tp => tp.Nazwa == inputValue).SelectMany(tp => tp.Posty).ToList();
@@ -181,6 +200,36 @@ namespace InstPlusEntityFr.Pages.MainPage
 				}
 				postsWithComments = postsWithComments.OrderByDescending(x => x.Data).ToList();
             }
+
+			//sprawdzamy czy jest sens ³adowaæ reklamê
+			if (CzyVip == false)
+			{
+				Random rnd = new Random();
+				int wybranaReklama = rnd.Next(3);
+
+				switch (wybranaReklama)
+				{
+					default: //zabezpieczenie
+                        WyswReklama = "~/ImgUploads/_REKLAMA1.png";
+						break;
+					case 0:
+                        WyswReklama = "~/ImgUploads/_REKLAMA1.png";
+                        break;
+                    case 1:
+                        WyswReklama = "~/ImgUploads/_REKLAMA2.png";
+                        break;
+                    case 2:
+                        WyswReklama = "~/ImgUploads/_REKLAMA3.png";
+                        break;
+                }
+            }
+			
+			//wyœwietlamy jak ktoœ jest zalogowany kim jest - trzeba dodaæ w cshtml!!!!!!!
+			if(CzyZalogowany)
+			{
+				LoginZalogowanego = zalogowany.Nazwa;
+				ZdjecieZalogowanego = zalogowany.Zdjecie;
+			}
         }
 
             [BindProperty]

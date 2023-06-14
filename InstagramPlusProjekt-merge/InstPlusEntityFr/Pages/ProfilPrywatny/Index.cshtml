@@ -20,13 +20,10 @@
             <br />
         </div>
     }
-    <div style="text-align: right">   
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Login/Index"><button style="background-color: lightsteelblue;">WYLOGUJ</button></a>
-     </div>
     <div style="text-align: left">
         <div style="display: flex; align-items: center;">
             <div style="width: 150px; height: 150px; overflow: hidden; margin-right: 10px;">
-                <img class="img" id="previewImage" src=@Url.Content(@Model.ZdjecieProfilowe) alt="Zdjecie profilowe" style="width: 100%; height: 100%; object-fit: cover;" />
+                <img class="img" id="previewImage" src=@Url.Content(@Model.ZdjecieProfilowe) alt="Zdjecie profilowe" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;" />
             </div>
             <label class="display-6">@Model.LoginUzytkownika</label>
             @if (Model.CzyAdministrator)
@@ -45,6 +42,11 @@
         <form asp-page-handler="ZmienZdjecie">
             <input type="submit" value="ZMIEŃ ZDJĘCIE PROFILOWE >" asp-page-handler="ZmienZdjecie" />
         </form>
+        <div style="text-align: right">
+            <a class="nav-link text-dark" asp-area="" asp-page="/Login/Index"><button style="background-color: lightsteelblue;">WYLOGUJ</button></a>
+        </div>
+        <br>
+        <label class="display-9">@Model.KomunikatVip</label>
         <br><br>
         <div>
             <label>O mnie:</label>
@@ -55,8 +57,7 @@
             <input type="submit" value="ZMIEŃ OPIS >" asp-page-handler="ZmienOpisBtn" />
         </form>
         @if (Model.CzyAdministrator)
-        {
-             
+        {        
             <br />
             <div style="text-align: right">
                 <a class="nav-link text-dark" asp-area="" asp-page="/Uzytkownicy/Index"><button type="button">UŻYTKOWNICY ></button></a>

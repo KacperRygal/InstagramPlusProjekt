@@ -12,6 +12,7 @@ namespace InstPlusEntityFr
         public DbSet<Obserwowany> Obserwowani { get; set; }
         public DbSet<Obserwujacy> Obserwujacy { get; set; }
         public DbSet<TagPostu> TagiPostow { get; set; }
+        public DbSet<TagUzytkownika> TagiUzytkownikow { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

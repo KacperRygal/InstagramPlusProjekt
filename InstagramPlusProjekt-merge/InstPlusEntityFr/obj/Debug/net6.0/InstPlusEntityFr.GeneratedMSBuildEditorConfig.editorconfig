@@ -5,84 +5,85 @@ build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = InstPlusEntityFr
 build_property.RootNamespace = InstPlusEntityFr
-build_property.ProjectDir = G:\Pulpit\InstagramPlusProjekt-MERGE\InstagramPlusProjekt-merge\InstPlusEntityFr\
+build_property.ProjectDir = C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstagramPlusProjekt-merge\InstPlusEntityFr\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = G:\Pulpit\InstagramPlusProjekt-MERGE\InstagramPlusProjekt-merge\InstPlusEntityFr
+build_property.MSBuildProjectDirectory = C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstagramPlusProjekt-merge\InstPlusEntityFr
 build_property._RazorSourceGeneratorDebug = 
 
-[G:/Pulpit/InstagramPlusProjekt-MERGE/InstagramPlusProjekt-merge/InstPlusEntityFr/Pages/DodajPost/Index.cshtml]
+[C:/Users/Bogdan i Wiktor/Desktop/studia katowice/PBD/InstagramPlusProjekt/InstagramPlusProjekt-merge/InstPlusEntityFr/Pages/DodajPost/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRG9kYWpQb3N0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/Pulpit/InstagramPlusProjekt-MERGE/InstagramPlusProjekt-merge/InstPlusEntityFr/Pages/Error.cshtml]
+[C:/Users/Bogdan i Wiktor/Desktop/studia katowice/PBD/InstagramPlusProjekt/InstagramPlusProjekt-merge/InstPlusEntityFr/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/Pulpit/InstagramPlusProjekt-MERGE/InstagramPlusProjekt-merge/InstPlusEntityFr/Pages/Index.cshtml]
+[C:/Users/Bogdan i Wiktor/Desktop/studia katowice/PBD/InstagramPlusProjekt/InstagramPlusProjekt-merge/InstPlusEntityFr/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/Pulpit/InstagramPlusProjekt-MERGE/InstagramPlusProjekt-merge/InstPlusEntityFr/Pages/Login/Index.cshtml]
+[C:/Users/Bogdan i Wiktor/Desktop/studia katowice/PBD/InstagramPlusProjekt/InstagramPlusProjekt-merge/InstPlusEntityFr/Pages/Login/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/Pulpit/InstagramPlusProjekt-MERGE/InstagramPlusProjekt-merge/InstPlusEntityFr/Pages/MainPage/Index.cshtml]
+[C:/Users/Bogdan i Wiktor/Desktop/studia katowice/PBD/InstagramPlusProjekt/InstagramPlusProjekt-merge/InstPlusEntityFr/Pages/MainPage/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTWFpblBhZ2VcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/Pulpit/InstagramPlusProjekt-MERGE/InstagramPlusProjekt-merge/InstPlusEntityFr/Pages/OdblokujVip/Index.cshtml]
+[C:/Users/Bogdan i Wiktor/Desktop/studia katowice/PBD/InstagramPlusProjekt/InstagramPlusProjekt-merge/InstPlusEntityFr/Pages/OdblokujVip/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT2RibG9rdWpWaXBcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/Pulpit/InstagramPlusProjekt-MERGE/InstagramPlusProjekt-merge/InstPlusEntityFr/Pages/Privacy.cshtml]
+[C:/Users/Bogdan i Wiktor/Desktop/studia katowice/PBD/InstagramPlusProjekt/InstagramPlusProjekt-merge/InstPlusEntityFr/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/Pulpit/InstagramPlusProjekt-MERGE/InstagramPlusProjekt-merge/InstPlusEntityFr/Pages/ProfilPrywatny/Index.cshtml]
+[C:/Users/Bogdan i Wiktor/Desktop/studia katowice/PBD/InstagramPlusProjekt/InstagramPlusProjekt-merge/InstPlusEntityFr/Pages/ProfilPrywatny/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsUHJ5d2F0bnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/Pulpit/InstagramPlusProjekt-MERGE/InstagramPlusProjekt-merge/InstPlusEntityFr/Pages/ProfilPubliczny/Index.cshtml]
+[C:/Users/Bogdan i Wiktor/Desktop/studia katowice/PBD/InstagramPlusProjekt/InstagramPlusProjekt-merge/InstPlusEntityFr/Pages/ProfilPubliczny/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsUHVibGljem55XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/Pulpit/InstagramPlusProjekt-MERGE/InstagramPlusProjekt-merge/InstPlusEntityFr/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Bogdan i Wiktor/Desktop/studia katowice/PBD/InstagramPlusProjekt/InstagramPlusProjekt-merge/InstPlusEntityFr/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/Pulpit/InstagramPlusProjekt-MERGE/InstagramPlusProjekt-merge/InstPlusEntityFr/Pages/StatystykiAdmin/Index.cshtml]
+[C:/Users/Bogdan i Wiktor/Desktop/studia katowice/PBD/InstagramPlusProjekt/InstagramPlusProjekt-merge/InstPlusEntityFr/Pages/StatystykiAdmin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RhdHlzdHlraUFkbWluXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/Pulpit/InstagramPlusProjekt-MERGE/InstagramPlusProjekt-merge/InstPlusEntityFr/Pages/Uzytkownicy/Index.cshtml]
+[C:/Users/Bogdan i Wiktor/Desktop/studia katowice/PBD/InstagramPlusProjekt/InstagramPlusProjekt-merge/InstPlusEntityFr/Pages/Uzytkownicy/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXp5dGtvd25pY3lcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/Pulpit/InstagramPlusProjekt-MERGE/InstagramPlusProjekt-merge/InstPlusEntityFr/Pages/WyswObserwowanych/Index.cshtml]
+[C:/Users/Bogdan i Wiktor/Desktop/studia katowice/PBD/InstagramPlusProjekt/InstagramPlusProjekt-merge/InstPlusEntityFr/Pages/WyswObserwowanych/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV3lzd09ic2Vyd293YW55Y2hcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/Pulpit/InstagramPlusProjekt-MERGE/InstagramPlusProjekt-merge/InstPlusEntityFr/Pages/WyswObserwujacych/Index.cshtml]
+[C:/Users/Bogdan i Wiktor/Desktop/studia katowice/PBD/InstagramPlusProjekt/InstagramPlusProjekt-merge/InstPlusEntityFr/Pages/WyswObserwujacych/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcV3lzd09ic2Vyd3VqYWN5Y2hcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/Pulpit/InstagramPlusProjekt-MERGE/InstagramPlusProjekt-merge/InstPlusEntityFr/Pages/ZmianaZdjecia/Index.cshtml]
+[C:/Users/Bogdan i Wiktor/Desktop/studia katowice/PBD/InstagramPlusProjekt/InstagramPlusProjekt-merge/InstPlusEntityFr/Pages/ZmianaZdjecia/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcWm1pYW5hWmRqZWNpYVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/Pulpit/InstagramPlusProjekt-MERGE/InstagramPlusProjekt-merge/InstPlusEntityFr/Pages/_ViewImports.cshtml]
+[C:/Users/Bogdan i Wiktor/Desktop/studia katowice/PBD/InstagramPlusProjekt/InstagramPlusProjekt-merge/InstPlusEntityFr/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/Pulpit/InstagramPlusProjekt-MERGE/InstagramPlusProjekt-merge/InstPlusEntityFr/Pages/_ViewStart.cshtml]
+[C:/Users/Bogdan i Wiktor/Desktop/studia katowice/PBD/InstagramPlusProjekt/InstagramPlusProjekt-merge/InstPlusEntityFr/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/Pulpit/InstagramPlusProjekt-MERGE/InstagramPlusProjekt-merge/InstPlusEntityFr/Pages/Shared/_Layout.cshtml]
+[C:/Users/Bogdan i Wiktor/Desktop/studia katowice/PBD/InstagramPlusProjekt/InstagramPlusProjekt-merge/InstPlusEntityFr/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-mtf5i9ophq
