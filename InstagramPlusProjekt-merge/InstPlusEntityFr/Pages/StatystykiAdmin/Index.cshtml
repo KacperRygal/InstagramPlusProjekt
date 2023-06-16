@@ -35,6 +35,62 @@
                 <td>@item</td>
             }
         </tr>
+        <tr>
+            <td>autor postu o największej<br>liczbie komentarzy<br>(ilość komentarzy)</td>
+            @foreach (var item in Model.AutorzyPostowZNajwKoment)
+            {
+                <td>@item</td>
+            }
+        </tr>
+        <tr>
+            <td>autor postu o największej<br>liczbie polubień<br>(ilość polubień)</td>
+            @foreach (var item in Model.AutorzyPostowZNajwPolubien)
+            {
+                <td>@item</td>
+            }
+        </tr>
+        <tr>
+            <td>autor komentarza o największej<br>liczbie polubień<br>(ilość polubień)</td>
+            @foreach (var item in Model.AutorzyKomentZNajwPolubien)
+            {
+                <td>@item</td>
+            }
+        </tr>
+        <tr>
+            <td>użytkownik o największej<br>liczbie komentarzy<br>(ilość komentarzy)</td>
+            @foreach (var item in Model.UzytkownicyNajwKoment)
+            {
+                <td>@item</td>
+            }
+        </tr>
+        <tr>
+            <td>użytkownik o największej<br>liczbie postów<br>(ilość postów)</td>
+            @foreach (var item in Model.UzytkownicyNajwPostow)
+            {
+                <td>@item</td>
+            }
+        </tr>
+        <tr>
+            <td>najczęściej występujący<br>tag</td>
+            @foreach (var item in Model.NajczestszeTagi)
+            {
+                <td>@item</td>
+            }
+        </tr>
+        <tr>
+            <td>ilość postów<br>użytkowników VIP</td>
+            @foreach (var item in Model.PostyUzytkownikowVip)
+            {
+                <td>@item</td>
+            }
+        </tr>
+        <tr>
+            <td>użytkownik o największej<br>liczbie obserwujących</td>
+            @foreach (var item in Model.UzytkownicyNajwObserwujacych)
+            {
+                <td>@item</td>
+            }
+        </tr>
     </tbody>
 </table>
 <div style="text-align: right">
