@@ -1,6 +1,20 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
+using System;
+using System.IO;
+using System.Web;
+using iText.Html2pdf;
+using System.Web.Mvc;
+using iText.Kernel.Pdf;
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Element;
+using System.IO;
+using System.Text;
+using iText.Html2pdf;
+using iText.IO.Source;
+using iText.Kernel.Geom;
+using iText.Kernel.Pdf;
 
 namespace InstPlusEntityFr.Pages.StatystykiAdmin
 {
@@ -248,8 +262,15 @@ namespace InstPlusEntityFr.Pages.StatystykiAdmin
                 UzytkownicyNajwKoment.Add("---");
 
         }
+
+
+        public void OnPostConvertCurrentPageToPDF()
+        {
+            u
+        }
     }
 }
+    
 
 /* UWAGA
  * na tej stronie brakuje sporej iloœci statystyk
