@@ -39,37 +39,12 @@
         margin-top: 10px;
         font-weight: bold;
     }
-
-        body {
-            margin: 0;
-            padding-bottom: 60px; /* Dostosuj wartość padding-bottom do wysokości stopki */
-        }
-
-        .footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: #e0e0e0;
-            padding: 10px;
-            text-align: center;
-            transform: scale(0.4);
-            transform-origin: bottom;
-            margin-bottom: -10px; /* Ujemna wartość marginesu, równa wysokości stopki */
-        }
 </style>
-
 </head>
 <body>
     <div id="kontener"></div>
 
-    @if (Model.CzyVip == false)
-    {
-        <footer class="footer">
-            <img class="img" id="reklamaImg" src="@Url.Content(Model.WyswReklama)" alt="REKLAMA" style="width: 100%; height: auto; max-width: 100%; object-fit: contain;" />
-        </footer>
-    }
-
+    
     <script>
     var postsWithComments = @Html.Raw(Model.getPosty());
     var container = document.getElementById("kontener");
@@ -95,40 +70,77 @@
         opis.className = "opis";
         opis.innerHTML = postsWithComments[i].Opis;
 
-        var nazwa = document.createElement("a");
+        var nazwa = document.createElement("label");
         nazwa.className = "nazwa";
         nazwa.innerHTML = postsWithComments[i].Nazwa;
-        nazwa.href = "/ProfilPubliczny/Index?data="+ postsWithComments[i].Nazwa;
 
 
 
         var komentarzeDiv = document.createElement("div");
         komentarzeDiv.className = "komentarze";
 
-        if (postsWithComments[i].Komentarze) {
-            for (var j = 0; j < postsWithComments[i].Komentarze.length; j++) {
-                var komentarz = document.createElement("div");
-                komentarz.className = "komentarz";
-                komentarz.innerHTML = postsWithComments[i].KomentarzeTresc[j];
+        var maxComments = Math.min(postsWithComments[i].Komentarze.length, 2); // Maksymalnie 2 komentarze
+        var showAllComments = false; // Flaga wskazująca, czy pokazać wszystkie komentarze
 
-                var imagekom = document.createElement("img");
-                imagekom.className = "imgkom";
-                imagekom.width = "40";
-                imagekom.height = "40";
-                imagekom.src = postsWithComments[i].KomentarzeZDJ[j];
-                imagekom.style.borderRadius = "50%";
+        for (var j = 0; j < maxComments; j++) {
+            var komentarz = document.createElement("div");
+            komentarz.className = "komentarz";
+            komentarz.innerHTML = postsWithComments[i].KomentarzeTresc[j];
 
-                var komentarzAutor = document.createElement("div");
-                komentarzAutor.className = "komentarzAutor";
-                komentarzAutor.innerHTML = postsWithComments[i].KomentarzeAutor[j];
+            var imagekom = document.createElement("img");
+            imagekom.className = "imgkom";
+            imagekom.width = "40";
+            imagekom.height = "40";
+            imagekom.src = postsWithComments[i].KomentarzeZDJ[j];
+            imagekom.style.borderRadius = "50%";
 
-                komentarzeDiv.appendChild(komentarzAutor);
-                komentarzeDiv.appendChild(imagekom);
-                komentarzeDiv.appendChild(komentarz);
-                
-                
-            }
+            var komentarzAutor = document.createElement("div");
+            komentarzAutor.className = "komentarzAutor";
+            komentarzAutor.innerHTML = postsWithComments[i].KomentarzeAutor[j];
+
+            komentarzeDiv.appendChild(komentarzAutor);
+            komentarzeDiv.appendChild(imagekom);
+            komentarzeDiv.appendChild(komentarz);
         }
+
+        if (postsWithComments[i].Komentarze.length > 2) {
+            var pokazWiecej = document.createElement("div");
+            pokazWiecej.className = "pokazWiecej";
+            pokazWiecej.innerHTML = "Pokaż wszystkie komentarze";
+            pokazWiecej.setAttribute("data-post-index", i); // Dodanie atrybutu data-post-index
+            pokazWiecej.addEventListener("click", function (event) {
+                var postIndex = event.target.getAttribute("data-post-index");
+                var komentarzeDiv = event.target.parentNode;
+
+                // Usunięcie przycisku "Pokaż wszystkie komentarze"
+                komentarzeDiv.removeChild(event.target);
+
+                // Wyświetlenie wszystkich komentarzy
+                for (var j = 2; j < postsWithComments[postIndex].Komentarze.length; j++) {
+                    var komentarz = document.createElement("div");
+                    komentarz.className = "komentarz";
+                    komentarz.innerHTML = postsWithComments[postIndex].KomentarzeTresc[j];
+
+                    var imagekom = document.createElement("img");
+                    imagekom.className = "imgkom";
+                    imagekom.width = "40";
+                    imagekom.height = "40";
+                    imagekom.src = postsWithComments[postIndex].KomentarzeZDJ[j];
+                    imagekom.style.borderRadius = "50%";
+
+                    var komentarzAutor = document.createElement("div");
+                    komentarzAutor.className = "komentarzAutor";
+                    komentarzAutor.innerHTML = postsWithComments[postIndex].KomentarzeAutor[j];
+
+                    komentarzeDiv.appendChild(komentarzAutor);
+                    komentarzeDiv.appendChild(imagekom);
+                    komentarzeDiv.appendChild(komentarz);
+                }
+            });
+
+            komentarzeDiv.appendChild(pokazWiecej);
+        }
+
 
         var polubienia = document.createElement("span");
         polubienia.className = "polubienia";
@@ -150,18 +162,5 @@
 <script>
     function selectFile() {
         document.getElementById("uploadedFile").click();
-    }
-    function sendPostRequest(url, data) {
-      var xhr = new XMLHttpRequest();
-      xhr.open("POST", url, true);
-      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-      xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-          // Obsługa odpowiedzi po wykonaniu żądania POST
-          console.log(xhr.responseText);
-        }
-      };
-      var params = "data=" + encodeURIComponent(data);
-      xhr.send(params);
     }
 </script>
