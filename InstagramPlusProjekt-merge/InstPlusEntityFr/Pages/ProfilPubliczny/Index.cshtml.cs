@@ -1,7 +1,7 @@
 using Grpc.Core;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-
 namespace InstPlusEntityFr.Pages.ProfilPubliczny
 {
     public class IndexModel : PageModel
@@ -10,12 +10,11 @@ namespace InstPlusEntityFr.Pages.ProfilPubliczny
         public string ZdjecieProfilowe { get; set; }
         public string LoginUzytkownika { get; set; }
 
+        public int IdUzytkownika { get; set; }
         [BindProperty]
         public string OpisUzytkownika { get; set; }
 
         [BindProperty]
-        public IFormFile UploadedImage { get; set; }
-
         public bool CzyAdministrator { get; set; } //flagi dla przycisków
         public bool CzyVip { get; set; }
 
@@ -29,7 +28,7 @@ namespace InstPlusEntityFr.Pages.ProfilPubliczny
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         //LAUNCH
 
-        Uzytkownik zalogowany;
+        public Uzytkownik profilowy;
         public void OnGet(string Nazwa)
         {
             //wyœwietlenie informacji
@@ -41,91 +40,90 @@ namespace InstPlusEntityFr.Pages.ProfilPubliczny
            
             HttpContext.Session.Remove("OpisPostu");
             HttpContext.Session.Remove("ListaTagow");
-            //wyszukanie zalogowanego u¿ytkownika
-            string dataValue = HttpContext.Request.Query["data"];
-            var zalogowany2 = dataValue;
-            zalogowany = db.Uzytkownicy.Where(u => u.Nazwa == zalogowany2).FirstOrDefault();
-            if(zalogowany==null) RedirectToPage("/MainPage/Index");
-            //wyœwietlenie zdjêcia profilowego
 
-            if (zalogowany.Zdjecie == null)
+
+            //wyszukanie profilu danego u¿ytkownika
+            string dataValue = HttpContext.Request.Query["data"];
+            var data = dataValue;
+            if (data == null) 
+            {
+                var temp = db.Uzytkownicy.Where(u => u.UzytkownikId == HttpContext.Session.GetInt32("PowrotneID")).FirstOrDefault();
+                data = temp.Nazwa;
+                HttpContext.Session.Remove("PowrotneID");
+            }
+
+            profilowy = db.Uzytkownicy.Where(u => u.Nazwa == data).FirstOrDefault();
+            
+            if(profilowy == null) RedirectToPage("/MainPage/Index");
+
+
+            //wyœwietlenie zdjêcia profilowego
+            if (profilowy.Zdjecie == null)
             {
                 ZdjecieProfilowe = "~/ImgUploads/userTmpImg.jpg";
             }
             else
             {
-                string sciezka = "~/ImgUploads/" + Path.GetFileName(zalogowany.Zdjecie);
+                string sciezka = "~/ImgUploads/" + Path.GetFileName(profilowy.Zdjecie);
                 ZdjecieProfilowe = sciezka;
             }
 
+            //zapis id
+            IdUzytkownika = profilowy.UzytkownikId;
+
             //wyœwietlenie opisu i loginu
-            OpisUzytkownika = zalogowany.Opis;
+            OpisUzytkownika = profilowy.Opis;
+            LoginUzytkownika = $"Profil u¿ytkownika {profilowy.Nazwa}";
+            Console.WriteLine(LoginUzytkownika);
 
-            LoginUzytkownika = $"Profil u¿ytkownika {zalogowany.Nazwa}";
-
-            //sprawdzenie czy zalogowany jest adminem
-            if (zalogowany.Moderator == null || zalogowany.Moderator == false)
+            //sprawdzenie czy obecny profil ma admina
+            if (profilowy.Moderator == null || profilowy.Moderator == false)
                 CzyAdministrator = false;
             else
                 CzyAdministrator = true;
 
-            //sprawdzenie czy zalogowany ma aktualn¹ subskrypcjê
-            if (zalogowany.DataVipDo == null || zalogowany.DataVipDo < DateTime.Now)
+			//sprawdzenie czy obecny profil ma aktualn¹ subskrypcjê
+			if (profilowy.DataVipDo == null || profilowy.DataVipDo < DateTime.Now)
                 CzyVip = false;
             else
                 CzyVip = true;
 
-           // //wyœwietlenie statystyk
-            IloscObserwowanych = db.Obserwowani.Where(o=>o.ObserwatorId == zalogowany.UzytkownikId).Count();
-           IloscObserwujacych = db.Obserwujacy.Where(o=>o.ObserwowanyId == zalogowany.UzytkownikId).Count();
-            IloscPolubZalogow = db.PolubieniaKomentarzy.Where(p => p.UzytkownikId == zalogowany.UzytkownikId).Count() +
-                db.PolubieniaPostow.Where(p => p.UzytkownikId == zalogowany.UzytkownikId).Count();
-          //  IloscPostowZalogow = db.Posty.Where(p=>p.UzytkownikId==zalogowanyId).Count();
+           //wyœwietlenie statystyk
+            IloscObserwowanych = db.Obserwowani.Where(o=>o.ObserwatorId == profilowy.UzytkownikId).Count();
+            IloscObserwujacych = db.Obserwujacy.Where(o=>o.ObserwowanyId == profilowy.UzytkownikId).Count();
+            IloscPolubZalogow = db.PolubieniaKomentarzy.Where(p => p.UzytkownikId == profilowy.UzytkownikId).Count()+db.PolubieniaPostow.Where(p => p.UzytkownikId == profilowy.UzytkownikId).Count();
+            IloscPostowZalogow = db.Posty.Where(p=>p.UzytkownikId==profilowy.UzytkownikId).Count();
 
             //prze³adowanie strony
             Page();
         }
 
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        //ZMIANA ZDJÊCIA PROFILOWEGO
-        public IActionResult OnPostZmienZdjecie()
-        {
-            return RedirectToPage("/ZmianaZdjecia/Index");
-        }
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        //ZMIANA OPISU POSTA
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        //CHÊÆ ZAKUPU SUBSKRYPCJI
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         //WYŒWIETLANIE OBSERWOWANYCH
-        public IActionResult OnPostWyswObserwowanychBtn()
+        public IActionResult OnPostWyswObserwowanychBtn(int id)
         {
-            return RedirectToPage("/WyswObserwowanych/Index");
+			HttpContext.Session.SetInt32("SzukaneID", id);
+			return RedirectToPage("/WyswObserwowanych/Index");
         }
 
+
 		////////////////////////////////////////////////////////////////////////////////////////////////////
-		//WYŒWIETLANIE OBSERWOWANYCH
-		public IActionResult OnPostWyswObserwujacychBtn()
+		//WYŒWIETLANIE OBSERWOWUJACYCH
+		public IActionResult OnPostWyswObserwujacychBtn(int id)
 		{
+			HttpContext.Session.SetInt32("SzukaneID", id);
 			return RedirectToPage("/WyswObserwujacych/Index");
 		}
 
 		////////////////////////////////////////////////////////////////////////////////////////////////////
-		//WYŒWIETLANIE OBSERWOWANYCH
-		public IActionResult OnPostWyswStatystykiBtn()
+		//WYŒWIETLANIE POSTOW
+
+		public IActionResult OnPostWyswMojePostyBtn(int id)
         {
-            return RedirectToPage("/StatystykiAdmin/Index");
-        }
-        public IActionResult OnPostWyswMojePostyBtn()
-        {
-            var zalogowany2 = LoginUzytkownika;
-            Console.WriteLine("T@" + zalogowany2);
-            zalogowany = db.Uzytkownicy.Where(u => u.Nazwa == zalogowany2).FirstOrDefault();
-            HttpContext.Session.SetInt32("SzukaneID", (int)zalogowany.UzytkownikId);
-            return RedirectToPage("/MainPage/Index");
-        }
+			HttpContext.Session.SetInt32("SzukaneID", id);
+			return RedirectToPage("/MainPage/Index");
+			//var temp = db.Uzytkownicy.Where(u => u.Nazwa == nazwa).FirstOrDefault();
+		}
     }
 }

@@ -62,7 +62,8 @@
                     <td>@Model.IloscObserwowanych</td>
                     <td>
                         <form asp-page-handler="WyswObserwowanychBtn">
-                            <input type="submit" value="WYŚWIETL >" disabled asp-page-handler="WyswObserwowanychBtn" />
+                            <input type="hidden" name="id" value="@Model.profilowy.UzytkownikId" />
+                            <input type="submit" value="WYŚWIETL >" asp-page-handler="WyswObserwowanychBtn" />
                         </form>
                     </td>
                 </tr>
@@ -71,7 +72,8 @@
                     <td>@Model.IloscObserwujacych</td>
                     <td>
                         <form asp-page-handler="WyswObserwujacychBtn">
-                            <input type="submit" value="WYŚWIETL >" disabled asp-page-handler="WyswObserwujacychBtn" />
+                            <input type="hidden" name="id" value="@Model.profilowy.UzytkownikId" />
+                            <input type="submit" value="WYŚWIETL >" asp-page-handler="WyswObserwujacychBtn" />
                         </form>
                     </td>
                 </tr>
@@ -80,7 +82,8 @@
                     <td>@Model.IloscPostowZalogow</td>
                     <td>
                         <form asp-page-handler="WyswMojePostyBtn">
-                            <input type="submit" value="WYŚWIETL  >"disabled asp-page-handler="WyswMojePostyBtn" />
+                            <input type="hidden" name="id" value="@Model.profilowy.UzytkownikId" />
+                            <input type="submit" value="WYŚWIETL  >" asp-page-handler="WyswMojePostyBtn" />
                         </form>
                     </td>
                 </tr>
