@@ -43,10 +43,15 @@ namespace InstPlusEntityFr.Pages.MainPage
 
 		private List<PostWithComments> postsWithComments = new List<PostWithComments>();
 		private Dictionary<String, int> mapaTagowSesji = new Dictionary<String, int>();
+
+
 		public void OnGet(string inputValue=null)
 		{
+			
 			//sprawdzenie czy jest ktoœ zalogowany
-            var zalogowany = db.Uzytkownicy.Where(u => u.UzytkownikId == (int?)HttpContext.Session.GetInt32("UzytkownikId")).FirstOrDefault();
+			var zalogowany = db.Uzytkownicy.Where(u => u.UzytkownikId == (int?)HttpContext.Session.GetInt32("UzytkownikId")).FirstOrDefault();
+			var obecny = db.Uzytkownicy.Where(u => u.UzytkownikId == (int?)HttpContext.Session.GetInt32("SzukaneID")).FirstOrDefault();
+
 			if (zalogowany!=null)
 			{
 				CzyZalogowany = true;
@@ -102,6 +107,7 @@ namespace InstPlusEntityFr.Pages.MainPage
                     post.KomentarzeTresc = new List<String>();
                     post.KomentarzeZDJ = new List<String>();
                     post.KomentarzeAutor = new List<String>();
+					post.KomentarzeData = new List<String>();
                     post.Image = @Url.Content(idpost.Zdjecie);
                     post.Opis = idpost.Opis;
                     post.ImageAvatar = @Url.Content(db.Uzytkownicy.Where(u => u.UzytkownikId == idpost.UzytkownikId).FirstOrDefault().Zdjecie);
@@ -117,6 +123,7 @@ namespace InstPlusEntityFr.Pages.MainPage
                         post.KomentarzeZDJ.Add(@Url.Content(zdj));
                         var autor = db.Uzytkownicy.Where(u => u.UzytkownikId == kom.UzytkownikId).Select(u => u.Nazwa).FirstOrDefault();
                         post.KomentarzeAutor.Add(autor);
+						post.KomentarzeData.Add(kom.DataPublikacji.ToString());
                     }
 					var tempTagi = db.Posty.Where(u=>u.PostId==idpost.PostId).Select(s=>s.Tagi);
 					foreach(var tag in tempTagi)
@@ -169,6 +176,12 @@ namespace InstPlusEntityFr.Pages.MainPage
 				//Tutaj Modu³ wyszukiwania tagu
 				var testowa = db.Posty.ToList();
 				if(inputValue!=null) testowa = db.TagiPostow.Include(tp => tp.Posty).Where(tp => tp.Nazwa == inputValue).SelectMany(tp => tp.Posty).ToList();
+				if (HttpContext.Session.GetInt32("SzukaneID") != null && obecny!=null)
+				{
+					testowa = db.Posty.Where(p => p.UzytkownikId == HttpContext.Session.GetInt32("SzukaneID")).ToList();
+					HttpContext.Session.Remove("SzukaneID");
+				}
+
 				//Tutaj koniec modu³u wyszukiwania tagu
 
 				foreach (var idpost in testowa)
@@ -178,6 +191,7 @@ namespace InstPlusEntityFr.Pages.MainPage
 					post.KomentarzeTresc = new List<String>();
 					post.KomentarzeZDJ = new List<String>();
 					post.KomentarzeAutor = new List<String>();
+					post.KomentarzeData = new List<String>();
 					post.Image = @Url.Content(idpost.Zdjecie);
 					post.Opis = idpost.Opis;
 					post.Data = idpost.DataPublikacji;
@@ -194,6 +208,7 @@ namespace InstPlusEntityFr.Pages.MainPage
 						post.KomentarzeZDJ.Add(@Url.Content(zdj));
 						var autor = db.Uzytkownicy.Where(u => u.UzytkownikId == kom.UzytkownikId).Select(u => u.Nazwa).FirstOrDefault();
 						post.KomentarzeAutor.Add(autor);
+						post.KomentarzeData.Add(kom.DataPublikacji.ToString());
 					}
 
 					postsWithComments.Add(post);

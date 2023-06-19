@@ -69,7 +69,7 @@
             <img class="img" id="reklamaImg" src="@Url.Content(Model.WyswReklama)" alt="REKLAMA" style="width: 100%; height: auto; max-width: 100%; object-fit: contain;" />
         </footer>
     }
-
+    
     <script>
     var postsWithComments = @Html.Raw(Model.getPosty());
     var container = document.getElementById("kontener");
@@ -100,7 +100,9 @@
         nazwa.innerHTML = postsWithComments[i].Nazwa;
         nazwa.href = "/ProfilPubliczny/Index?data="+ postsWithComments[i].Nazwa;
 
-
+        var data = document.createElement("label");
+        data.className = "data";
+        data.innerHTML = new Date(postsWithComments[i].Data).toLocaleDateString();
 
         var komentarzeDiv = document.createElement("div");
         komentarzeDiv.className = "komentarze";
@@ -123,10 +125,16 @@
             var komentarzAutor = document.createElement("div");
             komentarzAutor.className = "komentarzAutor";
             komentarzAutor.innerHTML = postsWithComments[i].KomentarzeAutor[j];
+            
+            var komentarzData = document.createElement("label");
+            komentarzData.className = "komentarzData";
+            komentarzData.innerHTML = new Date(postsWithComments[i].KomentarzeData[j]).toLocaleDateString();
+
 
             komentarzeDiv.appendChild(komentarzAutor);
             komentarzeDiv.appendChild(imagekom);
             komentarzeDiv.appendChild(komentarz);
+            komentarzeDiv.appendChild(komentarzData);
         }
 
         if (postsWithComments[i].Komentarze.length > 2) {
@@ -158,9 +166,14 @@
                     komentarzAutor.className = "komentarzAutor";
                     komentarzAutor.innerHTML = postsWithComments[postIndex].KomentarzeAutor[j];
 
+                    var komentarzData = document.createElement("label");
+                    komentarzData.className = "komentarzData";
+                    komentarzData.innerHTML = new Date(postsWithComments[postIndex].KomentarzeData[j]).toLocaleDateString();
+
                     komentarzeDiv.appendChild(komentarzAutor);
                     komentarzeDiv.appendChild(imagekom);
                     komentarzeDiv.appendChild(komentarz);
+                    komentarzeDiv.appendChild(komentarzData);
                 }
             });
 
@@ -177,6 +190,7 @@
         container.appendChild(imageDiv);
         container.appendChild(polubienia);
         container.appendChild(opis);
+        container.appendChild(data);
         container.appendChild(komentarzeDiv);
         
     }
