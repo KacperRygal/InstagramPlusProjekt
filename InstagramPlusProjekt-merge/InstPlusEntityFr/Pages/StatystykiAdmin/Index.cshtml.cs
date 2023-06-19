@@ -20,7 +20,7 @@ namespace InstPlusEntityFr.Pages.StatystykiAdmin
 {
     public class IndexModel : PageModel
     {
-        //elementy: [0] -> 24h [1] -> tydzieñ [2] -> miesi¹c [3] -> 6 miesiêcy
+        //elementy: [0] -> 24h [1] -> tydzieÃ± [2] -> miesiÂ¹c [3] -> 6 miesiÃªcy
 
         //lista do zrobienia:
         public List<int> IlosciDodPostow { get; set; } = new List<int>();
@@ -48,9 +48,9 @@ namespace InstPlusEntityFr.Pages.StatystykiAdmin
 
         public void OnGet()
         {
-            // - nie chcia³o mi siê robiæ listy list z t¹d du¿o kodu ale jest wiêksza czytelnoœæ
-            // - UWAGA - raporty nie bêd¹ dzia³aæ w pe³ni bez uzupe³nienia list zakresowych komentarzy i postów!!!
-            // - najlepiej wywo³ywaæ je w poni¿szej kolejnoœci
+            // - nie chciaÂ³o mi siÃª robiÃ¦ listy list z tÂ¹d duÂ¿o kodu ale jest wiÃªksza czytelnoÅ“Ã¦
+            // - UWAGA - raporty nie bÃªdÂ¹ dziaÂ³aÃ¦ w peÂ³ni bez uzupeÂ³nienia list zakresowych komentarzy i postÃ³w!!!
+            // - najlepiej wywoÂ³ywaÃ¦ je w poniÂ¿szej kolejnoÅ“ci
 
             //dodane posty w okresie czasu
             PobiezIloscDodPostow();
@@ -61,29 +61,29 @@ namespace InstPlusEntityFr.Pages.StatystykiAdmin
             //dodane polubienia w okresie czasu
             PobierzIloscPolubien();
 
-            //autorzy postów z najwiêksz¹ iloœci¹ komentarzy
+            //autorzy postÃ³w z najwiÃªkszÂ¹ iloÅ“ciÂ¹ komentarzy
             PobierzAutPostowNajwKom();
 
-            //autorzy postów z najwiêksz¹ iloœci¹ polubieñ
+            //autorzy postÃ³w z najwiÃªkszÂ¹ iloÅ“ciÂ¹ polubieÃ±
             PobierzAutPostowNajwPolub();
 
-            //autorzy komentarzy z najwiêksz¹ iloœci¹ polubieñ
+            //autorzy komentarzy z najwiÃªkszÂ¹ iloÅ“ciÂ¹ polubieÃ±
             PobierzAutKomNajwPolub();
 
-            //u¿ytkownicy o najwiêkszej liczbie dodanych komentarzy
-            //PobierzUzytkNajwKom(); // -- nie dzia³a!!! (crashuje)
+            //uÂ¿ytkownicy o najwiÃªkszej liczbie dodanych komentarzy
+            //PobierzUzytkNajwKom(); // -- nie dziaÂ³a!!! (crashuje)
 
 
         }
 
-        //powrót do profilu prywatnego
+        //powrÃ³t do profilu prywatnego
         public IActionResult OnPostAnulujBtn()
         {
             return RedirectToPage("/ProfilPrywatny/Index");
         }
 
         /////////////////////////////////////////////////////////////////////////////////////////////////////
-        ///METODY ZBIERAJ¥CE DANE Z BAZY///
+        ///METODY ZBIERAJÂ¥CE DANE Z BAZY///
         /////////////////////////////////////////////////////////////////////////////////////////////////////
 
         private void PobiezIloscDodPostow()
@@ -266,14 +266,14 @@ namespace InstPlusEntityFr.Pages.StatystykiAdmin
 
         public void OnPostConvertCurrentPageToPDF()
         {
-            u
+            
         }
     }
 }
     
 
 /* UWAGA
- * na tej stronie brakuje sporej iloœci statystyk
- * TASK - jak ktoœ ma czas to prosze niech siê tym zajmie
+ * na tej stronie brakuje sporej iloÅ“ci statystyk
+ * TASK - jak ktoÅ“ ma czas to prosze niech siÃª tym zajmie
  *                                      ~Wiktor
  */
