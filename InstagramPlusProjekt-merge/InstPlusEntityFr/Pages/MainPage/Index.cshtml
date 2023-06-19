@@ -39,12 +39,37 @@
         margin-top: 10px;
         font-weight: bold;
     }
+
+        body {
+            margin: 0;
+            padding-bottom: 60px; /* Dostosuj wartość padding-bottom do wysokości stopki */
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #e0e0e0;
+            padding: 10px;
+            text-align: center;
+            transform: scale(0.4);
+            transform-origin: bottom;
+            margin-bottom: -10px; /* Ujemna wartość marginesu, równa wysokości stopki */
+        }
 </style>
+
 </head>
 <body>
     <div id="kontener"></div>
 
-    
+    @if (Model.CzyVip == false)
+    {
+        <footer class="footer">
+            <img class="img" id="reklamaImg" src="@Url.Content(Model.WyswReklama)" alt="REKLAMA" style="width: 100%; height: auto; max-width: 100%; object-fit: contain;" />
+        </footer>
+    }
+
     <script>
     var postsWithComments = @Html.Raw(Model.getPosty());
     var container = document.getElementById("kontener");
@@ -70,9 +95,10 @@
         opis.className = "opis";
         opis.innerHTML = postsWithComments[i].Opis;
 
-        var nazwa = document.createElement("label");
+        var nazwa = document.createElement("a");
         nazwa.className = "nazwa";
         nazwa.innerHTML = postsWithComments[i].Nazwa;
+        nazwa.href = "/ProfilPubliczny/Index?data="+ postsWithComments[i].Nazwa;
 
 
 
@@ -141,7 +167,6 @@
             komentarzeDiv.appendChild(pokazWiecej);
         }
 
-
         var polubienia = document.createElement("span");
         polubienia.className = "polubienia";
         polubienia.innerHTML = "Polubienia: " + postsWithComments[i].IloscPolubien;
@@ -162,5 +187,18 @@
 <script>
     function selectFile() {
         document.getElementById("uploadedFile").click();
+    }
+    function sendPostRequest(url, data) {
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", url, true);
+      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          // Obsługa odpowiedzi po wykonaniu żądania POST
+          console.log(xhr.responseText);
+        }
+      };
+      var params = "data=" + encodeURIComponent(data);
+      xhr.send(params);
     }
 </script>
