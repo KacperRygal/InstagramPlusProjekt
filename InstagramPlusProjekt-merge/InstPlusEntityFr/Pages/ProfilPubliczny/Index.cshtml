@@ -42,6 +42,24 @@
         <form asp-page-handler="ZmienOpisBtn">
             <textarea class="form-control" id="OpisUzytkownika" name="OpisUzytkownika" rows="3" readonly cols="100">@Model.OpisUzytkownika </textarea>
         </form>
+
+        @if(Model.CzyZalogowany)
+        {
+          <form asp-page-handler="ObserwujBtn">
+            <input type="hidden" name="idProfilowego" value="@Model.profilowy.UzytkownikId" />
+            <input type="hidden" name="nazwaProfilowego" value="@Model.profilowy.Nazwa" />
+            <input type="hidden" name="idZalogowanego" value="@Model.zalogowany.UzytkownikId" />
+
+                @if (Model.CzyObserwacja)
+                {
+                    <input type="submit" value="Odobserwuj użytkownika>" asp-page-handler="ObserwujBtn" />
+                }
+                @if (!Model.CzyObserwacja)
+                {
+                    <input type="submit" value="Obserwuj użytkownika>" asp-page-handler="ObserwujBtn" />
+                }
+            </form>  
+        }
         @if (Model.CzyAdministrator)
         {
              

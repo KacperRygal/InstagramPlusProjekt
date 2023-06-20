@@ -44,12 +44,17 @@ namespace InstPlusEntityFr.Pages.MainPage
 		private List<PostWithComments> postsWithComments = new List<PostWithComments>();
 		private Dictionary<String, int> mapaTagowSesji = new Dictionary<String, int>();
 
-
+		private String zal = null;
+		public String getZalogowany()
+		{
+			return JsonConvert.SerializeObject(zal);
+		}
 		public void OnGet(string inputValue=null)
 		{
 			
 			//sprawdzenie czy jest ktoœ zalogowany
 			var zalogowany = db.Uzytkownicy.Where(u => u.UzytkownikId == (int?)HttpContext.Session.GetInt32("UzytkownikId")).FirstOrDefault();
+			if(zalogowany!=null) zal = zalogowany.Nazwa;
 			var obecny = db.Uzytkownicy.Where(u => u.UzytkownikId == (int?)HttpContext.Session.GetInt32("SzukaneID")).FirstOrDefault();
 
 			if (zalogowany!=null)

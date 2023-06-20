@@ -2,6 +2,8 @@ using Grpc.Core;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using static iText.StyledXmlParser.Jsoup.Select.Evaluator;
+
 namespace InstPlusEntityFr.Pages.ProfilPubliczny
 {
     public class IndexModel : PageModel
@@ -17,6 +19,8 @@ namespace InstPlusEntityFr.Pages.ProfilPubliczny
         [BindProperty]
         public bool CzyAdministrator { get; set; } //flagi dla przycisków
         public bool CzyVip { get; set; }
+        public bool CzyObserwacja { get; set; }
+        public bool CzyZalogowany { get; set; }
 
         public String errorMessage = "";
 
@@ -29,6 +33,7 @@ namespace InstPlusEntityFr.Pages.ProfilPubliczny
         //LAUNCH
 
         public Uzytkownik profilowy;
+        public Uzytkownik zalogowany;
         public void OnGet(string Nazwa)
         {
             //wyœwietlenie informacji
@@ -41,7 +46,16 @@ namespace InstPlusEntityFr.Pages.ProfilPubliczny
             HttpContext.Session.Remove("OpisPostu");
             HttpContext.Session.Remove("ListaTagow");
 
-
+            if(HttpContext.Session.Keys.Contains("UzytkownikId"))
+            {
+                zalogowany = db.Uzytkownicy.Where(u => u.UzytkownikId == HttpContext.Session.GetInt32("UzytkownikId")).FirstOrDefault();
+                CzyZalogowany = true;
+            }
+            else
+            {
+                CzyZalogowany=false;
+            }
+            
             //wyszukanie profilu danego u¿ytkownika
             string dataValue = HttpContext.Request.Query["data"];
             var data = dataValue;
@@ -94,10 +108,70 @@ namespace InstPlusEntityFr.Pages.ProfilPubliczny
             IloscPolubZalogow = db.PolubieniaKomentarzy.Where(p => p.UzytkownikId == profilowy.UzytkownikId).Count()+db.PolubieniaPostow.Where(p => p.UzytkownikId == profilowy.UzytkownikId).Count();
             IloscPostowZalogow = db.Posty.Where(p=>p.UzytkownikId==profilowy.UzytkownikId).Count();
 
+            //obserwacja
+            var listaObserwacjiZalogowanego = db.Obserwowani.Where(o => o.ObserwatorId == zalogowany.UzytkownikId);
+
+            CzyObserwacja = false;
+            foreach (var o in listaObserwacjiZalogowanego)
+            {
+                if (o.ObserwowanyId == profilowy.UzytkownikId)
+                {
+                    CzyObserwacja = true;
+                    break;
+                }
+            }
             //prze³adowanie strony
             Page();
         }
 
+        public IActionResult OnPostObserwujBtn(int idZalogowanego, int idProfilowego, string nazwaProfilowego)
+        {
+            bool czyIstniejeObserwacja=false;
+
+            var listaObserwacjiZalogowanego = db.Obserwowani.Where(o=>o.ObserwatorId==idZalogowanego);
+            var listaObserwujacychProfilowego = db.Obserwujacy.Where(o => o.ObserwowanyId == idProfilowego);
+
+            foreach (var o in listaObserwacjiZalogowanego)
+            {
+                if (o.ObserwowanyId == idProfilowego)
+                { 
+                    czyIstniejeObserwacja = true; 
+                    break; 
+                }
+            }
+
+            if (czyIstniejeObserwacja)
+            {
+                foreach(var o in listaObserwacjiZalogowanego)
+                {
+                    if (o.ObserwowanyId == idProfilowego)
+                    {
+                        db.Obserwowani.Remove(o);
+                        break;
+                    }
+                }
+                foreach(var o in listaObserwujacychProfilowego)
+                {
+                    if(o.ObserwatorId == idZalogowanego)
+                    {
+                        db.Obserwujacy.Remove(o);
+                    }
+                }
+            }
+            else
+            {
+                Obserwowany obserwowany = new Obserwowany(idProfilowego, idZalogowanego);
+                db.Obserwowani.Add(obserwowany);
+                Obserwujacy obserwujacy = new Obserwujacy(idProfilowego, idZalogowanego);
+                db.Obserwujacy.Add(obserwujacy);
+            }
+
+
+            db.SaveChanges();
+            HttpContext.Session.SetInt32("PowrotneID", idProfilowego);
+            //return Page() zwraca³o pust¹ stronê... why?
+            return RedirectToPage("/ProfilPubliczny/Index");
+        }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
         //WYŒWIETLANIE OBSERWOWANYCH

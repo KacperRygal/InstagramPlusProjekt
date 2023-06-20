@@ -71,9 +71,10 @@
     }
     
     <script>
+    var zalogowany = @Html.Raw(Model.getZalogowany());
     var postsWithComments = @Html.Raw(Model.getPosty());
     var container = document.getElementById("kontener");
-
+    
     for (var i = 0; i < postsWithComments.length; i++) {
         var imageDiv = document.createElement("div");
         imageDiv.className = "image-div";
@@ -98,7 +99,11 @@
         var nazwa = document.createElement("a");
         nazwa.className = "nazwa";
         nazwa.innerHTML = postsWithComments[i].Nazwa;
-        nazwa.href = "/ProfilPubliczny/Index?data="+ postsWithComments[i].Nazwa;
+        if(zalogowany==postsWithComments[i].Nazwa)
+        {nazwa.href = "/ProfilPrywatny/Index"}
+        else{
+            nazwa.href = "/ProfilPubliczny/Index?data="+ postsWithComments[i].Nazwa;
+        }
 
         var data = document.createElement("label");
         data.className = "data";
