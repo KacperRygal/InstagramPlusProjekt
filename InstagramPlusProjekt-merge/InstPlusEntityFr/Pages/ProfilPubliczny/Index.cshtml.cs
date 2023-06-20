@@ -17,7 +17,7 @@ namespace InstPlusEntityFr.Pages.ProfilPubliczny
         public string OpisUzytkownika { get; set; }
 
         [BindProperty]
-        public bool CzyAdministrator { get; set; } //flagi dla przycisków
+        public bool CzyAdministrator { get; set; } //flagi dla przyciskÃ³w
         public bool CzyVip { get; set; }
         public bool CzyObserwacja { get; set; }
         public bool CzyZalogowany { get; set; }
@@ -36,7 +36,7 @@ namespace InstPlusEntityFr.Pages.ProfilPubliczny
         public Uzytkownik zalogowany;
         public void OnGet(string Nazwa)
         {
-            //wyœwietlenie informacji
+            //wyÅ›wietlenie informacji
             if (HttpContext.Session.Keys.Contains("INFO"))
             {
                 errorMessage = HttpContext.Session.GetString("INFO");
@@ -56,7 +56,7 @@ namespace InstPlusEntityFr.Pages.ProfilPubliczny
                 CzyZalogowany=false;
             }
             
-            //wyszukanie profilu danego u¿ytkownika
+            //wyszukanie profilu danego uÅ¼ytkownika
             string dataValue = HttpContext.Request.Query["data"];
             var data = dataValue;
             if (data == null) 
@@ -71,7 +71,7 @@ namespace InstPlusEntityFr.Pages.ProfilPubliczny
             if(profilowy == null) RedirectToPage("/MainPage/Index");
 
 
-            //wyœwietlenie zdjêcia profilowego
+            //wyÅ›wietlenie zdjÄ™cia profilowego
             if (profilowy.Zdjecie == null)
             {
                 ZdjecieProfilowe = "~/ImgUploads/userTmpImg.jpg";
@@ -85,9 +85,9 @@ namespace InstPlusEntityFr.Pages.ProfilPubliczny
             //zapis id
             IdUzytkownika = profilowy.UzytkownikId;
 
-            //wyœwietlenie opisu i loginu
+            //wyÅ›wietlenie opisu i loginu
             OpisUzytkownika = profilowy.Opis;
-            LoginUzytkownika = $"Profil u¿ytkownika {profilowy.Nazwa}";
+            LoginUzytkownika = $"Profil uÅ¼ytkownika {profilowy.Nazwa}";
             Console.WriteLine(LoginUzytkownika);
 
             //sprawdzenie czy obecny profil ma admina
@@ -96,13 +96,13 @@ namespace InstPlusEntityFr.Pages.ProfilPubliczny
             else
                 CzyAdministrator = true;
 
-			//sprawdzenie czy obecny profil ma aktualn¹ subskrypcjê
+			//sprawdzenie czy obecny profil ma aktualnÄ… subskrypcjÄ™
 			if (profilowy.DataVipDo == null || profilowy.DataVipDo < DateTime.Now)
                 CzyVip = false;
             else
                 CzyVip = true;
 
-           //wyœwietlenie statystyk
+           //wyÅ›wietlenie statystyk
             IloscObserwowanych = db.Obserwowani.Where(o=>o.ObserwatorId == profilowy.UzytkownikId).Count();
             IloscObserwujacych = db.Obserwujacy.Where(o=>o.ObserwowanyId == profilowy.UzytkownikId).Count();
             IloscPolubZalogow = db.PolubieniaKomentarzy.Where(p => p.UzytkownikId == profilowy.UzytkownikId).Count()+db.PolubieniaPostow.Where(p => p.UzytkownikId == profilowy.UzytkownikId).Count();
@@ -111,16 +111,20 @@ namespace InstPlusEntityFr.Pages.ProfilPubliczny
             //obserwacja
             var listaObserwacjiZalogowanego = db.Obserwowani.Where(o => o.ObserwatorId == zalogowany.UzytkownikId);
 
-            CzyObserwacja = false;
-            foreach (var o in listaObserwacjiZalogowanego)
+            if (CzyZalogowany)
             {
-                if (o.ObserwowanyId == profilowy.UzytkownikId)
+                var listaObserwacjiZalogowanego = db.Obserwowani.Where(o => o.ObserwatorId == zalogowany.UzytkownikId);
+                CzyObserwacja = false;
+                foreach (var o in listaObserwacjiZalogowanego)
                 {
-                    CzyObserwacja = true;
-                    break;
+                    if (o.ObserwowanyId == profilowy.UzytkownikId)
+                    {
+                        CzyObserwacja = true;
+                        break;
+                    }
                 }
             }
-            //prze³adowanie strony
+            //przeÅ‚adowanie strony
             Page();
         }
 
@@ -169,12 +173,12 @@ namespace InstPlusEntityFr.Pages.ProfilPubliczny
 
             db.SaveChanges();
             HttpContext.Session.SetInt32("PowrotneID", idProfilowego);
-            //return Page() zwraca³o pust¹ stronê... why?
+            //return Page() zwracaÅ‚o pustÄ… stronÄ™... why?
             return RedirectToPage("/ProfilPubliczny/Index");
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////
-        //WYŒWIETLANIE OBSERWOWANYCH
+        //WYÅšWIETLANIE OBSERWOWANYCH
         public IActionResult OnPostWyswObserwowanychBtn(int id)
         {
 			HttpContext.Session.SetInt32("SzukaneID", id);
@@ -183,7 +187,7 @@ namespace InstPlusEntityFr.Pages.ProfilPubliczny
 
 
 		////////////////////////////////////////////////////////////////////////////////////////////////////
-		//WYŒWIETLANIE OBSERWOWUJACYCH
+		//WYÅšWIETLANIE OBSERWOWUJACYCH
 		public IActionResult OnPostWyswObserwujacychBtn(int id)
 		{
 			HttpContext.Session.SetInt32("SzukaneID", id);
@@ -191,7 +195,7 @@ namespace InstPlusEntityFr.Pages.ProfilPubliczny
 		}
 
 		////////////////////////////////////////////////////////////////////////////////////////////////////
-		//WYŒWIETLANIE POSTOW
+		//WYÅšWIETLANIE POSTOW
 
 		public IActionResult OnPostWyswMojePostyBtn(int id)
         {
