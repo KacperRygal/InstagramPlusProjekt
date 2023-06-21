@@ -1,23 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System;
-using System.IO;
-using System.Web;
-using iText.Html2pdf;
-using System.Web.Mvc;
-using iText.Kernel.Pdf;
-using iText.Kernel.Pdf;
-using iText.Layout;
-using iText.Layout.Element;
-using System.IO;
-using System.Text;
-using iText.Html2pdf;
-using iText.IO.Source;
-using iText.Kernel.Geom;
-using iText.Kernel.Pdf;
-using Microsoft.EntityFrameworkCore;
-using iText.Signatures;
-using iText.Commons.Actions.Contexts;
+using IronPdf;
 
 namespace InstPlusEntityFr.Pages.StatystykiAdmin
 {
@@ -578,7 +561,14 @@ namespace InstPlusEntityFr.Pages.StatystykiAdmin
 
         public void OnPostConvertCurrentPageToPDF()
         {
-            // co tu ma być?
+  
+            var renderer = new ChromePdfRenderer();
+            var host = Request.Host;
+            var path = Request.Path;
+            var scheme = Request.Scheme;
+            var currentPageUrl = $"{scheme}://{host}{path}";
+            var pdf = renderer.RenderUrlAsPdf(currentPageUrl);
+            pdf.SaveAs("T.pdf");
         }
     }
 }

@@ -14,14 +14,10 @@
           "System.Threading.Tasks.Extensions": "4.5.4"
         },
         "compile": {
-          "lib/net5.0/Azure.Core.dll": {
-            "related": ".xml"
-          }
+          "lib/net5.0/Azure.Core.dll": {}
         },
         "runtime": {
-          "lib/net5.0/Azure.Core.dll": {
-            "related": ".xml"
-          }
+          "lib/net5.0/Azure.Core.dll": {}
         }
       },
       "Azure.Identity/1.7.0": {
@@ -36,14 +32,19 @@
           "System.Threading.Tasks.Extensions": "4.5.4"
         },
         "compile": {
-          "lib/netstandard2.0/Azure.Identity.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/Azure.Identity.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Azure.Identity.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/Azure.Identity.dll": {}
+        }
+      },
+      "BitMiracle.LibTiff.NET/2.4.649": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/BitMiracle.LibTiff.NET.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/BitMiracle.LibTiff.NET.dll": {}
         }
       },
       "BouncyCastle/1.8.9": {
@@ -55,6 +56,21 @@
           "lib/BouncyCastle.Crypto.dll": {}
         }
       },
+      "Google.Protobuf/3.22.3": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/Google.Protobuf.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0/Google.Protobuf.dll": {}
+        }
+      },
+      "Grpc/2.46.6": {
+        "type": "package",
+        "dependencies": {
+          "Grpc.Core": "2.46.6"
+        }
+      },
       "Grpc.Core/2.46.6": {
         "type": "package",
         "dependencies": {
@@ -62,14 +78,10 @@
           "System.Memory": "4.5.3"
         },
         "compile": {
-          "lib/netstandard2.0/Grpc.Core.dll": {
-            "related": ".pdb;.xml"
-          }
+          "lib/netstandard2.0/Grpc.Core.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Grpc.Core.dll": {
-            "related": ".pdb;.xml"
-          }
+          "lib/netstandard2.0/Grpc.Core.dll": {}
         },
         "runtimeTargets": {
           "runtimes/linux-arm64/native/libgrpc_csharp_ext.arm64.so": {
@@ -100,27 +112,723 @@
           "System.Memory": "4.5.3"
         },
         "compile": {
-          "lib/netstandard2.1/Grpc.Core.Api.dll": {
-            "related": ".pdb;.xml"
-          }
+          "lib/netstandard2.1/Grpc.Core.Api.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.1/Grpc.Core.Api.dll": {
-            "related": ".pdb;.xml"
-          }
+          "lib/netstandard2.1/Grpc.Core.Api.dll": {}
         }
       },
       "Humanizer.Core/2.14.1": {
         "type": "package",
         "compile": {
-          "lib/net6.0/_._": {
-            "related": ".xml"
-          }
+          "lib/net6.0/_._": {}
         },
         "runtime": {
-          "lib/net6.0/Humanizer.dll": {
-            "related": ".xml"
+          "lib/net6.0/Humanizer.dll": {}
+        }
+      },
+      "IronPdf/2023.6.10": {
+        "type": "package",
+        "dependencies": {
+          "IronPdf.Native.Chrome.Windows": "[2023.6.14948, 2023.7.0)",
+          "IronPdf.Slim": "[2023.6.10]"
+        },
+        "compile": {
+          "lib/net6.0/_._": {}
+        },
+        "runtime": {
+          "lib/net6.0/_._": {}
+        }
+      },
+      "IronPdf.Native.Chrome.Windows/2023.6.14948": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/_._": {}
+        },
+        "build": {
+          "buildTransitive/netstandard2.0/IronPdf.Native.Chrome.Windows.targets": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win-x64/native/IronCefSubprocess.exe": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/IronInterop.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/IronPdf.Native.Chrome.deployment.json": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/chrome_100_percent.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/chrome_200_percent.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/chrome_elf.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/concrt140.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/d3dcompiler_47.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/dxva2.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/icudtl.dat": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/libEGL.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/libGLESv2.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/libcef.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/af.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/am.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/ar.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/bg.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/bn.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/ca.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/cs.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/da.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/de.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/el.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/en-GB.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/en-US.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/es-419.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/es.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/et.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/fa.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/fi.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/fil.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/fr.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/gu.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/he.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/hi.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/hr.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/hu.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/id.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/it.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/ja.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/kn.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/ko.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/lt.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/lv.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/ml.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/mr.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/ms.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/nb.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/nl.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/pl.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/pt-BR.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/pt-PT.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/ro.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/ru.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/sk.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/sl.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/sr.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/sv.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/sw.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/ta.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/te.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/th.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/tr.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/uk.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/ur.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/vi.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/zh-CN.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/locales/zh-TW.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/msvcp140.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/msvcp140_1.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/msvcp140_2.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/msvcp140_atomic_wait.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/msvcp140_codecvt_ids.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/resources.pak": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/snapshot_blob.bin": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/ucrtbase.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/v8_context_snapshot.bin": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/vcruntime140.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/vcruntime140_1.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/vk_swiftshader.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x64/native/vulkan-1.dll": {
+            "assetType": "native",
+            "rid": "win-x64"
+          },
+          "runtimes/win-x86/native/IronCefSubprocess.exe": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/IronInterop.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/IronPdf.Native.Chrome.deployment.json": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/chrome_100_percent.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/chrome_200_percent.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/chrome_elf.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/concrt140.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/d3dcompiler_47.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/dxva2.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/icudtl.dat": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/libEGL.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/libGLESv2.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/libcef.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/af.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/am.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/ar.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/bg.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/bn.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/ca.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/cs.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/da.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/de.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/el.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/en-GB.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/en-US.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/es-419.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/es.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/et.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/fa.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/fi.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/fil.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/fr.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/gu.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/he.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/hi.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/hr.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/hu.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/id.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/it.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/ja.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/kn.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/ko.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/lt.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/lv.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/ml.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/mr.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/ms.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/nb.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/nl.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/pl.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/pt-BR.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/pt-PT.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/ro.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/ru.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/sk.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/sl.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/sr.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/sv.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/sw.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/ta.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/te.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/th.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/tr.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/uk.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/ur.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/vi.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/zh-CN.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/locales/zh-TW.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/msvcp140.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/msvcp140_1.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/msvcp140_2.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/msvcp140_atomic_wait.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/msvcp140_codecvt_ids.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/resources.pak": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/snapshot_blob.bin": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/ucrtbase.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/v8_context_snapshot.bin": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/vcruntime140.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/vk_swiftshader.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
+          },
+          "runtimes/win-x86/native/vulkan-1.dll": {
+            "assetType": "native",
+            "rid": "win-x86"
           }
+        }
+      },
+      "IronPdf.Slim/2023.6.10": {
+        "type": "package",
+        "dependencies": {
+          "Google.Protobuf": "3.22.3",
+          "Grpc": "2.46.6",
+          "IronSoftware.System.Drawing": "2023.3.3",
+          "Microsoft.Extensions.Logging.Abstractions": "5.0.0",
+          "System.Configuration.ConfigurationManager": "5.0.0",
+          "System.Drawing.Common": "5.0.3"
+        },
+        "compile": {
+          "lib/net6.0/IronPdf.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0/IronPdf.dll": {}
+        },
+        "build": {
+          "build/IronPdf.Slim.props": {}
+        }
+      },
+      "IronSoftware.System.Drawing/2023.3.3": {
+        "type": "package",
+        "dependencies": {
+          "BitMiracle.LibTiff.NET": "2.4.649",
+          "SixLabors.ImageSharp": "2.1.3"
+        },
+        "compile": {
+          "lib/netstandard2.0/IronSoftware.Drawing.Common.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/IronSoftware.Drawing.Common.dll": {}
         }
       },
       "itext7/8.0.0": {
@@ -143,68 +851,28 @@
           "itext7.commons": "8.0.0"
         },
         "compile": {
-          "lib/netstandard2.0/itext.barcodes.dll": {
-            "related": ".xml"
-          },
-          "lib/netstandard2.0/itext.bouncy-castle-connector.dll": {
-            "related": ".xml"
-          },
-          "lib/netstandard2.0/itext.forms.dll": {
-            "related": ".xml"
-          },
-          "lib/netstandard2.0/itext.io.dll": {
-            "related": ".xml"
-          },
-          "lib/netstandard2.0/itext.kernel.dll": {
-            "related": ".xml"
-          },
-          "lib/netstandard2.0/itext.layout.dll": {
-            "related": ".xml"
-          },
-          "lib/netstandard2.0/itext.pdfa.dll": {
-            "related": ".xml"
-          },
-          "lib/netstandard2.0/itext.sign.dll": {
-            "related": ".xml"
-          },
-          "lib/netstandard2.0/itext.styledxmlparser.dll": {
-            "related": ".xml"
-          },
-          "lib/netstandard2.0/itext.svg.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/itext.barcodes.dll": {},
+          "lib/netstandard2.0/itext.bouncy-castle-connector.dll": {},
+          "lib/netstandard2.0/itext.forms.dll": {},
+          "lib/netstandard2.0/itext.io.dll": {},
+          "lib/netstandard2.0/itext.kernel.dll": {},
+          "lib/netstandard2.0/itext.layout.dll": {},
+          "lib/netstandard2.0/itext.pdfa.dll": {},
+          "lib/netstandard2.0/itext.sign.dll": {},
+          "lib/netstandard2.0/itext.styledxmlparser.dll": {},
+          "lib/netstandard2.0/itext.svg.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/itext.barcodes.dll": {
-            "related": ".xml"
-          },
-          "lib/netstandard2.0/itext.bouncy-castle-connector.dll": {
-            "related": ".xml"
-          },
-          "lib/netstandard2.0/itext.forms.dll": {
-            "related": ".xml"
-          },
-          "lib/netstandard2.0/itext.io.dll": {
-            "related": ".xml"
-          },
-          "lib/netstandard2.0/itext.kernel.dll": {
-            "related": ".xml"
-          },
-          "lib/netstandard2.0/itext.layout.dll": {
-            "related": ".xml"
-          },
-          "lib/netstandard2.0/itext.pdfa.dll": {
-            "related": ".xml"
-          },
-          "lib/netstandard2.0/itext.sign.dll": {
-            "related": ".xml"
-          },
-          "lib/netstandard2.0/itext.styledxmlparser.dll": {
-            "related": ".xml"
-          },
-          "lib/netstandard2.0/itext.svg.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/itext.barcodes.dll": {},
+          "lib/netstandard2.0/itext.bouncy-castle-connector.dll": {},
+          "lib/netstandard2.0/itext.forms.dll": {},
+          "lib/netstandard2.0/itext.io.dll": {},
+          "lib/netstandard2.0/itext.kernel.dll": {},
+          "lib/netstandard2.0/itext.layout.dll": {},
+          "lib/netstandard2.0/itext.pdfa.dll": {},
+          "lib/netstandard2.0/itext.sign.dll": {},
+          "lib/netstandard2.0/itext.styledxmlparser.dll": {},
+          "lib/netstandard2.0/itext.svg.dll": {}
         }
       },
       "itext7.commons/8.0.0": {
@@ -214,14 +882,10 @@
           "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
-          "lib/netstandard2.0/itext.commons.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/itext.commons.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/itext.commons.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/itext.commons.dll": {}
         }
       },
       "itext7.pdfhtml/5.0.0": {
@@ -230,14 +894,10 @@
           "itext7": "8.0.0"
         },
         "compile": {
-          "lib/netstandard2.0/itext.html2pdf.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/itext.html2pdf.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/itext.html2pdf.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/itext.html2pdf.dll": {}
         }
       },
       "iTextSharp/5.5.13.3": {
@@ -271,27 +931,19 @@
           "Microsoft.AspNet.WebPages": "[3.2.3, 3.3.0)"
         },
         "compile": {
-          "lib/net45/System.Web.Mvc.dll": {
-            "related": ".xml"
-          }
+          "lib/net45/System.Web.Mvc.dll": {}
         },
         "runtime": {
-          "lib/net45/System.Web.Mvc.dll": {
-            "related": ".xml"
-          }
+          "lib/net45/System.Web.Mvc.dll": {}
         }
       },
       "Microsoft.AspNet.Razor/3.2.3": {
         "type": "package",
         "compile": {
-          "lib/net45/System.Web.Razor.dll": {
-            "related": ".xml"
-          }
+          "lib/net45/System.Web.Razor.dll": {}
         },
         "runtime": {
-          "lib/net45/System.Web.Razor.dll": {
-            "related": ".xml"
-          }
+          "lib/net45/System.Web.Razor.dll": {}
         }
       },
       "Microsoft.AspNet.WebPages/3.2.3": {
@@ -301,32 +953,16 @@
           "Microsoft.Web.Infrastructure": "1.0.0"
         },
         "compile": {
-          "lib/net45/System.Web.Helpers.dll": {
-            "related": ".xml"
-          },
-          "lib/net45/System.Web.WebPages.Deployment.dll": {
-            "related": ".xml"
-          },
-          "lib/net45/System.Web.WebPages.Razor.dll": {
-            "related": ".xml"
-          },
-          "lib/net45/System.Web.WebPages.dll": {
-            "related": ".Deployment.xml;.Razor.xml;.xml"
-          }
+          "lib/net45/System.Web.Helpers.dll": {},
+          "lib/net45/System.Web.WebPages.Deployment.dll": {},
+          "lib/net45/System.Web.WebPages.Razor.dll": {},
+          "lib/net45/System.Web.WebPages.dll": {}
         },
         "runtime": {
-          "lib/net45/System.Web.Helpers.dll": {
-            "related": ".xml"
-          },
-          "lib/net45/System.Web.WebPages.Deployment.dll": {
-            "related": ".xml"
-          },
-          "lib/net45/System.Web.WebPages.Razor.dll": {
-            "related": ".xml"
-          },
-          "lib/net45/System.Web.WebPages.dll": {
-            "related": ".Deployment.xml;.Razor.xml;.xml"
-          }
+          "lib/net45/System.Web.Helpers.dll": {},
+          "lib/net45/System.Web.WebPages.Deployment.dll": {},
+          "lib/net45/System.Web.WebPages.Razor.dll": {},
+          "lib/net45/System.Web.WebPages.dll": {}
         }
       },
       "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
@@ -335,9 +971,7 @@
           "ref/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {}
         }
       },
       "Microsoft.CSharp/4.5.0": {
@@ -367,14 +1001,10 @@
           "System.Text.Encodings.Web": "6.0.0"
         },
         "compile": {
-          "ref/net6.0/Microsoft.Data.SqlClient.dll": {
-            "related": ".pdb;.xml"
-          }
+          "ref/net6.0/Microsoft.Data.SqlClient.dll": {}
         },
         "runtime": {
-          "lib/net6.0/Microsoft.Data.SqlClient.dll": {
-            "related": ".pdb;.xml"
-          }
+          "lib/net6.0/Microsoft.Data.SqlClient.dll": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/net6.0/Microsoft.Data.SqlClient.dll": {
@@ -437,14 +1067,10 @@
           "Microsoft.Extensions.Logging": "7.0.0"
         },
         "compile": {
-          "lib/net6.0/Microsoft.EntityFrameworkCore.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.EntityFrameworkCore.dll": {}
         },
         "runtime": {
-          "lib/net6.0/Microsoft.EntityFrameworkCore.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.EntityFrameworkCore.dll": {}
         },
         "build": {
           "buildTransitive/net6.0/Microsoft.EntityFrameworkCore.props": {}
@@ -453,14 +1079,10 @@
       "Microsoft.EntityFrameworkCore.Abstractions/7.0.5": {
         "type": "package",
         "compile": {
-          "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {}
         },
         "runtime": {
-          "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.EntityFrameworkCore.Abstractions.dll": {}
         }
       },
       "Microsoft.EntityFrameworkCore.Analyzers/7.0.5": {
@@ -481,14 +1103,10 @@
           "Mono.TextTemplating": "2.2.1"
         },
         "compile": {
-          "lib/net6.0/_._": {
-            "related": ".xml"
-          }
+          "lib/net6.0/_._": {}
         },
         "runtime": {
-          "lib/net6.0/Microsoft.EntityFrameworkCore.Design.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.EntityFrameworkCore.Design.dll": {}
         },
         "build": {
           "build/net6.0/Microsoft.EntityFrameworkCore.Design.props": {}
@@ -501,14 +1119,10 @@
           "Microsoft.Extensions.Configuration.Abstractions": "7.0.0"
         },
         "compile": {
-          "lib/net6.0/Microsoft.EntityFrameworkCore.Relational.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.EntityFrameworkCore.Relational.dll": {}
         },
         "runtime": {
-          "lib/net6.0/Microsoft.EntityFrameworkCore.Relational.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.EntityFrameworkCore.Relational.dll": {}
         }
       },
       "Microsoft.EntityFrameworkCore.SqlServer/7.0.5": {
@@ -518,14 +1132,10 @@
           "Microsoft.EntityFrameworkCore.Relational": "7.0.5"
         },
         "compile": {
-          "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {}
         },
         "runtime": {
-          "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {}
         }
       },
       "Microsoft.EntityFrameworkCore.Tools/7.0.5": {
@@ -546,14 +1156,10 @@
           "Microsoft.Extensions.Primitives": "7.0.0"
         },
         "compile": {
-          "lib/net6.0/Microsoft.Extensions.Caching.Abstractions.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.Extensions.Caching.Abstractions.dll": {}
         },
         "runtime": {
-          "lib/net6.0/Microsoft.Extensions.Caching.Abstractions.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.Extensions.Caching.Abstractions.dll": {}
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -569,14 +1175,10 @@
           "Microsoft.Extensions.Primitives": "7.0.0"
         },
         "compile": {
-          "lib/net6.0/Microsoft.Extensions.Caching.Memory.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.Extensions.Caching.Memory.dll": {}
         },
         "runtime": {
-          "lib/net6.0/Microsoft.Extensions.Caching.Memory.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.Extensions.Caching.Memory.dll": {}
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -588,14 +1190,10 @@
           "Microsoft.Extensions.Primitives": "7.0.0"
         },
         "compile": {
-          "lib/net6.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.Extensions.Configuration.Abstractions.dll": {}
         },
         "runtime": {
-          "lib/net6.0/Microsoft.Extensions.Configuration.Abstractions.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.Extensions.Configuration.Abstractions.dll": {}
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -607,14 +1205,10 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "7.0.0"
         },
         "compile": {
-          "lib/net6.0/Microsoft.Extensions.DependencyInjection.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.Extensions.DependencyInjection.dll": {}
         },
         "runtime": {
-          "lib/net6.0/Microsoft.Extensions.DependencyInjection.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.Extensions.DependencyInjection.dll": {}
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -623,14 +1217,10 @@
       "Microsoft.Extensions.DependencyInjection.Abstractions/7.0.0": {
         "type": "package",
         "compile": {
-          "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
         },
         "runtime": {
-          "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {}
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -643,14 +1233,10 @@
           "System.Text.Json": "7.0.0"
         },
         "compile": {
-          "lib/net6.0/Microsoft.Extensions.DependencyModel.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.Extensions.DependencyModel.dll": {}
         },
         "runtime": {
-          "lib/net6.0/Microsoft.Extensions.DependencyModel.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.Extensions.DependencyModel.dll": {}
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -665,14 +1251,10 @@
           "Microsoft.Extensions.Options": "7.0.0"
         },
         "compile": {
-          "lib/net6.0/Microsoft.Extensions.Logging.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.Extensions.Logging.dll": {}
         },
         "runtime": {
-          "lib/net6.0/Microsoft.Extensions.Logging.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.Extensions.Logging.dll": {}
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -681,14 +1263,10 @@
       "Microsoft.Extensions.Logging.Abstractions/7.0.0": {
         "type": "package",
         "compile": {
-          "lib/net6.0/Microsoft.Extensions.Logging.Abstractions.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.Extensions.Logging.Abstractions.dll": {}
         },
         "runtime": {
-          "lib/net6.0/Microsoft.Extensions.Logging.Abstractions.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.Extensions.Logging.Abstractions.dll": {}
         },
         "build": {
           "buildTransitive/net6.0/Microsoft.Extensions.Logging.Abstractions.targets": {}
@@ -701,14 +1279,10 @@
           "Microsoft.Extensions.Primitives": "7.0.0"
         },
         "compile": {
-          "lib/net6.0/Microsoft.Extensions.Options.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.Extensions.Options.dll": {}
         },
         "runtime": {
-          "lib/net6.0/Microsoft.Extensions.Options.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.Extensions.Options.dll": {}
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -720,14 +1294,10 @@
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
         },
         "compile": {
-          "lib/net6.0/Microsoft.Extensions.Primitives.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.Extensions.Primitives.dll": {}
         },
         "runtime": {
-          "lib/net6.0/Microsoft.Extensions.Primitives.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.Extensions.Primitives.dll": {}
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -739,14 +1309,10 @@
           "Microsoft.IdentityModel.Abstractions": "6.22.0"
         },
         "compile": {
-          "lib/netcoreapp2.1/Microsoft.Identity.Client.dll": {
-            "related": ".xml"
-          }
+          "lib/netcoreapp2.1/Microsoft.Identity.Client.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp2.1/Microsoft.Identity.Client.dll": {
-            "related": ".xml"
-          }
+          "lib/netcoreapp2.1/Microsoft.Identity.Client.dll": {}
         }
       },
       "Microsoft.Identity.Client.Extensions.Msal/2.19.3": {
@@ -756,27 +1322,19 @@
           "System.Security.Cryptography.ProtectedData": "4.5.0"
         },
         "compile": {
-          "lib/netcoreapp2.1/Microsoft.Identity.Client.Extensions.Msal.dll": {
-            "related": ".xml"
-          }
+          "lib/netcoreapp2.1/Microsoft.Identity.Client.Extensions.Msal.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp2.1/Microsoft.Identity.Client.Extensions.Msal.dll": {
-            "related": ".xml"
-          }
+          "lib/netcoreapp2.1/Microsoft.Identity.Client.Extensions.Msal.dll": {}
         }
       },
       "Microsoft.IdentityModel.Abstractions/6.24.0": {
         "type": "package",
         "compile": {
-          "lib/net6.0/Microsoft.IdentityModel.Abstractions.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.IdentityModel.Abstractions.dll": {}
         },
         "runtime": {
-          "lib/net6.0/Microsoft.IdentityModel.Abstractions.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.IdentityModel.Abstractions.dll": {}
         }
       },
       "Microsoft.IdentityModel.JsonWebTokens/6.24.0": {
@@ -787,14 +1345,10 @@
           "System.Text.Json": "4.7.2"
         },
         "compile": {
-          "lib/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
         },
         "runtime": {
-          "lib/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
         }
       },
       "Microsoft.IdentityModel.Logging/6.24.0": {
@@ -803,14 +1357,10 @@
           "Microsoft.IdentityModel.Abstractions": "6.24.0"
         },
         "compile": {
-          "lib/net6.0/Microsoft.IdentityModel.Logging.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.IdentityModel.Logging.dll": {}
         },
         "runtime": {
-          "lib/net6.0/Microsoft.IdentityModel.Logging.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.IdentityModel.Logging.dll": {}
         }
       },
       "Microsoft.IdentityModel.Protocols/6.24.0": {
@@ -820,14 +1370,10 @@
           "Microsoft.IdentityModel.Tokens": "6.24.0"
         },
         "compile": {
-          "lib/net6.0/Microsoft.IdentityModel.Protocols.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.IdentityModel.Protocols.dll": {}
         },
         "runtime": {
-          "lib/net6.0/Microsoft.IdentityModel.Protocols.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.IdentityModel.Protocols.dll": {}
         }
       },
       "Microsoft.IdentityModel.Protocols.OpenIdConnect/6.24.0": {
@@ -837,14 +1383,10 @@
           "System.IdentityModel.Tokens.Jwt": "6.24.0"
         },
         "compile": {
-          "lib/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll": {}
         },
         "runtime": {
-          "lib/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll": {}
         }
       },
       "Microsoft.IdentityModel.Tokens/6.24.0": {
@@ -855,14 +1397,10 @@
           "System.Security.Cryptography.Cng": "4.5.0"
         },
         "compile": {
-          "lib/net6.0/Microsoft.IdentityModel.Tokens.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.IdentityModel.Tokens.dll": {}
         },
         "runtime": {
-          "lib/net6.0/Microsoft.IdentityModel.Tokens.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.IdentityModel.Tokens.dll": {}
         }
       },
       "Microsoft.NETCore.Platforms/1.1.1": {
@@ -886,14 +1424,10 @@
       "Microsoft.SqlServer.Server/1.0.0": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Microsoft.SqlServer.Server.dll": {
-            "related": ".pdb;.xml"
-          }
+          "lib/netstandard2.0/Microsoft.SqlServer.Server.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.SqlServer.Server.dll": {
-            "related": ".pdb;.xml"
-          }
+          "lib/netstandard2.0/Microsoft.SqlServer.Server.dll": {}
         }
       },
       "Microsoft.Web.Infrastructure/1.0.0": {
@@ -913,9 +1447,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/_._": {}
         }
       },
       "Microsoft.Win32.Registry/4.3.0": {
@@ -931,9 +1463,7 @@
           "System.Runtime.InteropServices": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/_._": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard1.3/Microsoft.Win32.Registry.dll": {
@@ -949,14 +1479,10 @@
       "Microsoft.Win32.SystemEvents/6.0.0": {
         "type": "package",
         "compile": {
-          "lib/net6.0/_._": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {}
         },
         "runtime": {
-          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Microsoft.Win32.SystemEvents.dll": {}
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
@@ -983,14 +1509,10 @@
       "Newtonsoft.Json/13.0.3": {
         "type": "package",
         "compile": {
-          "lib/net6.0/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Newtonsoft.Json.dll": {}
         },
         "runtime": {
-          "lib/net6.0/Newtonsoft.Json.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/Newtonsoft.Json.dll": {}
         }
       },
       "RazorPDF/1.0.0": {
@@ -1162,15 +1684,26 @@
           }
         }
       },
+      "SixLabors.ImageSharp/2.1.3": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "5.0.0",
+          "System.Text.Encoding.CodePages": "5.0.0"
+        },
+        "compile": {
+          "lib/netcoreapp3.1/SixLabors.ImageSharp.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/SixLabors.ImageSharp.dll": {}
+        }
+      },
       "System.AppContext/4.1.0": {
         "type": "package",
         "dependencies": {
           "System.Runtime": "4.1.0"
         },
         "compile": {
-          "ref/netstandard1.6/System.AppContext.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.6/System.AppContext.dll": {}
         },
         "runtime": {
           "lib/netstandard1.6/System.AppContext.dll": {}
@@ -1179,9 +1712,7 @@
       "System.CodeDom/4.4.0": {
         "type": "package",
         "compile": {
-          "ref/netstandard2.0/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard2.0/_._": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.CodeDom.dll": {}
@@ -1195,9 +1726,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/System.Collections.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/System.Collections.dll": {}
         }
       },
       "System.Collections.Concurrent/4.3.0": {
@@ -1215,9 +1744,7 @@
           "System.Threading.Tasks": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/_._": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Collections.Concurrent.dll": {}
@@ -1234,9 +1761,7 @@
           "System.Threading": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/System.Collections.NonGeneric.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/System.Collections.NonGeneric.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Collections.NonGeneric.dll": {}
@@ -1249,14 +1774,10 @@
           "System.Security.Permissions": "6.0.0"
         },
         "compile": {
-          "lib/net6.0/_._": {
-            "related": ".xml"
-          }
+          "lib/net6.0/System.Configuration.ConfigurationManager.dll": {}
         },
         "runtime": {
-          "lib/net6.0/System.Configuration.ConfigurationManager.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/System.Configuration.ConfigurationManager.dll": {}
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
@@ -1270,9 +1791,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/_._": {}
         }
       },
       "System.Diagnostics.DiagnosticSource/6.0.0": {
@@ -1281,14 +1800,10 @@
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
         },
         "compile": {
-          "lib/net6.0/System.Diagnostics.DiagnosticSource.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/System.Diagnostics.DiagnosticSource.dll": {}
         },
         "runtime": {
-          "lib/net6.0/System.Diagnostics.DiagnosticSource.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/System.Diagnostics.DiagnosticSource.dll": {}
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
@@ -1320,9 +1835,7 @@
           "runtime.native.System": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.4/System.Diagnostics.Process.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.4/System.Diagnostics.Process.dll": {}
         },
         "runtimeTargets": {
           "runtimes/linux/lib/netstandard1.4/System.Diagnostics.Process.dll": {
@@ -1347,9 +1860,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.5/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.5/_._": {}
         }
       },
       "System.Drawing.Common/6.0.0": {
@@ -1358,14 +1869,10 @@
           "Microsoft.Win32.SystemEvents": "6.0.0"
         },
         "compile": {
-          "lib/net6.0/_._": {
-            "related": ".xml"
-          }
+          "lib/net6.0/System.Drawing.Common.dll": {}
         },
         "runtime": {
-          "lib/net6.0/System.Drawing.Common.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/System.Drawing.Common.dll": {}
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
@@ -1384,14 +1891,10 @@
       "System.Formats.Asn1/5.0.0": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/_._": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/_._": {}
         },
         "runtime": {
-          "lib/netstandard2.0/System.Formats.Asn1.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/System.Formats.Asn1.dll": {}
         }
       },
       "System.Globalization/4.3.0": {
@@ -1402,9 +1905,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/System.Globalization.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/System.Globalization.dll": {}
         }
       },
       "System.Globalization.Extensions/4.3.0": {
@@ -1418,9 +1919,7 @@
           "System.Runtime.InteropServices": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/System.Globalization.Extensions.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/System.Globalization.Extensions.dll": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard1.3/System.Globalization.Extensions.dll": {
@@ -1440,14 +1939,10 @@
           "Microsoft.IdentityModel.Tokens": "6.24.0"
         },
         "compile": {
-          "lib/net6.0/System.IdentityModel.Tokens.Jwt.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/System.IdentityModel.Tokens.Jwt.dll": {}
         },
         "runtime": {
-          "lib/net6.0/System.IdentityModel.Tokens.Jwt.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/System.IdentityModel.Tokens.Jwt.dll": {}
         }
       },
       "System.IO/4.3.0": {
@@ -1460,9 +1955,7 @@
           "System.Threading.Tasks": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.5/System.IO.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.5/System.IO.dll": {}
         }
       },
       "System.IO.FileSystem/4.3.0": {
@@ -1478,9 +1971,7 @@
           "System.Threading.Tasks": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/System.IO.FileSystem.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/System.IO.FileSystem.dll": {}
         }
       },
       "System.IO.FileSystem.Primitives/4.3.0": {
@@ -1489,9 +1980,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/System.IO.FileSystem.Primitives.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/System.IO.FileSystem.Primitives.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.IO.FileSystem.Primitives.dll": {}
@@ -1507,9 +1996,7 @@
           "System.Runtime.Extensions": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.6/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.6/_._": {}
         },
         "runtime": {
           "lib/netstandard1.6/System.Linq.dll": {}
@@ -1531,14 +2018,10 @@
           "System.Text.Json": "4.6.0"
         },
         "compile": {
-          "lib/netstandard2.0/System.Memory.Data.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/System.Memory.Data.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/System.Memory.Data.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/System.Memory.Data.dll": {}
         }
       },
       "System.Numerics.Vectors/4.5.0": {
@@ -1560,9 +2043,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.5/System.Reflection.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.5/System.Reflection.dll": {}
         }
       },
       "System.Reflection.Primitives/4.3.0": {
@@ -1573,9 +2054,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.0/System.Reflection.Primitives.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.0/System.Reflection.Primitives.dll": {}
         }
       },
       "System.Reflection.TypeExtensions/4.1.0": {
@@ -1585,9 +2064,7 @@
           "System.Runtime": "4.1.0"
         },
         "compile": {
-          "ref/netstandard1.5/System.Reflection.TypeExtensions.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.5/System.Reflection.TypeExtensions.dll": {}
         },
         "runtime": {
           "lib/netstandard1.5/System.Reflection.TypeExtensions.dll": {}
@@ -1603,9 +2080,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.0/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.0/_._": {}
         }
       },
       "System.Runtime/4.3.1": {
@@ -1615,9 +2090,7 @@
           "Microsoft.NETCore.Targets": "1.1.3"
         },
         "compile": {
-          "ref/netstandard1.5/System.Runtime.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.5/System.Runtime.dll": {}
         }
       },
       "System.Runtime.Caching/6.0.0": {
@@ -1626,14 +2099,10 @@
           "System.Configuration.ConfigurationManager": "6.0.0"
         },
         "compile": {
-          "lib/net6.0/_._": {
-            "related": ".xml"
-          }
+          "lib/net6.0/_._": {}
         },
         "runtime": {
-          "lib/net6.0/System.Runtime.Caching.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/System.Runtime.Caching.dll": {}
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
@@ -1648,14 +2117,10 @@
       "System.Runtime.CompilerServices.Unsafe/6.0.0": {
         "type": "package",
         "compile": {
-          "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll": {}
         },
         "runtime": {
-          "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll": {}
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
@@ -1669,9 +2134,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.5/System.Runtime.Extensions.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.5/System.Runtime.Extensions.dll": {}
         }
       },
       "System.Runtime.Handles/4.3.0": {
@@ -1682,9 +2145,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/System.Runtime.Handles.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/System.Runtime.Handles.dll": {}
         }
       },
       "System.Runtime.InteropServices/4.3.0": {
@@ -1734,9 +2195,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.5/System.Runtime.Loader.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.5/System.Runtime.Loader.dll": {}
         },
         "runtime": {
           "lib/netstandard1.5/System.Runtime.Loader.dll": {}
@@ -1751,9 +2210,7 @@
           "System.Runtime.Extensions": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.1/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.1/_._": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Runtime.Numerics.dll": {}
@@ -1782,9 +2239,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/System.Runtime.Serialization.Primitives.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/System.Runtime.Serialization.Primitives.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Runtime.Serialization.Primitives.dll": {}
@@ -1793,14 +2248,10 @@
       "System.Security.AccessControl/6.0.0": {
         "type": "package",
         "compile": {
-          "lib/net6.0/_._": {
-            "related": ".xml"
-          }
+          "lib/net6.0/System.Security.AccessControl.dll": {}
         },
         "runtime": {
-          "lib/net6.0/System.Security.AccessControl.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/System.Security.AccessControl.dll": {}
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
@@ -1854,14 +2305,10 @@
           "System.Formats.Asn1": "5.0.0"
         },
         "compile": {
-          "ref/netcoreapp3.0/System.Security.Cryptography.Cng.dll": {
-            "related": ".xml"
-          }
+          "ref/netcoreapp3.0/System.Security.Cryptography.Cng.dll": {}
         },
         "runtime": {
-          "lib/netcoreapp3.0/System.Security.Cryptography.Cng.dll": {
-            "related": ".xml"
-          }
+          "lib/netcoreapp3.0/System.Security.Cryptography.Cng.dll": {}
         },
         "runtimeTargets": {
           "runtimes/win/lib/netcoreapp3.0/System.Security.Cryptography.Cng.dll": {
@@ -1918,9 +2365,7 @@
           "runtime.native.System.Security.Cryptography.OpenSsl": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/System.Security.Cryptography.Encoding.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/System.Security.Cryptography.Encoding.dll": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard1.3/System.Security.Cryptography.Encoding.dll": {
@@ -1954,14 +2399,10 @@
       "System.Security.Cryptography.ProtectedData/6.0.0": {
         "type": "package",
         "compile": {
-          "lib/net6.0/System.Security.Cryptography.ProtectedData.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/System.Security.Cryptography.ProtectedData.dll": {}
         },
         "runtime": {
-          "lib/net6.0/System.Security.Cryptography.ProtectedData.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/System.Security.Cryptography.ProtectedData.dll": {}
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
@@ -1980,14 +2421,10 @@
           "System.Windows.Extensions": "6.0.0"
         },
         "compile": {
-          "lib/net6.0/_._": {
-            "related": ".xml"
-          }
+          "lib/net6.0/System.Security.Permissions.dll": {}
         },
         "runtime": {
-          "lib/net6.0/System.Security.Permissions.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/System.Security.Permissions.dll": {}
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
@@ -1996,14 +2433,10 @@
       "System.Security.Principal.Windows/5.0.0": {
         "type": "package",
         "compile": {
-          "ref/netcoreapp3.0/_._": {
-            "related": ".xml"
-          }
+          "ref/netcoreapp3.0/_._": {}
         },
         "runtime": {
-          "lib/netstandard2.0/System.Security.Principal.Windows.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/System.Security.Principal.Windows.dll": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netcoreapp2.1/System.Security.Principal.Windows.dll": {
@@ -2024,9 +2457,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/System.Text.Encoding.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/System.Text.Encoding.dll": {}
         }
       },
       "System.Text.Encoding.CodePages/6.0.0": {
@@ -2035,14 +2466,10 @@
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
         },
         "compile": {
-          "lib/net6.0/System.Text.Encoding.CodePages.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/System.Text.Encoding.CodePages.dll": {}
         },
         "runtime": {
-          "lib/net6.0/System.Text.Encoding.CodePages.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/System.Text.Encoding.CodePages.dll": {}
         },
         "build": {
           "buildTransitive/netcoreapp3.1/_._": {}
@@ -2063,9 +2490,7 @@
           "System.Text.Encoding": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/_._": {}
         }
       },
       "System.Text.Encodings.Web/7.0.0": {
@@ -2074,14 +2499,10 @@
           "System.Runtime.CompilerServices.Unsafe": "6.0.0"
         },
         "compile": {
-          "lib/net6.0/System.Text.Encodings.Web.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/System.Text.Encodings.Web.dll": {}
         },
         "runtime": {
-          "lib/net6.0/System.Text.Encodings.Web.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/System.Text.Encodings.Web.dll": {}
         },
         "build": {
           "buildTransitive/net6.0/_._": {}
@@ -2100,14 +2521,10 @@
           "System.Text.Encodings.Web": "7.0.0"
         },
         "compile": {
-          "lib/net6.0/System.Text.Json.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/System.Text.Json.dll": {}
         },
         "runtime": {
-          "lib/net6.0/System.Text.Json.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/System.Text.Json.dll": {}
         },
         "build": {
           "buildTransitive/net6.0/System.Text.Json.targets": {}
@@ -2132,9 +2549,7 @@
           "System.Threading.Tasks": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/_._": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/_._": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Threading.dll": {}
@@ -2148,9 +2563,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/System.Threading.Tasks.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
       },
       "System.Threading.Tasks.Extensions/4.5.4": {
@@ -2168,9 +2581,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/System.Threading.Thread.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/System.Threading.Thread.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Threading.Thread.dll": {}
@@ -2183,9 +2594,7 @@
           "System.Runtime.Handles": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/System.Threading.ThreadPool.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/System.Threading.ThreadPool.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Threading.ThreadPool.dll": {}
@@ -2197,14 +2606,10 @@
           "System.Drawing.Common": "6.0.0"
         },
         "compile": {
-          "lib/net6.0/_._": {
-            "related": ".xml"
-          }
+          "lib/net6.0/System.Windows.Extensions.dll": {}
         },
         "runtime": {
-          "lib/net6.0/System.Windows.Extensions.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/System.Windows.Extensions.dll": {}
         },
         "runtimeTargets": {
           "runtimes/win/lib/net6.0/System.Windows.Extensions.dll": {
@@ -2233,9 +2638,7 @@
           "System.Threading.Tasks.Extensions": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/System.Xml.ReaderWriter.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/System.Xml.ReaderWriter.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Xml.ReaderWriter.dll": {}
@@ -2256,9 +2659,7 @@
           "System.Xml.ReaderWriter": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.3/System.Xml.XmlDocument.dll": {
-            "related": ".xml"
-          }
+          "ref/netstandard1.3/System.Xml.XmlDocument.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlDocument.dll": {}
@@ -2305,6 +2706,21 @@
         "lib/netstandard2.0/Azure.Identity.xml"
       ]
     },
+    "BitMiracle.LibTiff.NET/2.4.649": {
+      "sha512": "XCEdfCphKo0UAvSg1h/OzOFWtjkIGnPMAziYkNqV7NVrqb/tZJTBxJhxIEX7gpvQwg8GIRYt133SUncfkKfjLA==",
+      "type": "package",
+      "path": "bitmiracle.libtiff.net/2.4.649",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "bitmiracle.libtiff.net.2.4.649.nupkg.sha512",
+        "bitmiracle.libtiff.net.nuspec",
+        "lib/net40/BitMiracle.LibTiff.NET.dll",
+        "lib/net40/BitMiracle.LibTiff.NET.xml",
+        "lib/netstandard2.0/BitMiracle.LibTiff.NET.dll",
+        "lib/netstandard2.0/BitMiracle.LibTiff.NET.xml"
+      ]
+    },
     "BouncyCastle/1.8.9": {
       "sha512": "axnBgvdD5n+FnEG6efk/tfKuMFru7R/EoISH9zjh319yb3HD24TEHSAbNN/lTRT2ulOGRxDgOsCjkuk08iwWPg==",
       "type": "package",
@@ -2316,6 +2732,41 @@
         "bouncycastle.1.8.9.nupkg.sha512",
         "bouncycastle.nuspec",
         "lib/BouncyCastle.Crypto.dll"
+      ]
+    },
+    "Google.Protobuf/3.22.3": {
+      "sha512": "uyWJZTS0N3gw35jtm/++1jAJNPkFP92QYdxgiC0yv8vQaOi8gaJZ8PhCnjmN6JbobJcCFPBd0cGkmCh6QYOt6Q==",
+      "type": "package",
+      "path": "google.protobuf/3.22.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "google.protobuf.3.22.3.nupkg.sha512",
+        "google.protobuf.nuspec",
+        "lib/net45/Google.Protobuf.dll",
+        "lib/net45/Google.Protobuf.pdb",
+        "lib/net45/Google.Protobuf.xml",
+        "lib/net5.0/Google.Protobuf.dll",
+        "lib/net5.0/Google.Protobuf.pdb",
+        "lib/net5.0/Google.Protobuf.xml",
+        "lib/netstandard1.1/Google.Protobuf.dll",
+        "lib/netstandard1.1/Google.Protobuf.pdb",
+        "lib/netstandard1.1/Google.Protobuf.xml",
+        "lib/netstandard2.0/Google.Protobuf.dll",
+        "lib/netstandard2.0/Google.Protobuf.pdb",
+        "lib/netstandard2.0/Google.Protobuf.xml"
+      ]
+    },
+    "Grpc/2.46.6": {
+      "sha512": "vpC39vgCxbVBnsn8boeQv2aGIdEFqQMnjsoDvyYfr6tC93Fe9KqNG1mAiF6KLzJTwk6aiWHGNYE2EqmDUzk5ng==",
+      "type": "package",
+      "path": "grpc/2.46.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "grpc.2.46.6.nupkg.sha512",
+        "grpc.nuspec",
+        "packageIcon.png"
       ]
     },
     "Grpc.Core/2.46.6": {
@@ -2386,6 +2837,247 @@
         "lib/netstandard2.0/Humanizer.dll",
         "lib/netstandard2.0/Humanizer.xml",
         "logo.png"
+      ]
+    },
+    "IronPdf/2023.6.10": {
+      "sha512": "o8kEtvp2977ujQ3gP0tVc6zkE8KOeFe5pTJ9fgYgb/f5by/2QsRPKHMtb9naJJkaP0926SeXLPAdiI9U8L3iSw==",
+      "type": "package",
+      "path": "ironpdf/2023.6.10",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "EULA.txt",
+        "README.txt",
+        "docs/README.md",
+        "images/iron-logo-128.png",
+        "ironpdf.2023.6.10.nupkg.sha512",
+        "ironpdf.nuspec",
+        "lib/net462/_._",
+        "lib/net5.0/_._",
+        "lib/net6.0/_._",
+        "lib/netcoreapp2.0/_._",
+        "lib/netcoreapp3.1/_._",
+        "lib/netstandard2.0/_._"
+      ]
+    },
+    "IronPdf.Native.Chrome.Windows/2023.6.14948": {
+      "sha512": "hipMLsxa8FZtiCdp/rrCLlPUbVk1DULJe7LvVHYe0SZZR0sYKTt3XAqXKBNjTO2hFyh/nXBpoUU0/TWi+Z+3qA==",
+      "type": "package",
+      "path": "ironpdf.native.chrome.windows/2023.6.14948",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "build/net/IronPdf.Native.Chrome.Windows.targets",
+        "build/netstandard2.0/IronPdf.Native.Chrome.Windows.targets",
+        "buildTransitive/net/IronPdf.Native.Chrome.Windows.targets",
+        "buildTransitive/netstandard2.0/IronPdf.Native.Chrome.Windows.targets",
+        "images/iron-logo-128.png",
+        "ironpdf.native.chrome.windows.2023.6.14948.nupkg.sha512",
+        "ironpdf.native.chrome.windows.nuspec",
+        "lib/net/_._",
+        "lib/netstandard2.0/_._",
+        "runtimes/win-x64/native/IronCefSubprocess.exe",
+        "runtimes/win-x64/native/IronInterop.dll",
+        "runtimes/win-x64/native/IronPdf.Native.Chrome.deployment.json",
+        "runtimes/win-x64/native/chrome_100_percent.pak",
+        "runtimes/win-x64/native/chrome_200_percent.pak",
+        "runtimes/win-x64/native/chrome_elf.dll",
+        "runtimes/win-x64/native/concrt140.dll",
+        "runtimes/win-x64/native/d3dcompiler_47.dll",
+        "runtimes/win-x64/native/dxva2.dll",
+        "runtimes/win-x64/native/icudtl.dat",
+        "runtimes/win-x64/native/libEGL.dll",
+        "runtimes/win-x64/native/libGLESv2.dll",
+        "runtimes/win-x64/native/libcef.dll",
+        "runtimes/win-x64/native/locales/af.pak",
+        "runtimes/win-x64/native/locales/am.pak",
+        "runtimes/win-x64/native/locales/ar.pak",
+        "runtimes/win-x64/native/locales/bg.pak",
+        "runtimes/win-x64/native/locales/bn.pak",
+        "runtimes/win-x64/native/locales/ca.pak",
+        "runtimes/win-x64/native/locales/cs.pak",
+        "runtimes/win-x64/native/locales/da.pak",
+        "runtimes/win-x64/native/locales/de.pak",
+        "runtimes/win-x64/native/locales/el.pak",
+        "runtimes/win-x64/native/locales/en-GB.pak",
+        "runtimes/win-x64/native/locales/en-US.pak",
+        "runtimes/win-x64/native/locales/es-419.pak",
+        "runtimes/win-x64/native/locales/es.pak",
+        "runtimes/win-x64/native/locales/et.pak",
+        "runtimes/win-x64/native/locales/fa.pak",
+        "runtimes/win-x64/native/locales/fi.pak",
+        "runtimes/win-x64/native/locales/fil.pak",
+        "runtimes/win-x64/native/locales/fr.pak",
+        "runtimes/win-x64/native/locales/gu.pak",
+        "runtimes/win-x64/native/locales/he.pak",
+        "runtimes/win-x64/native/locales/hi.pak",
+        "runtimes/win-x64/native/locales/hr.pak",
+        "runtimes/win-x64/native/locales/hu.pak",
+        "runtimes/win-x64/native/locales/id.pak",
+        "runtimes/win-x64/native/locales/it.pak",
+        "runtimes/win-x64/native/locales/ja.pak",
+        "runtimes/win-x64/native/locales/kn.pak",
+        "runtimes/win-x64/native/locales/ko.pak",
+        "runtimes/win-x64/native/locales/lt.pak",
+        "runtimes/win-x64/native/locales/lv.pak",
+        "runtimes/win-x64/native/locales/ml.pak",
+        "runtimes/win-x64/native/locales/mr.pak",
+        "runtimes/win-x64/native/locales/ms.pak",
+        "runtimes/win-x64/native/locales/nb.pak",
+        "runtimes/win-x64/native/locales/nl.pak",
+        "runtimes/win-x64/native/locales/pl.pak",
+        "runtimes/win-x64/native/locales/pt-BR.pak",
+        "runtimes/win-x64/native/locales/pt-PT.pak",
+        "runtimes/win-x64/native/locales/ro.pak",
+        "runtimes/win-x64/native/locales/ru.pak",
+        "runtimes/win-x64/native/locales/sk.pak",
+        "runtimes/win-x64/native/locales/sl.pak",
+        "runtimes/win-x64/native/locales/sr.pak",
+        "runtimes/win-x64/native/locales/sv.pak",
+        "runtimes/win-x64/native/locales/sw.pak",
+        "runtimes/win-x64/native/locales/ta.pak",
+        "runtimes/win-x64/native/locales/te.pak",
+        "runtimes/win-x64/native/locales/th.pak",
+        "runtimes/win-x64/native/locales/tr.pak",
+        "runtimes/win-x64/native/locales/uk.pak",
+        "runtimes/win-x64/native/locales/ur.pak",
+        "runtimes/win-x64/native/locales/vi.pak",
+        "runtimes/win-x64/native/locales/zh-CN.pak",
+        "runtimes/win-x64/native/locales/zh-TW.pak",
+        "runtimes/win-x64/native/msvcp140.dll",
+        "runtimes/win-x64/native/msvcp140_1.dll",
+        "runtimes/win-x64/native/msvcp140_2.dll",
+        "runtimes/win-x64/native/msvcp140_atomic_wait.dll",
+        "runtimes/win-x64/native/msvcp140_codecvt_ids.dll",
+        "runtimes/win-x64/native/resources.pak",
+        "runtimes/win-x64/native/snapshot_blob.bin",
+        "runtimes/win-x64/native/ucrtbase.dll",
+        "runtimes/win-x64/native/v8_context_snapshot.bin",
+        "runtimes/win-x64/native/vcruntime140.dll",
+        "runtimes/win-x64/native/vcruntime140_1.dll",
+        "runtimes/win-x64/native/vk_swiftshader.dll",
+        "runtimes/win-x64/native/vulkan-1.dll",
+        "runtimes/win-x86/native/IronCefSubprocess.exe",
+        "runtimes/win-x86/native/IronInterop.dll",
+        "runtimes/win-x86/native/IronPdf.Native.Chrome.deployment.json",
+        "runtimes/win-x86/native/chrome_100_percent.pak",
+        "runtimes/win-x86/native/chrome_200_percent.pak",
+        "runtimes/win-x86/native/chrome_elf.dll",
+        "runtimes/win-x86/native/concrt140.dll",
+        "runtimes/win-x86/native/d3dcompiler_47.dll",
+        "runtimes/win-x86/native/dxva2.dll",
+        "runtimes/win-x86/native/icudtl.dat",
+        "runtimes/win-x86/native/libEGL.dll",
+        "runtimes/win-x86/native/libGLESv2.dll",
+        "runtimes/win-x86/native/libcef.dll",
+        "runtimes/win-x86/native/locales/af.pak",
+        "runtimes/win-x86/native/locales/am.pak",
+        "runtimes/win-x86/native/locales/ar.pak",
+        "runtimes/win-x86/native/locales/bg.pak",
+        "runtimes/win-x86/native/locales/bn.pak",
+        "runtimes/win-x86/native/locales/ca.pak",
+        "runtimes/win-x86/native/locales/cs.pak",
+        "runtimes/win-x86/native/locales/da.pak",
+        "runtimes/win-x86/native/locales/de.pak",
+        "runtimes/win-x86/native/locales/el.pak",
+        "runtimes/win-x86/native/locales/en-GB.pak",
+        "runtimes/win-x86/native/locales/en-US.pak",
+        "runtimes/win-x86/native/locales/es-419.pak",
+        "runtimes/win-x86/native/locales/es.pak",
+        "runtimes/win-x86/native/locales/et.pak",
+        "runtimes/win-x86/native/locales/fa.pak",
+        "runtimes/win-x86/native/locales/fi.pak",
+        "runtimes/win-x86/native/locales/fil.pak",
+        "runtimes/win-x86/native/locales/fr.pak",
+        "runtimes/win-x86/native/locales/gu.pak",
+        "runtimes/win-x86/native/locales/he.pak",
+        "runtimes/win-x86/native/locales/hi.pak",
+        "runtimes/win-x86/native/locales/hr.pak",
+        "runtimes/win-x86/native/locales/hu.pak",
+        "runtimes/win-x86/native/locales/id.pak",
+        "runtimes/win-x86/native/locales/it.pak",
+        "runtimes/win-x86/native/locales/ja.pak",
+        "runtimes/win-x86/native/locales/kn.pak",
+        "runtimes/win-x86/native/locales/ko.pak",
+        "runtimes/win-x86/native/locales/lt.pak",
+        "runtimes/win-x86/native/locales/lv.pak",
+        "runtimes/win-x86/native/locales/ml.pak",
+        "runtimes/win-x86/native/locales/mr.pak",
+        "runtimes/win-x86/native/locales/ms.pak",
+        "runtimes/win-x86/native/locales/nb.pak",
+        "runtimes/win-x86/native/locales/nl.pak",
+        "runtimes/win-x86/native/locales/pl.pak",
+        "runtimes/win-x86/native/locales/pt-BR.pak",
+        "runtimes/win-x86/native/locales/pt-PT.pak",
+        "runtimes/win-x86/native/locales/ro.pak",
+        "runtimes/win-x86/native/locales/ru.pak",
+        "runtimes/win-x86/native/locales/sk.pak",
+        "runtimes/win-x86/native/locales/sl.pak",
+        "runtimes/win-x86/native/locales/sr.pak",
+        "runtimes/win-x86/native/locales/sv.pak",
+        "runtimes/win-x86/native/locales/sw.pak",
+        "runtimes/win-x86/native/locales/ta.pak",
+        "runtimes/win-x86/native/locales/te.pak",
+        "runtimes/win-x86/native/locales/th.pak",
+        "runtimes/win-x86/native/locales/tr.pak",
+        "runtimes/win-x86/native/locales/uk.pak",
+        "runtimes/win-x86/native/locales/ur.pak",
+        "runtimes/win-x86/native/locales/vi.pak",
+        "runtimes/win-x86/native/locales/zh-CN.pak",
+        "runtimes/win-x86/native/locales/zh-TW.pak",
+        "runtimes/win-x86/native/msvcp140.dll",
+        "runtimes/win-x86/native/msvcp140_1.dll",
+        "runtimes/win-x86/native/msvcp140_2.dll",
+        "runtimes/win-x86/native/msvcp140_atomic_wait.dll",
+        "runtimes/win-x86/native/msvcp140_codecvt_ids.dll",
+        "runtimes/win-x86/native/resources.pak",
+        "runtimes/win-x86/native/snapshot_blob.bin",
+        "runtimes/win-x86/native/ucrtbase.dll",
+        "runtimes/win-x86/native/v8_context_snapshot.bin",
+        "runtimes/win-x86/native/vcruntime140.dll",
+        "runtimes/win-x86/native/vk_swiftshader.dll",
+        "runtimes/win-x86/native/vulkan-1.dll"
+      ]
+    },
+    "IronPdf.Slim/2023.6.10": {
+      "sha512": "tBfxejOygLSQCOVwo0ai+s4qC7bt1uUCsIq/CXO3E+oBA8Z3Hv/Jm4iQ1KzN6zFQkfxJob+Nm1/AMfnbdSAoCQ==",
+      "type": "package",
+      "path": "ironpdf.slim/2023.6.10",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "EULA.txt",
+        "README.txt",
+        "build/IronPdf.Slim.props",
+        "buildTransitive/net/IronPdf.Slim.targets",
+        "docs/README.md",
+        "images/iron-logo-128.png",
+        "ironpdf.slim.2023.6.10.nupkg.sha512",
+        "ironpdf.slim.nuspec",
+        "lib/net6.0/IronPdf.dll",
+        "lib/net6.0/IronPdf.xml",
+        "lib/netstandard2.0/IronPdf.dll",
+        "lib/netstandard2.0/IronPdf.xml"
+      ]
+    },
+    "IronSoftware.System.Drawing/2023.3.3": {
+      "sha512": "GRA/kBUMJErkn7bs7i3y2LZOT3YMAcWFnKZh0Nm+2xvey3jIA0A7q2Ti4RP0AAnZ3eUuhpyRl2bymQgyzc9z2w==",
+      "type": "package",
+      "path": "ironsoftware.system.drawing/2023.3.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "README.txt",
+        "docs/README.md",
+        "images/ironsoftware-logo.png",
+        "ironsoftware.system.drawing.2023.3.3.nupkg.sha512",
+        "ironsoftware.system.drawing.nuspec",
+        "lib/netstandard2.0/IronSoftware.Drawing.Common.deps.json",
+        "lib/netstandard2.0/IronSoftware.Drawing.Common.dll",
+        "lib/netstandard2.0/IronSoftware.Drawing.Common.pdb",
+        "lib/netstandard2.0/IronSoftware.Drawing.Common.xml"
       ]
     },
     "itext7/8.0.0": {
@@ -3775,6 +4467,28 @@
         "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
         "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.nuspec",
         "runtimes/ubuntu.16.10-x64/native/System.Security.Cryptography.Native.OpenSsl.so"
+      ]
+    },
+    "SixLabors.ImageSharp/2.1.3": {
+      "sha512": "8yonNRWX3vUE9k29ta0Hbfa0AEc0hbDjSH/nZ3vOTJEXmY6hLnGsjDKoz96Z+AgOsrdkAu6PdL/Ebaf70aitzw==",
+      "type": "package",
+      "path": "sixlabors.imagesharp/2.1.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net472/SixLabors.ImageSharp.dll",
+        "lib/net472/SixLabors.ImageSharp.xml",
+        "lib/netcoreapp2.1/SixLabors.ImageSharp.dll",
+        "lib/netcoreapp2.1/SixLabors.ImageSharp.xml",
+        "lib/netcoreapp3.1/SixLabors.ImageSharp.dll",
+        "lib/netcoreapp3.1/SixLabors.ImageSharp.xml",
+        "lib/netstandard2.0/SixLabors.ImageSharp.dll",
+        "lib/netstandard2.0/SixLabors.ImageSharp.xml",
+        "lib/netstandard2.1/SixLabors.ImageSharp.dll",
+        "lib/netstandard2.1/SixLabors.ImageSharp.xml",
+        "sixlabors.imagesharp.128.png",
+        "sixlabors.imagesharp.2.1.3.nupkg.sha512",
+        "sixlabors.imagesharp.nuspec"
       ]
     },
     "System.AppContext/4.1.0": {
@@ -6767,6 +7481,7 @@
   "projectFileDependencyGroups": {
     "net6.0": [
       "Grpc.Core >= 2.46.6",
+      "IronPdf >= 2023.6.10",
       "Microsoft.Data.SqlClient >= 5.1.1",
       "Microsoft.EntityFrameworkCore >= 7.0.5",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.5",
@@ -6782,24 +7497,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Bogdan i Wiktor\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Karol\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Bogdan i Wiktor\\Desktop\\studia katowice\\PBD\\InstagramPlusProjekt\\InstagramPlusProjekt-merge\\InstPlusEntityFr\\InstPlusEntityFr.csproj",
+      "projectUniqueName": "G:\\MOJEDOKUMENTY\\GitHub\\InstagramPlusProjekt\\InstagramPlusProjekt-merge\\InstPlusEntityFr\\InstPlusEntityFr.csproj",
       "projectName": "InstPlusEntityFr",
-      "projectPath": "C:\\Users\\Bogdan i Wiktor\\Desktop\\studia katowice\\PBD\\InstagramPlusProjekt\\InstagramPlusProjekt-merge\\InstPlusEntityFr\\InstPlusEntityFr.csproj",
-      "packagesPath": "C:\\Users\\Bogdan i Wiktor\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Bogdan i Wiktor\\Desktop\\studia katowice\\PBD\\InstagramPlusProjekt\\InstagramPlusProjekt-merge\\InstPlusEntityFr\\obj\\",
+      "projectPath": "G:\\MOJEDOKUMENTY\\GitHub\\InstagramPlusProjekt\\InstagramPlusProjekt-merge\\InstPlusEntityFr\\InstPlusEntityFr.csproj",
+      "packagesPath": "C:\\Users\\Karol\\.nuget\\packages\\",
+      "outputPath": "G:\\MOJEDOKUMENTY\\GitHub\\InstagramPlusProjekt\\InstagramPlusProjekt-merge\\InstPlusEntityFr\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Bogdan i Wiktor\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Karol\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6807,7 +7517,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -6829,6 +7538,10 @@
           "Grpc.Core": {
             "target": "Package",
             "version": "[2.46.6, )"
+          },
+          "IronPdf": {
+            "target": "Package",
+            "version": "[2023.6.10, )"
           },
           "Microsoft.Data.SqlClient": {
             "target": "Package",
@@ -6889,8 +7602,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -6902,7 +7614,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   },
@@ -6911,7 +7623,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Pakiet „BouncyCastle 1.8.9” został przywrócony przy użyciu elementu „.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1” zamiast platformy docelowej projektu „net6.0”. Ten pakiet może nie być w pełni kompatybilny z Twoim projektem.",
+      "message": "Pakiet „BouncyCastle 1.8.9” został przywrócony przy użyciu elementu „.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8” zamiast platformy docelowej projektu „net6.0”. Ten pakiet może nie być w pełni kompatybilny z Twoim projektem.",
       "libraryId": "BouncyCastle",
       "targetGraphs": [
         "net6.0"
@@ -6921,7 +7633,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Pakiet „iTextSharp 5.5.13.3” został przywrócony przy użyciu elementu „.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1” zamiast platformy docelowej projektu „net6.0”. Ten pakiet może nie być w pełni kompatybilny z Twoim projektem.",
+      "message": "Pakiet „iTextSharp 5.5.13.3” został przywrócony przy użyciu elementu „.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8” zamiast platformy docelowej projektu „net6.0”. Ten pakiet może nie być w pełni kompatybilny z Twoim projektem.",
       "libraryId": "iTextSharp",
       "targetGraphs": [
         "net6.0"
@@ -6931,7 +7643,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Pakiet „itextsharp.xmlworker 5.5.13.3” został przywrócony przy użyciu elementu „.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1” zamiast platformy docelowej projektu „net6.0”. Ten pakiet może nie być w pełni kompatybilny z Twoim projektem.",
+      "message": "Pakiet „itextsharp.xmlworker 5.5.13.3” został przywrócony przy użyciu elementu „.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8” zamiast platformy docelowej projektu „net6.0”. Ten pakiet może nie być w pełni kompatybilny z Twoim projektem.",
       "libraryId": "itextsharp.xmlworker",
       "targetGraphs": [
         "net6.0"
@@ -6941,7 +7653,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Pakiet „Microsoft.AspNet.Mvc 5.2.3” został przywrócony przy użyciu elementu „.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1” zamiast platformy docelowej projektu „net6.0”. Ten pakiet może nie być w pełni kompatybilny z Twoim projektem.",
+      "message": "Pakiet „Microsoft.AspNet.Mvc 5.2.3” został przywrócony przy użyciu elementu „.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8” zamiast platformy docelowej projektu „net6.0”. Ten pakiet może nie być w pełni kompatybilny z Twoim projektem.",
       "libraryId": "Microsoft.AspNet.Mvc",
       "targetGraphs": [
         "net6.0"
@@ -6951,7 +7663,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Pakiet „Microsoft.AspNet.Razor 3.2.3” został przywrócony przy użyciu elementu „.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1” zamiast platformy docelowej projektu „net6.0”. Ten pakiet może nie być w pełni kompatybilny z Twoim projektem.",
+      "message": "Pakiet „Microsoft.AspNet.Razor 3.2.3” został przywrócony przy użyciu elementu „.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8” zamiast platformy docelowej projektu „net6.0”. Ten pakiet może nie być w pełni kompatybilny z Twoim projektem.",
       "libraryId": "Microsoft.AspNet.Razor",
       "targetGraphs": [
         "net6.0"
@@ -6961,7 +7673,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Pakiet „Microsoft.AspNet.WebPages 3.2.3” został przywrócony przy użyciu elementu „.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1” zamiast platformy docelowej projektu „net6.0”. Ten pakiet może nie być w pełni kompatybilny z Twoim projektem.",
+      "message": "Pakiet „Microsoft.AspNet.WebPages 3.2.3” został przywrócony przy użyciu elementu „.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8” zamiast platformy docelowej projektu „net6.0”. Ten pakiet może nie być w pełni kompatybilny z Twoim projektem.",
       "libraryId": "Microsoft.AspNet.WebPages",
       "targetGraphs": [
         "net6.0"
@@ -6971,7 +7683,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Pakiet „Microsoft.Web.Infrastructure 1.0.0” został przywrócony przy użyciu elementu „.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1” zamiast platformy docelowej projektu „net6.0”. Ten pakiet może nie być w pełni kompatybilny z Twoim projektem.",
+      "message": "Pakiet „Microsoft.Web.Infrastructure 1.0.0” został przywrócony przy użyciu elementu „.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8” zamiast platformy docelowej projektu „net6.0”. Ten pakiet może nie być w pełni kompatybilny z Twoim projektem.",
       "libraryId": "Microsoft.Web.Infrastructure",
       "targetGraphs": [
         "net6.0"
@@ -6981,7 +7693,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Pakiet „RazorPDF 1.0.0” został przywrócony przy użyciu elementu „.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1” zamiast platformy docelowej projektu „net6.0”. Ten pakiet może nie być w pełni kompatybilny z Twoim projektem.",
+      "message": "Pakiet „RazorPDF 1.0.0” został przywrócony przy użyciu elementu „.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8” zamiast platformy docelowej projektu „net6.0”. Ten pakiet może nie być w pełni kompatybilny z Twoim projektem.",
       "libraryId": "RazorPDF",
       "targetGraphs": [
         "net6.0"
@@ -6991,7 +7703,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Pakiet „Rotativa 1.7.3” został przywrócony przy użyciu elementu „.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1” zamiast platformy docelowej projektu „net6.0”. Ten pakiet może nie być w pełni kompatybilny z Twoim projektem.",
+      "message": "Pakiet „Rotativa 1.7.3” został przywrócony przy użyciu elementu „.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8” zamiast platformy docelowej projektu „net6.0”. Ten pakiet może nie być w pełni kompatybilny z Twoim projektem.",
       "libraryId": "Rotativa",
       "targetGraphs": [
         "net6.0"
