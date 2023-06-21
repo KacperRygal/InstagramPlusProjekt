@@ -1037,3 +1037,28 @@ G:\MOJEDOKUMENTY\GitHub\InstagramPlusProjekt\InstagramPlusProjekt-merge\InstPlus
 G:\MOJEDOKUMENTY\GitHub\InstagramPlusProjekt\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\itext.commons.dll
 G:\MOJEDOKUMENTY\GitHub\InstagramPlusProjekt\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\itext.html2pdf.dll
 G:\MOJEDOKUMENTY\GitHub\InstagramPlusProjekt\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\itext.barcodes.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\itext.bouncy-castle-connector.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\itext.forms.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\itext.io.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\itext.kernel.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\itext.layout.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\itext.pdfa.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\itext.sign.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\itext.styledxmlparser.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\itext.svg.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\itext.commons.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\itext.html2pdf.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\itextsharp.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\itextsharp.xmlworker.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\System.Web.Mvc.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\System.Web.Razor.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\System.Web.Helpers.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\System.Web.WebPages.Deployment.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\System.Web.WebPages.Razor.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\System.Web.WebPages.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Microsoft.Web.Infrastructure.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\RazorPDF.dll
+C:\Users\Bogdan i Wiktor\Desktop\studia katowice\PBD\InstagramPlusProjekt\InstagramPlusProjekt-merge\InstPlusEntityFr\bin\Debug\net6.0\Rotativa.dll

@@ -113,7 +113,6 @@ namespace InstPlusEntityFr.Pages.ProfilPubliczny
 
             if (CzyZalogowany)
             {
-                var listaObserwacjiZalogowanego = db.Obserwowani.Where(o => o.ObserwatorId == zalogowany.UzytkownikId);
                 CzyObserwacja = false;
                 foreach (var o in listaObserwacjiZalogowanego)
                 {

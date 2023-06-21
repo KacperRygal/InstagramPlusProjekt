@@ -15,12 +15,15 @@ using iText.Html2pdf;
 using iText.IO.Source;
 using iText.Kernel.Geom;
 using iText.Kernel.Pdf;
+using Microsoft.EntityFrameworkCore;
+using iText.Signatures;
+using iText.Commons.Actions.Contexts;
 
 namespace InstPlusEntityFr.Pages.StatystykiAdmin
 {
     public class IndexModel : PageModel
     {
-        //elementy: [0] -> 24h [1] -> tydzieñ [2] -> miesi¹c [3] -> 6 miesiêcy
+        //elementy: [0] -> 24h [1] -> tydzień [2] -> miesiąc [3] -> 6 miesięcy
 
         //lista do zrobienia:
         public List<int> IlosciDodPostow { get; set; } = new List<int>();
@@ -29,11 +32,10 @@ namespace InstPlusEntityFr.Pages.StatystykiAdmin
         public List<String> AutorzyPostowZNajwKoment { get; set; } = new List<String>();
         public List<String> AutorzyPostowZNajwPolubien { get; set; } = new List<String>();
         public List<String> AutorzyKomentZNajwPolubien { get; set; } = new List<String>();
-        public List<String> UzytkownicyNajwKoment { get; set; } = new List<String>(); //brak
-        public List<String> UzytkownicyNajwPostow { get; set; } = new List<String>(); //brak
-        public List<String> NajczestszeTagi { get; set; } = new List<String>(); //brak
-        public List<int> PostyUzytkownikowVip { get; set; } = new List<int>(); //brak
-        public List<String> UzytkownicyNajwObserwujacych { get; set; } = new List<String>(); //brak
+        public List<String> UzytkownicyNajwKoment { get; set; } = new List<String>();
+        public List<String> UzytkownicyNajwPostow { get; set; } = new List<String>();
+        public List<String> NajczestszeTagi { get; set; } = new List<String>();
+        public List<int> PostyUzytkownikowVip { get; set; } = new List<int>();
 
         IQueryable<Post>? posty24h;
         IQueryable<Post>? posty7dni;
@@ -71,9 +73,16 @@ namespace InstPlusEntityFr.Pages.StatystykiAdmin
             PobierzAutKomNajwPolub();
 
             //u¿ytkownicy o najwiêkszej liczbie dodanych komentarzy
-            //PobierzUzytkNajwKom(); // -- nie dzia³a!!! (crashuje)
+            PobierzUzytkNajwKom(); // -- nie dzia³a!!! (crashuje)
 
+            //użytkownicy o największej ilości dodanych postów
+            PobierzUzytkNajwPostow();
 
+            //najczęściej występujące tagi
+            PobierzNajczestszeTagi();
+
+            //posty użytkowników VIP
+            PobierzPostyUzytkownikowVip();
         }
 
         //powrót do profilu prywatnego
@@ -251,22 +260,325 @@ namespace InstPlusEntityFr.Pages.StatystykiAdmin
 
         private void PobierzUzytkNajwKom()
         {
-            var autorMax24h = kom24h.GroupBy(k => k.UzytkownikId).OrderByDescending(g => g.Count()).FirstOrDefault();
-            if (autorMax24h != null)
+            //24h
+            var uzytkownikZMaxLiczbaKomentarzy24h = kom24h
+                .GroupBy(k => k.UzytkownikId)
+                .Select(g => new
+                {
+                    UzytkownikId = g.Key,
+                    LiczbaKomentarzy = g.Count()
+                })
+                .OrderByDescending(g => g.LiczbaKomentarzy)
+            .FirstOrDefault();
+
+            if (uzytkownikZMaxLiczbaKomentarzy24h != null)
             {
-                Uzytkownik autor = db.Uzytkownicy.FirstOrDefault(u => u.UzytkownikId == autorMax24h.Key);
-                int iloscKom = kom24h.Count(k => k.UzytkownikId == autor.UzytkownikId);
-                UzytkownicyNajwKoment.Add($"{autor.Nazwa}, ({iloscKom})");
+                var uzytkownik = db.Uzytkownicy
+                        .FirstOrDefault(u => u.UzytkownikId == uzytkownikZMaxLiczbaKomentarzy24h.UzytkownikId);
+
+                if (uzytkownik != null)
+                {
+                    var iloscKom = kom24h.Count(k => k.UzytkownikId == uzytkownik.UzytkownikId);
+                    UzytkownicyNajwKoment.Add($"{uzytkownik.Nazwa}, ({iloscKom})");
+                }
+                else
+                    UzytkownicyNajwKoment.Add("---");
             }
             else
                 UzytkownicyNajwKoment.Add("---");
 
+            //7dni
+            var uzytkownikZMaxLiczbaKomentarzy7dni = kom7dni
+                .GroupBy(k => k.UzytkownikId)
+                .Select(g => new
+                {
+                    UzytkownikId = g.Key,
+                    LiczbaKomentarzy = g.Count()
+                })
+                .OrderByDescending(g => g.LiczbaKomentarzy)
+            .FirstOrDefault();
+
+            if (uzytkownikZMaxLiczbaKomentarzy7dni != null)
+            {
+                var uzytkownik = db.Uzytkownicy
+                        .FirstOrDefault(u => u.UzytkownikId == uzytkownikZMaxLiczbaKomentarzy7dni.UzytkownikId);
+
+                if (uzytkownik != null)
+                {
+                    var iloscKom = kom7dni.Count(k => k.UzytkownikId == uzytkownik.UzytkownikId);
+                    UzytkownicyNajwKoment.Add($"{uzytkownik.Nazwa}, ({iloscKom})");
+                }
+                else
+                    UzytkownicyNajwKoment.Add("---");
+            }
+            else
+                UzytkownicyNajwKoment.Add("---");
+
+            //1miesiąc
+            var uzytkownikZMaxLiczbaKomentarzy1mies = kom1mies
+                .GroupBy(k => k.UzytkownikId)
+                .Select(g => new
+                {
+                    UzytkownikId = g.Key,
+                    LiczbaKomentarzy = g.Count()
+                })
+                .OrderByDescending(g => g.LiczbaKomentarzy)
+            .FirstOrDefault();
+
+            if (uzytkownikZMaxLiczbaKomentarzy1mies != null)
+            {
+                var uzytkownik = db.Uzytkownicy
+                        .FirstOrDefault(u => u.UzytkownikId == uzytkownikZMaxLiczbaKomentarzy1mies.UzytkownikId);
+
+                if (uzytkownik != null)
+                {
+                    var iloscKom = kom1mies.Count(k => k.UzytkownikId == uzytkownik.UzytkownikId);
+                    UzytkownicyNajwKoment.Add($"{uzytkownik.Nazwa}, ({iloscKom})");
+                }
+                else
+                    UzytkownicyNajwKoment.Add("---");
+            }
+            else
+                UzytkownicyNajwKoment.Add("---");
+
+            //6miesięcy
+            var uzytkownikZMaxLiczbaKomentarzy6mies = kom6mies
+                .GroupBy(k => k.UzytkownikId)
+                .Select(g => new
+                {
+                    UzytkownikId = g.Key,
+                    LiczbaKomentarzy = g.Count()
+                })
+                .OrderByDescending(g => g.LiczbaKomentarzy)
+            .FirstOrDefault();
+
+            if (uzytkownikZMaxLiczbaKomentarzy6mies != null)
+            {
+                var uzytkownik = db.Uzytkownicy
+                        .FirstOrDefault(u => u.UzytkownikId == uzytkownikZMaxLiczbaKomentarzy6mies.UzytkownikId);
+
+                if (uzytkownik != null)
+                {
+                    var iloscKom = kom6mies.Count(k => k.UzytkownikId == uzytkownik.UzytkownikId);
+                    UzytkownicyNajwKoment.Add($"{uzytkownik.Nazwa}, ({iloscKom})");
+                }
+                else
+                    UzytkownicyNajwKoment.Add("---");
+            }
+            else
+                UzytkownicyNajwKoment.Add("---");
         }
 
+        private void PobierzUzytkNajwPostow()
+        {
+            //24h
+            var uzytkownikZMaxLiczbaPostow24h = posty24h
+                .GroupBy(p => p.UzytkownikId)
+                .Select(g => new
+                {
+                    UzytkownikId = g.Key,
+                    LiczbaPostow = g.Count()
+                })
+                .OrderByDescending(g => g.LiczbaPostow)
+            .FirstOrDefault();
+
+            if (uzytkownikZMaxLiczbaPostow24h != null)
+            {
+                var uzytkownik = db.Uzytkownicy
+                        .FirstOrDefault(u => u.UzytkownikId == uzytkownikZMaxLiczbaPostow24h.UzytkownikId);
+
+                if (uzytkownik != null)
+                {
+                    var iloscPostow = posty24h.Count(p => p.UzytkownikId == uzytkownik.UzytkownikId);
+                    UzytkownicyNajwPostow.Add($"{uzytkownik.Nazwa}, ({iloscPostow})");
+                }
+                else
+                    UzytkownicyNajwPostow.Add("---");
+            }
+            else
+                UzytkownicyNajwPostow.Add("---");
+
+            //7dni
+            var uzytkownikZMaxLiczbaPostow7dni = posty7dni
+                .GroupBy(p => p.UzytkownikId)
+                .Select(g => new
+                {
+                    UzytkownikId = g.Key,
+                    LiczbaPostow = g.Count()
+                })
+                .OrderByDescending(g => g.LiczbaPostow)
+            .FirstOrDefault();
+
+            if (uzytkownikZMaxLiczbaPostow7dni != null)
+            {
+                var uzytkownik = db.Uzytkownicy
+                        .FirstOrDefault(u => u.UzytkownikId == uzytkownikZMaxLiczbaPostow7dni.UzytkownikId);
+
+                if (uzytkownik != null)
+                {
+                    var iloscPostow = posty7dni.Count(p => p.UzytkownikId == uzytkownik.UzytkownikId);
+                    UzytkownicyNajwPostow.Add($"{uzytkownik.Nazwa}, ({iloscPostow})");
+                }
+                else
+                    UzytkownicyNajwPostow.Add("---");
+            }
+            else
+                UzytkownicyNajwPostow.Add("---");
+
+            //1miesiąc
+            var uzytkownikZMaxLiczbaPostow1mies = posty1mies
+                .GroupBy(p => p.UzytkownikId)
+                .Select(g => new
+                {
+                    UzytkownikId = g.Key,
+                    LiczbaPostow = g.Count()
+                })
+                .OrderByDescending(g => g.LiczbaPostow)
+            .FirstOrDefault();
+
+            if (uzytkownikZMaxLiczbaPostow1mies != null)
+            {
+                var uzytkownik = db.Uzytkownicy
+                        .FirstOrDefault(u => u.UzytkownikId == uzytkownikZMaxLiczbaPostow1mies.UzytkownikId);
+
+                if (uzytkownik != null)
+                {
+                    var iloscPostow = posty1mies.Count(p => p.UzytkownikId == uzytkownik.UzytkownikId);
+                    UzytkownicyNajwPostow.Add($"{uzytkownik.Nazwa}, ({iloscPostow})");
+                }
+                else
+                    UzytkownicyNajwPostow.Add("---");
+            }
+            else
+                UzytkownicyNajwPostow.Add("---");
+
+            //6miesięcy
+            var uzytkownikZMaxLiczbaPostow6mies = posty6mies
+                .GroupBy(p => p.UzytkownikId)
+                .Select(g => new
+                {
+                    UzytkownikId = g.Key,
+                    LiczbaPostow = g.Count()
+                })
+                .OrderByDescending(g => g.LiczbaPostow)
+            .FirstOrDefault();
+
+            if (uzytkownikZMaxLiczbaPostow6mies != null)
+            {
+                var uzytkownik = db.Uzytkownicy
+                        .FirstOrDefault(u => u.UzytkownikId == uzytkownikZMaxLiczbaPostow6mies.UzytkownikId);
+
+                if (uzytkownik != null)
+                {
+                    var iloscPostow = posty6mies.Count(p => p.UzytkownikId == uzytkownik.UzytkownikId);
+                    UzytkownicyNajwPostow.Add($"{uzytkownik.Nazwa}, ({iloscPostow})");
+                }
+                else
+                    UzytkownicyNajwPostow.Add("---");
+            }
+            else
+                UzytkownicyNajwPostow.Add("---");
+        }
+
+        private void PobierzNajczestszeTagi()
+        {
+            //24h
+            var najczestszyTag24h = posty24h
+                .SelectMany(p => p.Tagi)
+                .GroupBy(t => t.Nazwa)
+                .OrderByDescending(g => g.Count())
+                .Select(g => g.Key)
+                .FirstOrDefault();
+
+            if (najczestszyTag24h != null)
+                NajczestszeTagi.Add(najczestszyTag24h);
+            else
+                NajczestszeTagi.Add("---");
+
+            //7dni
+            var najczestszyTag7dni = posty7dni
+                .SelectMany(p => p.Tagi)
+                .GroupBy(t => t.Nazwa)
+                .OrderByDescending(g => g.Count())
+                .Select(g => g.Key)
+                .FirstOrDefault();
+
+            if (najczestszyTag7dni != null)
+                NajczestszeTagi.Add(najczestszyTag7dni);
+            else
+                NajczestszeTagi.Add("---");
+
+            //1miesiąc
+            var najczestszyTag1mies = posty1mies
+                .SelectMany(p => p.Tagi)
+                .GroupBy(t => t.Nazwa)
+                .OrderByDescending(g => g.Count())
+                .Select(g => g.Key)
+                .FirstOrDefault();
+
+            if (najczestszyTag1mies != null)
+                NajczestszeTagi.Add(najczestszyTag1mies);
+            else
+                NajczestszeTagi.Add("---");
+
+            //6miesięcy
+            var najczestszyTag6mies = posty6mies
+                .SelectMany(p => p.Tagi)
+                .GroupBy(t => t.Nazwa)
+                .OrderByDescending(g => g.Count())
+                .Select(g => g.Key)
+                .FirstOrDefault();
+
+            if (najczestszyTag6mies != null)
+                NajczestszeTagi.Add(najczestszyTag6mies);
+            else
+                NajczestszeTagi.Add("---");
+        }
+
+        private void PobierzPostyUzytkownikowVip()
+        {
+            //24h
+            DateTime czasTeraz = DateTime.Now;
+
+            var iloscPostowVip24h = posty24h
+                .Join(db.Uzytkownicy.Where(u => u.DataVipDo != null && u.DataVipDo > czasTeraz),
+                    post => post.UzytkownikId,
+                    uzytkownik => uzytkownik.UzytkownikId,
+                    (post, uzytkownik) => post)
+                .Count();
+            PostyUzytkownikowVip.Add(iloscPostowVip24h);
+
+            //7dni
+            var iloscPostowVip7dni = posty7dni
+                .Join(db.Uzytkownicy.Where(u => u.DataVipDo != null && u.DataVipDo > czasTeraz),
+                    post => post.UzytkownikId,
+                    uzytkownik => uzytkownik.UzytkownikId,
+                    (post, uzytkownik) => post)
+                .Count();
+            PostyUzytkownikowVip.Add(iloscPostowVip7dni);
+
+            //1miesiąc
+            var iloscPostowVip1mies = posty1mies
+                .Join(db.Uzytkownicy.Where(u => u.DataVipDo != null && u.DataVipDo > czasTeraz),
+                    post => post.UzytkownikId,
+                    uzytkownik => uzytkownik.UzytkownikId,
+                    (post, uzytkownik) => post)
+                .Count();
+            PostyUzytkownikowVip.Add(iloscPostowVip1mies);
+
+            //6miesięcy
+            var iloscPostowVip6mies = posty6mies
+                .Join(db.Uzytkownicy.Where(u => u.DataVipDo != null && u.DataVipDo > czasTeraz),
+                    post => post.UzytkownikId,
+                    uzytkownik => uzytkownik.UzytkownikId,
+                    (post, uzytkownik) => post)
+                .Count();
+            PostyUzytkownikowVip.Add(iloscPostowVip6mies);
+        }
 
         public void OnPostConvertCurrentPageToPDF()
         {
-            
+            // co tu ma być?
         }
     }
 }
