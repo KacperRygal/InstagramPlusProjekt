@@ -559,7 +559,7 @@ namespace InstPlusEntityFr.Pages.StatystykiAdmin
             PostyUzytkownikowVip.Add(iloscPostowVip6mies);
         }
 
-        public void OnPostConvertCurrentPageToPDF()
+        public IActionResult OnPostConvertCurrentPageToPDF()
         {
   
             var renderer = new ChromePdfRenderer();
@@ -569,6 +569,8 @@ namespace InstPlusEntityFr.Pages.StatystykiAdmin
             var currentPageUrl = $"{scheme}://{host}{path}";
             var pdf = renderer.RenderUrlAsPdf(currentPageUrl);
             pdf.SaveAs("T.pdf");
+            byte[] pdfBytes = pdf.BinaryData;
+            return File(pdfBytes, "application/pdf", "T.pdf");
         }
     }
 }
