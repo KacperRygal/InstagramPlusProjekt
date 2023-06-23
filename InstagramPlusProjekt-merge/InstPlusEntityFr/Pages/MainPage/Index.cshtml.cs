@@ -17,6 +17,7 @@ namespace InstPlusEntityFr.Pages.MainPage
         public string Opis { get; set; }
         public string ImageAvatar { get; set; }
         public string Nazwa { get; set; }
+		public List<int> KomentarzeId { get; set; }
         public List<Komentarz> Komentarze { get; set; }
         public List<String> KomentarzeTresc { get; set; }
         public List<String> KomentarzeZDJ { get; set; }
@@ -42,50 +43,43 @@ namespace InstPlusEntityFr.Pages.MainPage
 		public string przechTresc{get; set;}
 		public int przechPId { get; set;}
 		
-        public void OnGetGuzik(int id,string tresc)
+        public void OnGetGuzik(int fun,int id,string tresc)
         {
-
-            
-            Komentarz kom = new Komentarz();
             var zalo = db.Uzytkownicy.Where(u => u.UzytkownikId == (int?)HttpContext.Session.GetInt32("UzytkownikId")).FirstOrDefault();
-            if (zalo != null)
-            {
-                Console.WriteLine("Dziala" );
-                Console.WriteLine(zalo.UzytkownikId);
-                kom.UzytkownikId = zalo.UzytkownikId;
-				kom.PostId = id;
-				kom.Tresc = tresc;
-                db.Komentarze.Add(kom);
-				db.SaveChanges();
-            }
-		
-            Console.WriteLine(id+tresc);
-			//return 0;
-			
-            //Console.WriteLine(TesktKomentarza);
-           
-			
-        }
-		/*
-        public bool dodajKomentarz()
-		{
-            Komentarz kom = new Komentarz();
-            var zalo = db.Uzytkownicy.Where(u => u.UzytkownikId == (int?)HttpContext.Session.GetInt32("UzytkownikId")).FirstOrDefault();
-            if (zalo != null)
+			if (zalo != null)
 			{
-                przechowywanieKom.UzytkownikId = zalo;
-				kom = przechowywanieKom;
-                db.Komentarze.Add(kom);
-				return true;
-            }
-			return false;
-           
-		}
-		public Komentarz GetNowyKom()
-		{
-			return przechowywanieKom;
+				switch (fun)
+				{
+					case 1:
+						Komentarz kom = new Komentarz();
+
+							kom.UzytkownikId = zalo.UzytkownikId;
+							kom.PostId = id;
+							kom.Tresc = tresc;
+							db.Komentarze.Add(kom);
+							db.SaveChanges();
+						break;
+
+					case 2:
+							PolubieniePosta p = new PolubieniePosta(id, zalo.UzytkownikId);
+							db.PolubieniaPostow.Add(p);
+							db.SaveChanges();
+						break;
+
+					case 3:
+						PolubienieKomentarza k = new PolubienieKomentarza(id, zalo.UzytkownikId);
+						db.PolubieniaKomentarzy.Add(k);
+						db.SaveChanges();
+						break;
+				}
+			}
+            Console.WriteLine(fun+" "+id+" "+tresc);
         }
-		*/
+
+		public void OnPostpolubPost(int ida)
+		{
+            
+		}
 
         public String getPosty()
 		{
@@ -105,9 +99,9 @@ namespace InstPlusEntityFr.Pages.MainPage
 		{
           
             //sprawdzenie czy jest ktoœ zalogowany
-            var zalogowany = db.Uzytkownicy.Where(u => u.UzytkownikId == (int?)HttpContext.Session.GetInt32("UzytkownikId")).FirstOrDefault();
+            var zalogowany=db.Uzytkownicy.Where(u => u.UzytkownikId==(int?)HttpContext.Session.GetInt32("UzytkownikId")).FirstOrDefault();
 			if(zalogowany!=null) zal = zalogowany.Nazwa;
-			var obecny = db.Uzytkownicy.Where(u => u.UzytkownikId == (int?)HttpContext.Session.GetInt32("SzukaneID")).FirstOrDefault();
+			var obecny=db.Uzytkownicy.Where(u => u.UzytkownikId == (int?)HttpContext.Session.GetInt32("SzukaneID")).FirstOrDefault();
 
 			if (zalogowany!=null)
 			{
@@ -159,7 +153,8 @@ namespace InstPlusEntityFr.Pages.MainPage
 				foreach (var idpost in testowa)
                 {
                     var post = new PostWithComments();
-				    post.Tagi = new List<String>(); 
+				    post.Tagi = new List<String>();
+					post.KomentarzeId = new List<int>();
                     post.Komentarze = new List<Komentarz>();
                     post.KomentarzeTresc = new List<String>();
                     post.KomentarzeZDJ = new List<String>();
@@ -176,6 +171,7 @@ namespace InstPlusEntityFr.Pages.MainPage
                     foreach (var kom in tempKom)
                     {
                         post.Komentarze.Add(kom);
+						post.KomentarzeId.Add(kom.KomentarzId);
                         post.KomentarzeTresc.Add(kom.Tresc);
                         var zdj = db.Uzytkownicy.Where(u => u.UzytkownikId == kom.UzytkownikId).Select(u => u.Zdjecie).FirstOrDefault();
                         post.KomentarzeZDJ.Add(@Url.Content(zdj));
@@ -245,6 +241,7 @@ namespace InstPlusEntityFr.Pages.MainPage
 				foreach (var idpost in testowa)
 				{
 					var post = new PostWithComments();
+					post.KomentarzeId = new List<int>();
 					post.Komentarze = new List<Komentarz>();
 					post.KomentarzeTresc = new List<String>();
 					post.KomentarzeZDJ = new List<String>();
@@ -263,6 +260,7 @@ namespace InstPlusEntityFr.Pages.MainPage
 					{
 						post.Komentarze.Add(kom);
 						post.KomentarzeTresc.Add(kom.Tresc);
+						post.KomentarzeId.Add(kom.KomentarzId);
 						var zdj = db.Uzytkownicy.Where(u => u.UzytkownikId == kom.UzytkownikId).Select(u => u.Zdjecie).FirstOrDefault();
 						post.KomentarzeZDJ.Add(@Url.Content(zdj));
 						var autor = db.Uzytkownicy.Where(u => u.UzytkownikId == kom.UzytkownikId).Select(u => u.Nazwa).FirstOrDefault();
