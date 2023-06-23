@@ -1,8 +1,10 @@
 using InstPlusEntityFr.Migrations;
+using iText.Forms.Form.Element;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
+using Microsoft.VisualBasic;
 using Newtonsoft.Json;
 using System.Linq;
 
@@ -10,6 +12,7 @@ namespace InstPlusEntityFr.Pages.MainPage
 {
 	public class PostWithComments
 	{
+		public int Id { get; set; }
         public string Image { get; set; }
         public string Opis { get; set; }
         public string ImageAvatar { get; set; }
@@ -35,6 +38,55 @@ namespace InstPlusEntityFr.Pages.MainPage
 		public string LoginZalogowanego { get; set; }
         public String WyswReklama { get; set; }
 
+
+		public string przechTresc{get; set;}
+		public int przechPId { get; set;}
+		
+        public void OnGetGuzik(int id,string tresc)
+        {
+
+            
+            Komentarz kom = new Komentarz();
+            var zalo = db.Uzytkownicy.Where(u => u.UzytkownikId == (int?)HttpContext.Session.GetInt32("UzytkownikId")).FirstOrDefault();
+            if (zalo != null)
+            {
+                Console.WriteLine("Dziala" );
+                Console.WriteLine(zalo.UzytkownikId);
+                kom.UzytkownikId = zalo.UzytkownikId;
+				kom.PostId = id;
+				kom.Tresc = tresc;
+                db.Komentarze.Add(kom);
+				db.SaveChanges();
+            }
+		
+            Console.WriteLine(id+tresc);
+			//return 0;
+			
+            //Console.WriteLine(TesktKomentarza);
+           
+			
+        }
+		/*
+        public bool dodajKomentarz()
+		{
+            Komentarz kom = new Komentarz();
+            var zalo = db.Uzytkownicy.Where(u => u.UzytkownikId == (int?)HttpContext.Session.GetInt32("UzytkownikId")).FirstOrDefault();
+            if (zalo != null)
+			{
+                przechowywanieKom.UzytkownikId = zalo;
+				kom = przechowywanieKom;
+                db.Komentarze.Add(kom);
+				return true;
+            }
+			return false;
+           
+		}
+		public Komentarz GetNowyKom()
+		{
+			return przechowywanieKom;
+        }
+		*/
+
         public String getPosty()
 		{
 
@@ -51,9 +103,9 @@ namespace InstPlusEntityFr.Pages.MainPage
 		}
 		public void OnGet(string inputValue=null)
 		{
-			
-			//sprawdzenie czy jest ktoœ zalogowany
-			var zalogowany = db.Uzytkownicy.Where(u => u.UzytkownikId == (int?)HttpContext.Session.GetInt32("UzytkownikId")).FirstOrDefault();
+          
+            //sprawdzenie czy jest ktoœ zalogowany
+            var zalogowany = db.Uzytkownicy.Where(u => u.UzytkownikId == (int?)HttpContext.Session.GetInt32("UzytkownikId")).FirstOrDefault();
 			if(zalogowany!=null) zal = zalogowany.Nazwa;
 			var obecny = db.Uzytkownicy.Where(u => u.UzytkownikId == (int?)HttpContext.Session.GetInt32("SzukaneID")).FirstOrDefault();
 
@@ -62,7 +114,7 @@ namespace InstPlusEntityFr.Pages.MainPage
 				CzyZalogowany = true;
 
                 //sprawdzenie czy ma siê wyœwietliæ reklama
-                if (zalogowany.DataVipDo == null || zalogowany.DataVipDo < DateTime.Now)
+                if (zalogowany.DataVipDo == null || zalogowany.DataVipDo < DateAndTime.Now)
                     CzyVip = false;
                 else
                     CzyVip = true;
@@ -107,12 +159,13 @@ namespace InstPlusEntityFr.Pages.MainPage
 				foreach (var idpost in testowa)
                 {
                     var post = new PostWithComments();
-					post.Tagi = new List<String>();
+				    post.Tagi = new List<String>(); 
                     post.Komentarze = new List<Komentarz>();
                     post.KomentarzeTresc = new List<String>();
                     post.KomentarzeZDJ = new List<String>();
                     post.KomentarzeAutor = new List<String>();
 					post.KomentarzeData = new List<String>();
+					post.Id = idpost.PostId;
                     post.Image = @Url.Content(idpost.Zdjecie);
                     post.Opis = idpost.Opis;
                     post.ImageAvatar = @Url.Content(db.Uzytkownicy.Where(u => u.UzytkownikId == idpost.UzytkownikId).FirstOrDefault().Zdjecie);
@@ -199,7 +252,8 @@ namespace InstPlusEntityFr.Pages.MainPage
 					post.KomentarzeData = new List<String>();
 					post.Image = @Url.Content(idpost.Zdjecie);
 					post.Opis = idpost.Opis;
-					post.Data = idpost.DataPublikacji;
+                    post.Id = idpost.PostId;
+                    post.Data = idpost.DataPublikacji;
 					post.ImageAvatar = @Url.Content(db.Uzytkownicy.Where(u => u.UzytkownikId == idpost.UzytkownikId).FirstOrDefault().Zdjecie);
 					if (post.ImageAvatar == null) post.ImageAvatar = @Url.Content("/ImgUploads/userTmpImg.jpg");
 					post.Nazwa = db.Uzytkownicy.Where(u => u.UzytkownikId == idpost.UzytkownikId).FirstOrDefault().Nazwa;
