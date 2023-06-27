@@ -101,6 +101,7 @@
     var container = document.getElementById("kontener");
     var komDodanieText = new Array(postsWithComments.length);
 
+    console.log(zalogowany);
     
     for (var i = 0; i < postsWithComments.length; i++) {
 
@@ -224,7 +225,7 @@
                     komentarzeDiv.appendChild(komentarzAutor);
                     komentarzeDiv.appendChild(imagekom);
                     komentarzeDiv.appendChild(komentarz);
-                    komentarzeDiv.appendChild(formDodPolubKom);
+                    if (zalogowany != null) { komentarzeDiv.appendChild(formDodPolubKom); }
                     komentarzeDiv.appendChild(komentarzData);
                    
                 }
@@ -232,19 +233,20 @@
 
             komentarzeDiv.appendChild(pokazWiecej);
         }
-       
+        
             var formDodKom = document.createElement("form");
 
             komDodanieText[i] = document.createElement("textarea");
             komDodanieText[i].placeholder = "Miejsce na komentarz";
 
             formDodKom.innerHTML += '<input type="button" onclick="wyslij(' + i + ')" value="Guzior"/>';
-        
+
             function wyslij(msg) {
                 fetch('?handler=Guzik&fun=1&id=' + postsWithComments[msg].Id + '&tresc=' + komDodanieText[msg].value);
                 komDodanieText[msg].value = null;
                 komDodanieText[msg].placeholder = "Dodano komentarz";
             }
+        
 
 
            
@@ -272,11 +274,13 @@
         container.appendChild(imageDiv);
         container.appendChild(polubienia);
         container.appendChild(opis);
-        container.appendChild(formDodPolubPos);
+        if (zalogowany != null) { container.appendChild(formDodPolubPos); }
         container.appendChild(data);
-        container.appendChild(formDodKom);
+        if (zalogowany != null) { 
+        container.appendChild(formDodKom); 
         container.appendChild(komDodanieText[i])
-        container.appendChild(komentarzeDiv);
+         }
+         container.appendChild(komentarzeDiv);
     }
 </script>
    
