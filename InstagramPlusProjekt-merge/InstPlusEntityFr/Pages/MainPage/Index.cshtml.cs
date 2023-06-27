@@ -174,8 +174,8 @@ namespace InstPlusEntityFr.Pages.MainPage
 						post.KomentarzeId.Add(kom.KomentarzId);
                         post.KomentarzeTresc.Add(kom.Tresc);
                         var zdj = db.Uzytkownicy.Where(u => u.UzytkownikId == kom.UzytkownikId).Select(u => u.Zdjecie).FirstOrDefault();
-						if (zdj == null) post.KomentarzeZDJ.Add(@Url.Content("/ImgUploads/userTmpImg.jpg"));
-						else post.KomentarzeZDJ.Add(@Url.Content(zdj));
+						if (zdj == null) zdj = "/ImgUploads/userTmpImg.jpg";
+						post.KomentarzeZDJ.Add(@Url.Content(zdj));
 						//if (zdj) post.KomentarzeZDJ.Add(@Url.Content("/ImgUploads/userTmpImg.jpg"));
 						
 
@@ -266,6 +266,7 @@ namespace InstPlusEntityFr.Pages.MainPage
 						post.KomentarzeTresc.Add(kom.Tresc);
 						post.KomentarzeId.Add(kom.KomentarzId);
 						var zdj = db.Uzytkownicy.Where(u => u.UzytkownikId == kom.UzytkownikId).Select(u => u.Zdjecie).FirstOrDefault();
+						if (zdj == null ) zdj = "/ImgUploads/userTmpImg.jpg";
 						post.KomentarzeZDJ.Add(@Url.Content(zdj));
 						var autor = db.Uzytkownicy.Where(u => u.UzytkownikId == kom.UzytkownikId).Select(u => u.Nazwa).FirstOrDefault();
 						post.KomentarzeAutor.Add(autor);
