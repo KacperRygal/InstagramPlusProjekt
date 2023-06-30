@@ -28,7 +28,7 @@ namespace InstPlusEntityFr
             //tylko wkleić swojego stringa
 
 
-            optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=InstagramPlus;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False"
+            optionsBuilder.UseSqlServer("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=C:\\USERS\\K\\DESKTOP\\INSTA\\INSTAGRAMPLUSPROJEKT\\INSTAGRAMPLUSPROJEKT-MERGE\\INSTPLUSENTITYFR\\INSTAGRAMPLUS.MDF;Integrated Security=True;Connect Timeout=30;Encrypt=False;Trust Server Certificate=False;Application Intent=ReadWrite;Multi Subnet Failover=False"
                 + ";MultipleActiveResultSets=True");
 
         }

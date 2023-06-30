@@ -2,7 +2,6 @@
 @model InstPlusEntityFr.Pages.MainPage.IndexModel
 @{
 }
-
 <head>
 
     <style>
@@ -40,29 +39,6 @@
         margin-top: 10px;
         font-weight: bold;
     }
-    .guzikDodKom{
-            display: inline-block;
-            padding: 10px 20px;
-            font-size: 16px;
-            font-weight: bold;
-            text-align: center;
-            text-decoration: none;
-            background-color: #007bff;
-            color: #fff;
-            border-radius: 5px;
-            border: none;
-            cursor: pointer;
-    }
-
-        .komText {
-            width: 100%; 
-            height: 150px; 
-            padding: 10px; 
-            font-size: 14px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            resize: vertical; 
-        }
 
         body {
             margin: 0;
@@ -86,7 +62,6 @@
 </head>
 <body>
     <div id="kontener"></div>
-    
 
     @if (Model.CzyVip == false)
     {
@@ -101,14 +76,25 @@
     var container = document.getElementById("kontener");
     var komDodanieText = new Array(postsWithComments.length);
 
-    
-    for (var i = 0; i < postsWithComments.length; i++) {
-        var postDIV = document.createElement("div");
-        postDIV.style.borderStyle = "solid";
+        function polubKomF(msg,msg2) {
+            fetch('?handler=Guzik&fun=3&id=' + postsWithComments[msg].KomentarzeId[msg2] + '&tresc');
+        }
+        function polubKomF2(msg, msg2) {
+            fetch('?handler=Guzik&fun=3&id=' + postsWithComments[msg].KomentarzeId[msg2] + '&tresc');
+        }
+        function wyslij(msg) {
+            fetch('?handler=Guzik&fun=1&id=' + postsWithComments[msg].Id + '&tresc=' + komDodanieText[msg].value);
+            komDodanieText[msg].value = null;
+            komDodanieText[msg].placeholder = "Dodano komentarz";
+        }
+        function polubPostF(msg) {
 
+            fetch('?handler=Guzik&fun=2&id=' + postsWithComments[msg].Id + '&tresc');
+        }
+
+    for (var i = 0; i < postsWithComments.length; i++) {
         var imageDiv = document.createElement("div");
         imageDiv.className = "image-div";
-        //imageDiv.style.borderStyle = "dotted";
 
         var imageavatar = document.createElement("img");
         imageavatar.className = "imgavatar";
@@ -136,10 +122,9 @@
             nazwa.href = "/ProfilPubliczny/Index?data="+ postsWithComments[i].Nazwa;
         }
 
-
-        var data = document.createElement("time");
+        var data = document.createElement("label");
         data.className = "data";
-            data.innerHTML = new Date(postsWithComments[i].Data).toLocaleDateString();
+        data.innerHTML = new Date(postsWithComments[i].Data).toLocaleDateString();
 
         var komentarzeDiv = document.createElement("div");
         komentarzeDiv.className = "komentarze";
@@ -162,24 +147,25 @@
             var komentarzAutor = document.createElement("div");
             komentarzAutor.className = "komentarzAutor";
             komentarzAutor.innerHTML = postsWithComments[i].KomentarzeAutor[j];
+                postsWithComments[i].KomentarzeId[j];
             
             var komentarzData = document.createElement("label");
             komentarzData.className = "komentarzData";
-                komentarzData.innerHTML = postsWithComments[i].KomentarzeData[j];
-
+            komentarzData.innerHTML = new Date(postsWithComments[i].KomentarzeData[j]).toLocaleDateString();
+                
             var formDodPolubKom = document.createElement("form");
-                formDodPolubKom.innerHTML += '<input type="button" onclick="polubKomF(' + postsWithComments[i].KomentarzeId[j] + ')" value="Polub Komentarz"/>';
-                 function polubKomF(msg) {
-                   fetch('?handler=Guzik&fun=3&id=' + msg + '&tresc');
-                 }
-                       
-                       
+                formDodPolubKom.innerHTML += '<input type="button" onclick="polubKomF(' + i+','+j + ')" value="Polub Komentarz"/>';
 
-            komentarzeDiv.appendChild(komentarzAutor);
-            komentarzeDiv.appendChild(imagekom);
-            komentarzeDiv.appendChild(komentarz);
-            komentarzeDiv.appendChild(formDodPolubKom);
-            komentarzeDiv.appendChild(komentarzData);
+                var polubieniaKom = document.createElement("span");
+                polubieniaKom.className = "polubienia";
+                polubieniaKom.innerHTML = "Polubienia: " + postsWithComments[i].KomentarzePolubienia[j];
+
+                komentarzeDiv.appendChild(komentarzAutor);
+                komentarzeDiv.appendChild(imagekom);
+                komentarzeDiv.appendChild(komentarz);
+                if (zalogowany != null) { komentarzeDiv.appendChild(formDodPolubKom) };
+                komentarzeDiv.appendChild(polubieniaKom);
+                komentarzeDiv.appendChild(komentarzData);
         }
 
         if (postsWithComments[i].Komentarze.length > 2) {
@@ -213,81 +199,60 @@
 
                     var komentarzData = document.createElement("label");
                     komentarzData.className = "komentarzData";
-                    komentarzData.innerHTML = new DateTime(postsWithComments[postIndex].KomentarzeData[j]).toLocaleDateString();
+                    komentarzData.innerHTML = new Date(postsWithComments[postIndex].KomentarzeData[j]).toLocaleDateString();
 
                         var formDodPolubKom = document.createElement("form");
+                        formDodPolubKom.innerHTML += '<input type="button" onclick="polubKomF2(' + postIndex + ',' + j + ')" value="Polub Komentarz"/>';
 
-                            formDodPolubKom.innerHTML += '<input type="button" onclick="polubKomF(' + postsWithComments[i].KomentarzeId[j] + ')" value="Polub Komentarz"/>';
-
-                            function polubKomF(msg) {
-                                fetch('?handler=Guzik&fun=3&id=' + msg + '&tresc');
-                            }
-
+                        var polubieniaKom = document.createElement("span");
+                        polubieniaKom.className = "polubienia";
+                        polubieniaKom.innerHTML = "Polubienia: " + postsWithComments[postIndex].KomentarzePolubienia[j];
 
                     komentarzeDiv.appendChild(komentarzAutor);
                     komentarzeDiv.appendChild(imagekom);
                     komentarzeDiv.appendChild(komentarz);
-                    if (zalogowany != null) { komentarzeDiv.appendChild(formDodPolubKom); }
+                        if (zalogowany != null) {komentarzeDiv.appendChild(formDodPolubKom)};
+                    komentarzeDiv.appendChild(polubieniaKom);
                     komentarzeDiv.appendChild(komentarzData);
-                   
+                       
                 }
             });
 
             komentarzeDiv.appendChild(pokazWiecej);
         }
-        
+
             var formDodKom = document.createElement("form");
 
             komDodanieText[i] = document.createElement("textarea");
             komDodanieText[i].placeholder = "Miejsce na komentarz";
 
-            formDodKom.innerHTML += '<input type="button" onclick="wyslij(' + i + ')" value="Guzior"/>';
+            formDodKom.innerHTML += '<input type="button" onclick="wyslij(' + i + ')" value="Dodaj komentarz"/>';
 
-            function wyslij(msg) {
-                fetch('?handler=Guzik&fun=1&id=' + postsWithComments[msg].Id + '&tresc=' + komDodanieText[msg].value);
-                komDodanieText[msg].value = null;
-                komDodanieText[msg].placeholder = "Dodano komentarz";
-            }
-        
-
-
-           
-
-            var formDodPolubPos=document.createElement("form");
-
+            var formDodPolubPos = document.createElement("form");
             formDodPolubPos.innerHTML += '<input type="button" onclick="polubPostF(' + i + ')" value="Polub post"/>';
-            
-            function polubPostF(msg) {
-               
-                fetch('?handler=Guzik&fun=2&id=' + postsWithComments[msg].Id + '&tresc');
+
+            var polubienia = document.createElement("span");
+            polubienia.className = "polubienia";
+            polubienia.innerHTML = "Polubienia: " + postsWithComments[i].IloscPolubien;
+
+            imageDiv.appendChild(image);
+            container.appendChild(imageavatar);
+            container.appendChild(nazwa);
+            container.appendChild(imageDiv);
+            container.appendChild(polubienia);
+            container.appendChild(opis);
+            if (zalogowany != null) {
+                container.appendChild(formDodPolubPos);
             }
-            
-
-           
-
+            container.appendChild(data);
+            if (zalogowany != null) {
+              container.appendChild(formDodKom);
+              container.appendChild(komDodanieText[i])
+            }
+            container.appendChild(komentarzeDiv);
         
-        var polubienia = document.createElement("span");
-        polubienia.className = "polubienia";
-        polubienia.innerHTML = "Polubienia: " + postsWithComments[i].IloscPolubien;
-
-
-        imageDiv.appendChild(image);
-        container.appendChild(postDIV);
-        postDIV.appendChild(imageavatar);
-        postDIV.appendChild(nazwa);
-        postDIV.appendChild(imageDiv);
-        postDIV.appendChild(polubienia);
-        postDIV.appendChild(opis);
-        if (zalogowany != null) { postDIV.appendChild(formDodPolubPos); }
-        postDIV.appendChild(data);
-        if (zalogowany != null) { 
-        postDIV.appendChild(formDodKom); 
-        postDIV.appendChild(komDodanieText[i])
-         }
-         postDIV.appendChild(komentarzeDiv);
     }
 </script>
-   
 </body>
 
 
