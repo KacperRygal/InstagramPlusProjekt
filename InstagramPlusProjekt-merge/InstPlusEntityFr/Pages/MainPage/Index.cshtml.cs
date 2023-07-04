@@ -7,6 +7,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.VisualBasic;
 using Newtonsoft.Json;
 using System.Linq;
+using System.Text;
 
 namespace InstPlusEntityFr.Pages.MainPage
 {
@@ -26,7 +27,7 @@ namespace InstPlusEntityFr.Pages.MainPage
         public List<String> Tagi { get; set; }
         public DateTime Data { get; set; }
         public int IloscPolubien { get; set; }
-        public List<int> KomentarzePolubienia { get; set; }  
+        public List<int> KomentarzePolubienia { get; set; }
     }
     public class IndexModel : PageModel
     {
@@ -49,6 +50,13 @@ namespace InstPlusEntityFr.Pages.MainPage
             var zalo = db.Uzytkownicy.Where(u => u.UzytkownikId == (int?)HttpContext.Session.GetInt32("UzytkownikId")).FirstOrDefault();
             if (zalo != null)
             {
+                var postsListBytes = HttpContext.Session.Get("PostsList");
+                if (postsListBytes != null)
+                {
+                    postsWithComments = JsonConvert.DeserializeObject<List<PostWithComments>>(Encoding.UTF8.GetString(postsListBytes));
+                    // Wykonaj operacje na liœcie postów
+                }
+
                 switch (fun)
                 {
                     case 1:
@@ -59,28 +67,109 @@ namespace InstPlusEntityFr.Pages.MainPage
                         kom.Tresc = tresc;
                         db.Komentarze.Add(kom);
                         db.SaveChanges();
+                        Reload();
                         break;
 
                     case 2:
+                        bool czyBylPolubiony = false;
                         PolubieniePosta p = new PolubieniePosta(id, zalo.UzytkownikId);
-                        db.PolubieniaPostow.Add(p);
+                        foreach (PolubieniePosta pol in db.PolubieniaPostow)
+                        {
+                            if (pol.UzytkownikId == p.UzytkownikId && pol.PostId == p.PostId)
+                            {
+                                db.PolubieniaPostow.Remove(pol);
+                                czyBylPolubiony = true;
+                                break;
+                            }
+                        }
+                        if (!czyBylPolubiony) db.PolubieniaPostow.Add(p);
                         db.SaveChanges();
+                        Reload();
                         break;
 
                     case 3:
-                       // Console.WriteLine("dodawanie polubien do komentarzy");
+                        bool czyBylPolubionyK = false;
                         PolubienieKomentarza k = new PolubienieKomentarza(id, zalo.UzytkownikId);
-                        db.PolubieniaKomentarzy.Add(k);
+                        foreach (PolubienieKomentarza pol in db.PolubieniaKomentarzy)
+                        {
+                            if (pol.KomentarzId==k.KomentarzId && pol.UzytkownikId==k.UzytkownikId)
+                            {
+                                db.PolubieniaKomentarzy.Remove(pol);
+                                czyBylPolubionyK = true;
+                                break;
+                            }
+                        }
+                        if (!czyBylPolubionyK) db.PolubieniaKomentarzy.Add(k);
                         db.SaveChanges();
+                        Reload();
                         break;
                 }
+                
             }
-           // Console.WriteLine(fun+" "+id+" "+tresc);
+            HttpContext.Session.SetInt32("CZYODCZYT",1);
+            // Console.WriteLine(fun+" "+id+" "+tresc);
+        }
+
+        private void Reload()
+        {
+            
+
+            foreach (PostWithComments pk in postsWithComments)
+            {
+                
+                foreach (Post post in db.Posty)
+                {
+                    if (post.PostId==pk.Id)
+                    {
+                        pk.IloscPolubien = db.PolubieniaPostow.Count(u => u.PostId == post.PostId);
+                        pk.Komentarze.Clear();
+                        pk.KomentarzeTresc.Clear();
+                        pk.KomentarzePolubienia.Clear();
+                        pk.KomentarzeZDJ.Clear();
+                        pk.KomentarzeAutor.Clear();
+                        pk.KomentarzeId.Clear();
+                        var tempKom = db.Komentarze.Where(u => u.PostId == post.PostId);
+                        foreach (var kom in tempKom)
+                        {
+                            pk.Komentarze.Add(kom);
+                            pk.KomentarzeId.Add(kom.KomentarzId);
+                            pk.KomentarzeTresc.Add(kom.Tresc);
+                            pk.KomentarzePolubienia.Add(db.PolubieniaKomentarzy.Count(u => u.KomentarzId == kom.KomentarzId));
+                            var zdj = db.Uzytkownicy.Where(u => u.UzytkownikId == kom.UzytkownikId).Select(u => u.Zdjecie).FirstOrDefault();
+                            if (zdj == null) zdj = "/ImgUploads/userTmpImg.jpg";
+                            pk.KomentarzeZDJ.Add(@Url.Content(zdj));
+                            //if (zdj) post.KomentarzeZDJ.Add(@Url.Content("/ImgUploads/userTmpImg.jpg"));
+
+
+                            var autor = db.Uzytkownicy.Where(u => u.UzytkownikId == kom.UzytkownikId).Select(u => u.Nazwa).FirstOrDefault();
+                            pk.KomentarzeAutor.Add(autor);
+                            pk.KomentarzeData.Add(kom.DataPublikacji.ToString());
+                        }
+                        pk.Tagi.Clear();
+                        
+                        var tempTagi = db.Posty.Where(u => u.PostId == post.PostId).Select(s => s.Tagi);
+                        foreach (var tag in tempTagi)
+                        {
+                            foreach (var x in tag)
+                            {
+                                pk.Tagi.Add(x.Nazwa);
+                            }
+                        }
+                    }
+                    
+                }
+            }
+            HttpContext.Session.Set("PostsList", Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(postsWithComments)));
         }
 
         public String getPosty()
         {
-
+            var postsListBytes = HttpContext.Session.Get("PostsList");
+            if (postsListBytes != null)
+            {
+                postsWithComments = JsonConvert.DeserializeObject<List<PostWithComments>>(Encoding.UTF8.GetString(postsListBytes));
+                // Wykonaj operacje na liœcie postów
+            }
             return JsonConvert.SerializeObject(postsWithComments);
         }
 
@@ -100,6 +189,8 @@ namespace InstPlusEntityFr.Pages.MainPage
             if (zalogowany != null) zal = zalogowany.Nazwa;
             var obecny = db.Uzytkownicy.Where(u => u.UzytkownikId == (int?)HttpContext.Session.GetInt32("SzukaneID")).FirstOrDefault();
 
+            
+
             if (zalogowany != null)
             {
                 CzyZalogowany = true;
@@ -110,6 +201,21 @@ namespace InstPlusEntityFr.Pages.MainPage
                 else
                     CzyVip = true;
 
+              
+
+                if (HttpContext.Session.Keys.Contains("CZYODCZYT"))
+                {
+                    var postsListBytes = HttpContext.Session.Get("PostsList");
+                    if (postsListBytes != null)
+                    {
+                        postsWithComments = JsonConvert.DeserializeObject<List<PostWithComments>>(Encoding.UTF8.GetString(postsListBytes));
+                        // Wykonaj operacje na liœcie postów
+                    }
+                    HttpContext.Session.Remove("CZYODCZYT");
+                }
+
+                else
+                { 
                 //zliczenie tagów
                 foreach (var pol in db.PolubieniaPostow.Where(u => u.UzytkownikId == zalogowany.UzytkownikId))
                 {
@@ -223,6 +329,7 @@ namespace InstPlusEntityFr.Pages.MainPage
                     }
                     // Console.WriteLine(post.Nazwa);
                 }
+                }
             }
             //to kiedy niezalogowany uzytkownik
             else
@@ -230,6 +337,7 @@ namespace InstPlusEntityFr.Pages.MainPage
                 //nie ma VIP z automatu - reklamy
                 CzyZalogowany = false;
                 CzyVip = false;
+
                 //Tutaj Modu³ wyszukiwania tagu
                 var testowa = db.Posty.ToList();
                 if (inputValue != null) testowa = db.TagiPostow.Include(tp => tp.Posty).Where(tp => tp.Nazwa == inputValue).SelectMany(tp => tp.Posty).ToList();
@@ -311,6 +419,8 @@ namespace InstPlusEntityFr.Pages.MainPage
                 LoginZalogowanego = zalogowany.Nazwa;
                 ZdjecieZalogowanego = zalogowany.Zdjecie;
             }
+
+            HttpContext.Session.Set("PostsList", Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(postsWithComments)));
         }
 
         [BindProperty]
