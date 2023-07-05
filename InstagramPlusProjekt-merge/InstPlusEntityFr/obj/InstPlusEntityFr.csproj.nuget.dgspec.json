@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\K\\Desktop\\InstagramPlusProjekt-abbbb5cf0c33fe9dde056bd984a08c042d5ac401\\InstagramPlusProjekt-merge\\InstPlusEntityFr\\InstPlusEntityFr.csproj": {}
+    "C:\\Users\\K\\Desktop\\insta\\InstagramPlusProjekt\\InstagramPlusProjekt-merge\\InstPlusEntityFr\\InstPlusEntityFr.csproj": {}
   },
   "projects": {
-    "C:\\Users\\K\\Desktop\\InstagramPlusProjekt-abbbb5cf0c33fe9dde056bd984a08c042d5ac401\\InstagramPlusProjekt-merge\\InstPlusEntityFr\\InstPlusEntityFr.csproj": {
+    "C:\\Users\\K\\Desktop\\insta\\InstagramPlusProjekt\\InstagramPlusProjekt-merge\\InstPlusEntityFr\\InstPlusEntityFr.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\K\\Desktop\\InstagramPlusProjekt-abbbb5cf0c33fe9dde056bd984a08c042d5ac401\\InstagramPlusProjekt-merge\\InstPlusEntityFr\\InstPlusEntityFr.csproj",
+        "projectUniqueName": "C:\\Users\\K\\Desktop\\insta\\InstagramPlusProjekt\\InstagramPlusProjekt-merge\\InstPlusEntityFr\\InstPlusEntityFr.csproj",
         "projectName": "InstPlusEntityFr",
-        "projectPath": "C:\\Users\\K\\Desktop\\InstagramPlusProjekt-abbbb5cf0c33fe9dde056bd984a08c042d5ac401\\InstagramPlusProjekt-merge\\InstPlusEntityFr\\InstPlusEntityFr.csproj",
+        "projectPath": "C:\\Users\\K\\Desktop\\insta\\InstagramPlusProjekt\\InstagramPlusProjekt-merge\\InstPlusEntityFr\\InstPlusEntityFr.csproj",
         "packagesPath": "C:\\Users\\K\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\K\\Desktop\\InstagramPlusProjekt-abbbb5cf0c33fe9dde056bd984a08c042d5ac401\\InstagramPlusProjekt-merge\\InstPlusEntityFr\\obj\\",
+        "outputPath": "C:\\Users\\K\\Desktop\\insta\\InstagramPlusProjekt\\InstagramPlusProjekt-merge\\InstPlusEntityFr\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

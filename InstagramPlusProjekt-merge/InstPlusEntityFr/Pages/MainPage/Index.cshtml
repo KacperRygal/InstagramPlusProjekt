@@ -28,6 +28,14 @@
     .komentarze {
         margin-top: 10px;
     }
+    .divPost{
+            width: 50%;
+            background-color: #a8d0e6;
+            border: 2px solid #1f618d;
+            border-radius: 20px;
+            padding: 10px;
+
+    }
 
     .komentarz {
         margin-bottom: 5px;
@@ -39,7 +47,6 @@
         margin-top: 10px;
         font-weight: bold;
     }
-
         body {
             margin: 0;
             padding-bottom: 60px; /* Dostosuj wartość padding-bottom do wysokości stopki */
@@ -81,10 +88,12 @@
         }
 
         function polubKomF(msg,msg2) {
-            fetch('?handler=Guzik&fun=3&id=' + postsWithComments[msg].KomentarzeId[msg2] + '&tresc')
+            var a=fetch('?handler=Guzik&fun=3&id=' + postsWithComments[msg].KomentarzeId[msg2] + '&tresc')
                 .then(function () {
                     generatePostElements(); // Call the function to regenerate post elements
                 }).then(function () { refreshPage(); });
+
+            
         }
         function polubKomF2(msg, msg2) {
             fetch('?handler=Guzik&fun=3&id=' + postsWithComments[msg].KomentarzeId[msg2] + '&tresc')
@@ -111,6 +120,8 @@
         function generatePostElements() {
             container.innerHTML = ""; // Clear the container before regenerating the post elements
             for (var i = 0; i < postsWithComments.length; i++) {
+                var divPost=document.createElement("div");
+                divPost.className="divPost";
                 var imageDiv = document.createElement("div");
                 imageDiv.className = "image-div";
 
@@ -172,7 +183,14 @@
                     komentarzData.innerHTML = new Date(postsWithComments[i].KomentarzeData[j]).toLocaleDateString();
                 
                     var formDodPolubKom = document.createElement("form");
-                        formDodPolubKom.innerHTML += '<input type="button" onclick="polubKomF(' + i+','+j + ')" value="Polub Komentarz"/>';
+                    if(postsWithComments[i].CzyPolubionyKomentarz[j])
+                    {
+                        formDodPolubKom.innerHTML += '<input type="button" classname="guzik" onclick="polubKomF(' + i + ',' + j + ')" value="Cofnij polubienie komentarza"/>';
+                    }
+                    else
+                    {
+                        formDodPolubKom.innerHTML += '<input type="button" onclick="polubKomF(' + i + ',' + j + ')" value="Polub Komentarz"/>';
+                    }
 
                         var polubieniaKom = document.createElement("span");
                         polubieniaKom.className = "polubienia";
@@ -220,7 +238,12 @@
                             komentarzData.innerHTML = new Date(postsWithComments[postIndex].KomentarzeData[j]).toLocaleDateString();
 
                                 var formDodPolubKom = document.createElement("form");
-                                formDodPolubKom.innerHTML += '<input type="button" onclick="polubKomF2(' + postIndex + ',' + j + ')" value="Polub Komentarz"/>';
+                            if (postsWithComments[postIndex].CzyPolubionyKomentarz[j]) {
+                                formDodPolubKom.innerHTML += '<input type="button" onclick="polubKomF(' + postIndex + ',' + j + ')" value="Cofnij polubienie komentarza"/>';
+                            }
+                            else {
+                                formDodPolubKom.innerHTML += '<input type="button" onclick="polubKomF(' + postIndex + ',' + j + ')" value="Polub Komentarz"/>';
+                            }
 
                                 var polubieniaKom = document.createElement("span");
                                 polubieniaKom.className = "polubienia";
@@ -247,27 +270,36 @@
                     formDodKom.innerHTML += '<input type="button" onclick="wyslij(' + i + ')" value="Dodaj komentarz"/>';
 
                     var formDodPolubPos = document.createElement("form");
+               
+                if (postsWithComments[i].CzyPolubionyPost)
+                {
+                    formDodPolubPos.innerHTML += '<input type="button" onclick="polubPostF(' + i + ')" value="Cofnij polubienie posta"/>';
+                }
+                else
+                {
                     formDodPolubPos.innerHTML += '<input type="button" onclick="polubPostF(' + i + ')" value="Polub post"/>';
+                }
 
                     var polubienia = document.createElement("span");
                     polubienia.className = "polubienia";
                     polubienia.innerHTML = "Polubienia: " + postsWithComments[i].IloscPolubien;
 
                     imageDiv.appendChild(image);
-                    container.appendChild(imageavatar);
-                    container.appendChild(nazwa);
-                    container.appendChild(imageDiv);
-                    container.appendChild(polubienia);
-                    container.appendChild(opis);
+                    divPost.appendChild(imageavatar);
+                divPost.appendChild(nazwa);
+                divPost.appendChild(imageDiv);
+                divPost.appendChild(polubienia);
+                divPost.appendChild(opis);
                     if (zalogowany != null) {
-                        container.appendChild(formDodPolubPos);
+                    divPost.appendChild(formDodPolubPos);
                     }
-                    container.appendChild(data);
+                divPost.appendChild(data);
                     if (zalogowany != null) {
-                      container.appendChild(formDodKom);
-                      container.appendChild(komDodanieText[i])
+                    divPost.appendChild(formDodKom);
+                    divPost.appendChild(komDodanieText[i])
                     }
-                    container.appendChild(komentarzeDiv);     
+                divPost.appendChild(komentarzeDiv);
+                container.appendChild(divPost);
                     }
     }
         generatePostElements();

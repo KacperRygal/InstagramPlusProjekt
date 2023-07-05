@@ -14,10 +14,12 @@ namespace InstPlusEntityFr.Pages.MainPage
     public class PostWithComments
     {
         public int Id { get; set; }
+        public bool CzyPolubionyPost { get; set; }
         public string Image { get; set; }
         public string Opis { get; set; }
         public string ImageAvatar { get; set; }
         public string Nazwa { get; set; }
+        public List<bool> CzyPolubionyKomentarz { get; set; }
         public List<int> KomentarzeId { get; set; }
         public List<Komentarz> Komentarze { get; set; }
         public List<String> KomentarzeTresc { get; set; }
@@ -116,7 +118,6 @@ namespace InstPlusEntityFr.Pages.MainPage
 
             foreach (PostWithComments pk in postsWithComments)
             {
-                
                 foreach (Post post in db.Posty)
                 {
                     if (post.PostId==pk.Id)
@@ -128,6 +129,12 @@ namespace InstPlusEntityFr.Pages.MainPage
                         pk.KomentarzeZDJ.Clear();
                         pk.KomentarzeAutor.Clear();
                         pk.KomentarzeId.Clear();
+                        pk.CzyPolubionyKomentarz.Clear();
+
+                        var zalog = db.Uzytkownicy.Where(u => u.UzytkownikId == (int?)HttpContext.Session.GetInt32("UzytkownikId")).FirstOrDefault();
+                        bool PolubionyPost = db.PolubieniaPostow.Any(l => l.UzytkownikId == zalog.UzytkownikId && l.PostId == post.PostId);
+                        pk.CzyPolubionyPost = PolubionyPost;
+
                         var tempKom = db.Komentarze.Where(u => u.PostId == post.PostId);
                         foreach (var kom in tempKom)
                         {
@@ -135,6 +142,9 @@ namespace InstPlusEntityFr.Pages.MainPage
                             pk.KomentarzeId.Add(kom.KomentarzId);
                             pk.KomentarzeTresc.Add(kom.Tresc);
                             pk.KomentarzePolubienia.Add(db.PolubieniaKomentarzy.Count(u => u.KomentarzId == kom.KomentarzId));
+
+                            pk.CzyPolubionyKomentarz.Add(db.PolubieniaKomentarzy.Any(l => l.UzytkownikId == zalog.UzytkownikId && l.KomentarzId == kom.KomentarzId));
+                           // 
                             var zdj = db.Uzytkownicy.Where(u => u.UzytkownikId == kom.UzytkownikId).Select(u => u.Zdjecie).FirstOrDefault();
                             if (zdj == null) zdj = "/ImgUploads/userTmpImg.jpg";
                             pk.KomentarzeZDJ.Add(@Url.Content(zdj));
@@ -264,6 +274,7 @@ namespace InstPlusEntityFr.Pages.MainPage
                     post.KomentarzeZDJ = new List<String>();
                     post.KomentarzeAutor = new List<String>();
                     post.KomentarzeData = new List<String>();
+                    post.CzyPolubionyKomentarz = new List<bool>();
                     post.Id = idpost.PostId;
                     post.Image = @Url.Content(idpost.Zdjecie);
                     post.Opis = idpost.Opis;
@@ -272,13 +283,23 @@ namespace InstPlusEntityFr.Pages.MainPage
                     post.Nazwa = db.Uzytkownicy.Where(u => u.UzytkownikId == idpost.UzytkownikId).FirstOrDefault().Nazwa;
                     post.IloscPolubien = db.PolubieniaPostow.Count(u => u.PostId == idpost.PostId);
                     var tempKom = db.Komentarze.Where(u => u.PostId == idpost.PostId);
-                    foreach (var kom in tempKom)
+
+
+                        var zalog = db.Uzytkownicy.Where(u => u.UzytkownikId == (int?)HttpContext.Session.GetInt32("UzytkownikId")).FirstOrDefault();
+                        bool PolubionyPost = db.PolubieniaPostow.Any(l => l.UzytkownikId == zalog.UzytkownikId && l.PostId == idpost.PostId);
+                        post.CzyPolubionyPost = PolubionyPost;
+
+                       // Console.WriteLine(zalog.UzytkownikId + " " + post.Id + " " + PolubionyPost);
+
+                        foreach (var kom in tempKom)
                     {
                         post.Komentarze.Add(kom);
                         post.KomentarzeId.Add(kom.KomentarzId);
                         post.KomentarzeTresc.Add(kom.Tresc);
                         post.KomentarzePolubienia.Add(db.PolubieniaKomentarzy.Count(u => u.KomentarzId == kom.KomentarzId));
-                        var zdj = db.Uzytkownicy.Where(u => u.UzytkownikId == kom.UzytkownikId).Select(u => u.Zdjecie).FirstOrDefault();
+                        post.CzyPolubionyKomentarz.Add(db.PolubieniaKomentarzy.Any(l => l.UzytkownikId == zalog.UzytkownikId && l.KomentarzId == kom.KomentarzId));
+
+                            var zdj = db.Uzytkownicy.Where(u => u.UzytkownikId == kom.UzytkownikId).Select(u => u.Zdjecie).FirstOrDefault();
                         if (zdj == null) zdj = "/ImgUploads/userTmpImg.jpg";
                         post.KomentarzeZDJ.Add(@Url.Content(zdj));
                         //if (zdj) post.KomentarzeZDJ.Add(@Url.Content("/ImgUploads/userTmpImg.jpg"));
@@ -352,6 +373,7 @@ namespace InstPlusEntityFr.Pages.MainPage
                 foreach (var idpost in testowa)
                 {
                     var post = new PostWithComments();
+                    post.Tagi = new List<String>();
                     post.KomentarzeId = new List<int>();
                     post.KomentarzePolubienia = new List<int>();
                     post.Komentarze = new List<Komentarz>();
@@ -359,21 +381,26 @@ namespace InstPlusEntityFr.Pages.MainPage
                     post.KomentarzeZDJ = new List<String>();
                     post.KomentarzeAutor = new List<String>();
                     post.KomentarzeData = new List<String>();
+                    post.CzyPolubionyKomentarz = new List<bool>();
+                    post.Id = idpost.PostId;
                     post.Image = @Url.Content(idpost.Zdjecie);
                     post.Opis = idpost.Opis;
-                    post.Id = idpost.PostId;
-                    post.Data = idpost.DataPublikacji;
                     post.ImageAvatar = @Url.Content(db.Uzytkownicy.Where(u => u.UzytkownikId == idpost.UzytkownikId).FirstOrDefault().Zdjecie);
-                    if (post.ImageAvatar == null) post.ImageAvatar = @Url.Content("/ImgUploads/userTmpImg.jpg");
+                    if (post.ImageAvatar == null) post.ImageAvatar = "/ImgUploads/userTmpImg.jpg";
                     post.Nazwa = db.Uzytkownicy.Where(u => u.UzytkownikId == idpost.UzytkownikId).FirstOrDefault().Nazwa;
                     post.IloscPolubien = db.PolubieniaPostow.Count(u => u.PostId == idpost.PostId);
                     var tempKom = db.Komentarze.Where(u => u.PostId == idpost.PostId);
+
+                    // Console.WriteLine(zalog.UzytkownikId + " " + post.Id + " " + PolubionyPost);
+
                     foreach (var kom in tempKom)
                     {
                         post.Komentarze.Add(kom);
-                        post.KomentarzeTresc.Add(kom.Tresc);
                         post.KomentarzeId.Add(kom.KomentarzId);
-                        post.KomentarzePolubienia.Add( db.PolubieniaKomentarzy.Count(u => u.KomentarzId == kom.KomentarzId));
+                        post.KomentarzeTresc.Add(kom.Tresc);
+                        post.KomentarzePolubienia.Add(db.PolubieniaKomentarzy.Count(u => u.KomentarzId == kom.KomentarzId));
+                      
+
                         var zdj = db.Uzytkownicy.Where(u => u.UzytkownikId == kom.UzytkownikId).Select(u => u.Zdjecie).FirstOrDefault();
                         if (zdj == null) zdj = "/ImgUploads/userTmpImg.jpg";
                         post.KomentarzeZDJ.Add(@Url.Content(zdj));
@@ -384,7 +411,14 @@ namespace InstPlusEntityFr.Pages.MainPage
                         post.KomentarzeAutor.Add(autor);
                         post.KomentarzeData.Add(kom.DataPublikacji.ToString());
                     }
-
+                    var tempTagi = db.Posty.Where(u => u.PostId == idpost.PostId).Select(s => s.Tagi);
+                    foreach (var tag in tempTagi)
+                    {
+                        foreach (var x in tag)
+                        {
+                            post.Tagi.Add(x.Nazwa);
+                        }
+                    }
                     postsWithComments.Add(post);
                 }
                 postsWithComments = postsWithComments.OrderByDescending(x => x.Data).ToList();
